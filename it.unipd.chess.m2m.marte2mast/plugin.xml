@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+     <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.polarsys.chess.preferences"
+            class="it.unipd.chess.m2m.marte2mast.preferences.Marte2mastPreferencePage"
+            id="it.unipd.chess.m2m.marte2mast.preferences.preferencePage"
+            name="Schedulability Analysis">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.core.runtime.preferences">
+      <initializer
+            class="it.unipd.chess.m2m.marte2mast.preferences.Marte2mastPreferenceInitializer">
+      </initializer>
+   </extension>
+   <extension
+         id="it.unipd.chess.m2m.marte2mast.executor"
+         name="MARTE2MAST"
+         point="org.polarsys.chess.transformationExecutor">
+      <executor
+            name="MARTE2MAST"
+            realization="it.unipd.chess.m2m.marte2mast.TransformationExecutor">
+      </executor>
+   </extension>
+
+</plugin>

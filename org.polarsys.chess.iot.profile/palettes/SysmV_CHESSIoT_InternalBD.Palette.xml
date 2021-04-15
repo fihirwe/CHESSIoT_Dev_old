@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+   
+    Copyright (c) 2021 Intecs SpA 
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v2.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v20.html
+   
+    Contributors:
+    Felicien Ihirwe
+ -->
+
+<paletteDefinition>
+	<content>
+<drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT_IBD_DRAWER" name="CHESSIoT_IBD">
+			<aspectTool description="Create a new Pin (IN)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/portandflows/FlowPort_IN.gif" id="internalblock.tool.flowport_in_1386261494628" name="IN_Pin" refToolId="internalblock.tool.flowport_in"/>
+			<aspectTool description="Create a new Pin (OUT)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/portandflows/FlowPort_OUT.gif" id="internalblock.tool.flowport_out_1386261505899" name="OUT_Pin (OUT)" refToolId="internalblock.tool.flowport_out"/>
+			<aspectTool description="Create a new Pin (INOUT)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/portandflows/FlowPort_INOUT.gif" id="internalblock.tool.flowport_inout_1386261495772" name="IN_OUT_Pin" refToolId="internalblock.tool.flowport_inout"/>
+			<aspectTool description="Create a new Inner block" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif" id="internalblock.tool.part_1346858391333" name="InnerBlock" refToolId="internalblock.tool.part"/>
+			<aspectTool description="Create a new Comment" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif" id="internalblock.tool.comment_1346858395077" name="Comment" refToolId="internalblock.tool.comment"/>		
+</drawer>
+	</content>
+</paletteDefinition>

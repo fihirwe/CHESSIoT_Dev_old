@@ -1,0 +1,11 @@
+org.polarsys.chess.service.core.exceptions
+org.polarsys.chess.service.core.model
+org.polarsys.chess.service.core.utils
+org.polarsys.chess.service.gui.utils
+org.polarsys.chess.service.internal
+org.polarsys.chess.service.internal.commands
+org.polarsys.chess.service.internal.commands.switchers
+org.polarsys.chess.service.internal.palette
+org.polarsys.chess.service.internal.service
+org.polarsys.chess.service.internal.utils
+org.polarsys.chess.service.internal.visibility

@@ -1,0 +1,3126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:mtl="http://www.eclipse.org/acceleo/mtl/3.0" xmlns:ocl.ecore="http://www.eclipse.org/ocl/1.1.0/Ecore">
+  <mtl:Module name="marte2mast" nsURI="it::unipd::chess::m2m::marte2mast::common::marte2mast" startHeaderPosition="2261" endHeaderPosition="2320">
+    <input>
+      <takesTypesFrom href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
+    </input>
+    <imports href="helperfunctions.emtl#/0"/>
+    <imports href="activityfunctions.emtl#/0"/>
+    <imports href="processing_resource.emtl#/0"/>
+    <imports href="scheduling_server.emtl#/0"/>
+    <imports href="ima_partitions.emtl#/0"/>
+    <imports href="ima_partitions_sched.emtl#/0"/>
+    <imports href="ima_secondary_scheduling_servers.emtl#/0"/>
+    <imports href="ima_secondary_schedulers.emtl#/0"/>
+    <imports href="partitioned_multicore_schedulers.emtl#/0"/>
+    <imports href="partitioned_multicore_scheduling_servers.emtl#/0"/>
+    <imports href="run_primary_scheduling_servers.emtl#/0"/>
+    <imports href="run_primary_schedulers.emtl#/0"/>
+    <imports href="run_secondary_scheduling_servers.emtl#/0"/>
+    <imports href="run_secondary_schedulers.emtl#/0"/>
+    <imports href="scheduler.emtl#/0"/>
+    <imports href="shared_resource.emtl#/0"/>
+    <imports href="mrspshared_resource.emtl#/0"/>
+    <imports href="mutualex_resource.emtl#/0"/>
+    <imports href="mast.emtl#/0"/>
+    <imports href="log.emtl#/0"/>
+    <imports href="log2file.emtl#/0"/>
+    <ownedModuleElement xsi:type="mtl:Template" name="marte2mast" visibility="Public" main="true">
+      <body xsi:type="mtl:FileBlock" openMode="OverWrite">
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="-- "/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+          <definition href="helperfunctions.emtl#/0/printHeaderData"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/7">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+          </argument>
+        </body>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          <definition href="log.emtl#/0/initLog"/>
+          <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="false">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="true">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:BooleanLiteralExp" booleanSymbol="false">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+          </argument>
+          <argument xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="model" referredVariable="/0/marte2mast/model">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+          </argument>
+        </body>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          <definition href="log.emtl#/0/logLine"/>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">>> Starting MARTE to MAST conversion&#xA;">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;-- Processing Resources"/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          <definition href="log.emtl#/0/logLine"/>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=">> Extracting Processing Resources:">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="processing_resource.emtl#/0/processing_resource"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/17">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/16">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                  </argument>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SaExecHost">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </source>
+                <argument xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/16">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                  </argument>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SaCommHost">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+              </ifExpr>
+            </body>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/15">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/14/Class">
+                <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+            </ifExpr>
+          </body>
+          <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+            <definition href="helperfunctions.emtl#/0/getMulticoreProcessors"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+            </argument>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+        <body xsi:type="mtl:IfBlock">
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="-- Analysis type: IMA&#xA;-- Primary Schedulers"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+            <definition href="log.emtl#/0/logLine"/>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Primary Schedulers:">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="ima_partitions_sched.emtl#/0/ima_partitions_scheduler"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/26">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+              <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+                <definition href="helperfunctions.emtl#/0/getCores"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/24">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                </argument>
+              </iterSet>
+            </body>
+            <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+              <definition href="helperfunctions.emtl#/0/getMulticoreProcessors"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              </argument>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;-- Primary Scheduling Servers"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+            <definition href="log.emtl#/0/logLine"/>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Primary Scheduling Servers:">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="mtl:TemplateInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="ima_partitions.emtl#/0/ima_partitions_scheduling_server"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/34">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+            <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+              <definition href="helperfunctions.emtl#/0/getFunctionalPartitions"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              </argument>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;-- Secondary Schedulers&#xA;&#xA;"/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="mtl:TemplateInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              <definition href="ima_secondary_schedulers.emtl#/0/ima_secondary_scheduler"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/39">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+            <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+              <definition href="helperfunctions.emtl#/0/getFunctionalPartitions"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              </argument>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;-- Secondary Scheduling Servers"/>
+          <body xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+            <definition href="log.emtl#/0/logLine"/>
+            <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Secondary Scheduling Servers:">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            </argument>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+          <body xsi:type="mtl:ForBlock">
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="ima_secondary_scheduling_servers.emtl#/0/ima_secondary_scheduling_server"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/47">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+              <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+                <definition href="helperfunctions.emtl#/0/getSchedulableResources"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/45">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                </argument>
+              </iterSet>
+            </body>
+            <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+              <definition href="helperfunctions.emtl#/0/getFunctionalPartitions"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              </argument>
+            </iterSet>
+          </body>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+          <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+          <ifExpr xsi:type="mtl:QueryInvocation">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+            <definition href="helperfunctions.emtl#/0/functionalPartitions"/>
+            <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+            </argument>
+          </ifExpr>
+          <else>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="-- Analysis type: Standard&#xA;-- Schedulers"/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+              <definition href="log.emtl#/0/logLine"/>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Schedulers:">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="mtl:IfBlock">
+                  <body xsi:type="mtl:TemplateInvocation">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <definition href="scheduler.emtl#/0/scheduler"/>
+                    <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/86">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                    </argument>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+                  <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="mtl:QueryInvocation">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                      <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/85">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                      </argument>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SaExecHost">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                    </source>
+                    <argument xsi:type="mtl:QueryInvocation">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                      <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/85">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                      </argument>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SaCommHost">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                  </ifExpr>
+                </body>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/84">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/14/Class">
+                    <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+                </ifExpr>
+              </body>
+              <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/11/Set(Element)">
+                <source xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/allOwnedElements"/>
+              </iterSet>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;-- Scheduling Servers"/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+              <definition href="log.emtl#/0/logLine"/>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Scheduling Servers:">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="mtl:IfBlock">
+                  <body xsi:type="mtl:TemplateInvocation">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <definition href="scheduling_server.emtl#/0/scheduling_server"/>
+                    <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/94">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                    </argument>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+                  <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:OperationCallExp">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <source xsi:type="mtl:QueryInvocation">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                        <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/93">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                        </argument>
+                        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SchedulableResource">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        </argument>
+                      </source>
+                      <argument xsi:type="mtl:QueryInvocation">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                        <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/93">
+                          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                        </argument>
+                        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="GaCommChannel">
+                          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                        </argument>
+                      </argument>
+                      <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                    </source>
+                    <argument xsi:type="mtl:QueryInvocation">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                      <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                      <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/93">
+                        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                      </argument>
+                      <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SwSchedulableResource">
+                        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                      </argument>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/or"/>
+                  </ifExpr>
+                </body>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/92">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/14/Class">
+                    <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+                </ifExpr>
+              </body>
+              <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/11/Set(Element)">
+                <source xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                </source>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/allOwnedElements"/>
+              </iterSet>
+            </body>
+          </else>
+          <elseIf>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="-- Analysis type: RUN&#xA;-- Schedulers"/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+              <definition href="log.emtl#/0/logLine"/>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Schedulers:">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;"/>
+              <body xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="run_primary_schedulers.emtl#/0/run_primary_scheduler"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/56">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+              <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+                <definition href="helperfunctions.emtl#/0/getMulticoreProcessors"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                </argument>
+              </iterSet>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;-- Scheduling Servers"/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+              <definition href="log.emtl#/0/logLine"/>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Scheduling Servers:">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="run_primary_scheduling_servers.emtl#/0/run_primary_scheduling_server"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/62">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+              <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+                <definition href="helperfunctions.emtl#/0/getSupertasks"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                </argument>
+              </iterSet>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;-- Schedulers"/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+              <definition href="log.emtl#/0/logLine"/>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Schedulers:">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="run_secondary_schedulers.emtl#/0/run_secondary_scheduler"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/68">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+              <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+                <definition href="helperfunctions.emtl#/0/getSupertasks"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                </argument>
+              </iterSet>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;-- Secondary Scheduling Servers"/>
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+              <definition href="log.emtl#/0/logLine"/>
+              <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Secondary Scheduling Servers:">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:ForBlock">
+                <body xsi:type="mtl:TemplateInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="run_secondary_scheduling_servers.emtl#/0/run_secondary_scheduling_server"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/76">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+                <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+                  <definition href="helperfunctions.emtl#/0/getSchedulableResources"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/74">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+                  </argument>
+                </iterSet>
+              </body>
+              <iterSet xsi:type="mtl:QueryInvocation" eType="/11/Sequence(Classifier)">
+                <definition href="helperfunctions.emtl#/0/getSupertasks"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                </argument>
+              </iterSet>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#x9;&#xA;"/>
+            <ifExpr xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <definition href="helperfunctions.emtl#/0/isRUNSystem"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+              </argument>
+            </ifExpr>
+          </elseIf>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;&#xA;-- Resources"/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          <definition href="log.emtl#/0/logLine"/>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Resources:">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="mtl:TemplateInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <definition href="mrspshared_resource.emtl#/0/mrspshared_resource"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/103">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+                <ifExpr xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <definition href="helperfunctions.emtl#/0/isRUNSystem"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                  </argument>
+                </ifExpr>
+                <else>
+                  <body xsi:type="mtl:TemplateInvocation">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    <definition href="shared_resource.emtl#/0/shared_resource"/>
+                    <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/104">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                    </argument>
+                  </body>
+                  <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+                </else>
+              </body>
+              <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/101">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                  </argument>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SaSharedResource">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </source>
+                <argument xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="mtl:QueryInvocation">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                    <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/101">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                    </argument>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SwMutualExclusionResource">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </argument>
+                  </source>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/not"/>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+              </ifExpr>
+            </body>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/100">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/14/Class">
+                <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+            </ifExpr>
+          </body>
+          <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/11/Set(Element)">
+            <source xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/allOwnedElements"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="mtl:IfBlock">
+              <body xsi:type="mtl:TemplateInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                <definition href="mutualex_resource.emtl#/0/mutualex_resource"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/111">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                </argument>
+              </body>
+              <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#x9;&#xA;"/>
+              <ifExpr xsi:type="mtl:QueryInvocation">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/110">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                </argument>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SwMutualExclusionResource">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </ifExpr>
+            </body>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/109">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+              </source>
+              <argument xsi:type="ocl.ecore:TypeExp" eType="/14/Class">
+                <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+            </ifExpr>
+          </body>
+          <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/11/Set(Element)">
+            <source xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/allOwnedElements"/>
+          </iterSet>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#x9;&#xA;"/>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          <definition href="log.emtl#/0/logLine"/>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>> Extracting Operations and Transactions:">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <body xsi:type="mtl:ForBlock">
+          <body xsi:type="mtl:IfBlock">
+            <body xsi:type="mtl:QueryInvocation">
+              <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+              <definition href="activityfunctions.emtl#/0/extractContextInfo"/>
+              <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/118">
+                <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+              </argument>
+            </body>
+            <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+            <body xsi:type="mtl:ForBlock">
+              <body xsi:type="mtl:IfBlock">
+                <body xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+                  <definition href="activityfunctions.emtl#/0/extractActivityData"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/122">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                  </argument>
+                </body>
+                <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+                <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/121">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                    </source>
+                    <argument xsi:type="ocl.ecore:TypeExp" eType="/14/Activity">
+                      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Activity"/>
+                    </argument>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+                  </source>
+                  <argument xsi:type="mtl:QueryInvocation">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                    <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                    <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/121">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                    </argument>
+                    <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SaEndtoEndFlow">
+                      <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                    </argument>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+                </ifExpr>
+              </body>
+              <iterSet xsi:type="ocl.ecore:PropertyCallExp" eType="/11/Set(Element)">
+                <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/119">
+                  <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                </source>
+                <referredProperty xsi:type="ecore:EReference" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/ownedElement"/>
+              </iterSet>
+            </body>
+            <ifExpr xsi:type="ocl.ecore:OperationCallExp">
+              <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+              <source xsi:type="ocl.ecore:OperationCallExp">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:OperationCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/117">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                  </source>
+                  <argument xsi:type="ocl.ecore:TypeExp" eType="/14/Class">
+                    <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+                  </argument>
+                  <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny_Class/oclIsTypeOf"/>
+                </source>
+                <argument xsi:type="mtl:QueryInvocation">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                  <definition href="helperfunctions.emtl#/0/hasStereotype"/>
+                  <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/117">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                  </argument>
+                  <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="SaAnalysisContext">
+                    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  </argument>
+                </argument>
+                <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+              </source>
+              <argument xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/equalsIgnoreCase">
+                <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+                <source xsi:type="ocl.ecore:PropertyCallExp">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                  <source xsi:type="ocl.ecore:OperationCallExp">
+                    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+                    <source xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/117">
+                      <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+                    </source>
+                    <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/getNearestPackage"/>
+                  </source>
+                  <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+                </source>
+                <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="AnalysisContext">
+                  <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+                </argument>
+              </argument>
+              <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean_Class/and"/>
+            </ifExpr>
+          </body>
+          <iterSet xsi:type="ocl.ecore:OperationCallExp" eType="/11/Set(Element)">
+            <source xsi:type="ocl.ecore:VariableExp" name="psmPackage" referredVariable="/0/marte2mast/psmPackage">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+            </source>
+            <referredOperation xsi:type="ecore:EOperation" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element/allOwnedElements"/>
+          </iterSet>
+        </body>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+          <definition href="activityfunctions.emtl#/0/getOperationsTransactionsText"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/127">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+          </argument>
+        </body>
+        <body xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+          <definition href="log.emtl#/0/logLine"/>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>>> Finished MARTE to MAST conversion&#xA;">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </body>
+        <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+        <fileUrl xsi:type="mtl:QueryInvocation">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <definition href="helperfunctions.emtl#/0/fileName"/>
+          <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/6">
+            <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+          </argument>
+        </fileUrl>
+      </body>
+      <body xsi:type="mtl:FileBlock">
+        <fileUrl xsi:type="ocl.ecore:OperationCallExp" referredOperation="/1/oclstdlib_String_Class/+">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          <source xsi:type="ocl.ecore:PropertyCallExp">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+            <source xsi:type="ocl.ecore:VariableExp" name="model" referredVariable="/0/marte2mast/model">
+              <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+            </source>
+            <referredProperty xsi:type="ecore:EAttribute" href="http://www.eclipse.org/uml2/5.0.0/UML#//NamedElement/name"/>
+          </source>
+          <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol=".mast">
+            <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+          </argument>
+        </fileUrl>
+      </body>
+      <body xsi:type="mtl:QueryInvocation">
+        <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        <definition href="log.emtl#/0/logLine"/>
+        <argument xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;>>> Marte2Mast finished running&#xA;">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </argument>
+      </body>
+      <body xsi:type="ocl.ecore:StringLiteralExp" stringSymbol="&#xA;"/>
+      <body xsi:type="mtl:TemplateInvocation">
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <definition href="log2file.emtl#/0/log2file"/>
+        <argument xsi:type="ocl.ecore:VariableExp" name="self" referredVariable="/131">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+        </argument>
+      </body>
+      <parameter name="model">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+      </parameter>
+      <parameter name="psmPackage">
+        <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </parameter>
+    </ownedModuleElement>
+  </mtl:Module>
+  <ecore:EPackage name="additions">
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_String_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+      </eAnnotations>
+      <eOperations name="equalsIgnoreCase">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="+">
+        <eAnnotations source="MTL non-standard"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="other">
+          <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Integer_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Real_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Real"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ecore_EObject_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+      </eAnnotations>
+      <eOperations name="marte2mast">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL" references="/0/marte2mast"/>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="model">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+        </eParameters>
+        <eParameters name="psmPackage">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="hasStereotype">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/hasStereotype"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+        <eParameters name="arg1">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getMulticoreProcessors">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/getMulticoreProcessors"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="helperfunctions.emtl#/3/Sequence(Classifier)"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getSupertasks">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/getSupertasks"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="helperfunctions.emtl#/3/Sequence(Classifier)"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getCores">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/getCores"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="helperfunctions.emtl#/3/Sequence(Classifier)"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="isRUNSystem">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/isRUNSystem"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="functionalPartitions">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/functionalPartitions"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getSchedulableResources">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/getSchedulableResources"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="helperfunctions.emtl#/3/Sequence(Classifier)"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getFunctionalPartitions">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/getFunctionalPartitions"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:SequenceType" href="helperfunctions.emtl#/3/Sequence(Classifier)"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="printHeaderData">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/printHeaderData"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="fileName">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="helperfunctions.emtl#/0/fileName"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="extractContextInfo">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="activityfunctions.emtl#/0/extractContextInfo"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="extractActivityData">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="activityfunctions.emtl#/0/extractActivityData"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="getOperationsTransactionsText">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="activityfunctions.emtl#/0/getOperationsTransactionsText"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:AnyType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="processing_resource">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="processing_resource.emtl#/0/processing_resource"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="scheduling_server">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="scheduling_server.emtl#/0/scheduling_server"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="ima_partitions_scheduling_server">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="ima_partitions.emtl#/0/ima_partitions_scheduling_server"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="ima_partitions_scheduler">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="ima_partitions_sched.emtl#/0/ima_partitions_scheduler"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="ima_secondary_scheduling_server">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="ima_secondary_scheduling_servers.emtl#/0/ima_secondary_scheduling_server"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="ima_secondary_scheduler">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="ima_secondary_schedulers.emtl#/0/ima_secondary_scheduler"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="run_primary_scheduling_server">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="run_primary_scheduling_servers.emtl#/0/run_primary_scheduling_server"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="run_primary_scheduler">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="run_primary_schedulers.emtl#/0/run_primary_scheduler"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="run_secondary_scheduling_server">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="run_secondary_scheduling_servers.emtl#/0/run_secondary_scheduling_server"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="run_secondary_scheduler">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="run_secondary_schedulers.emtl#/0/run_secondary_scheduler"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="scheduler">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="scheduler.emtl#/0/scheduler"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="shared_resource">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="shared_resource.emtl#/0/shared_resource"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="mrspshared_resource">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="mrspshared_resource.emtl#/0/mrspshared_resource"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="mutualex_resource">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="mutualex_resource.emtl#/0/mutualex_resource"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="initLog">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="log.emtl#/0/initLog"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+        <eParameters name="arg1">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+        <eParameters name="arg2">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+        <eParameters name="arg3">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+        </eParameters>
+        <eParameters name="arg4">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="logLine">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="log.emtl#/0/logLine"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:VoidType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclVoid"/>
+        <eParameters name="arg0">
+          <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="log2file">
+        <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+          <contents xsi:type="ocl.ecore:Constraint"/>
+        </eAnnotations>
+        <eAnnotations source="MTL">
+          <references href="log2file.emtl#/0/log2file"/>
+        </eAnnotations>
+        <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+        <eParameters name="e">
+          <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+        </eParameters>
+      </eOperations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OclAny_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OclAny"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Collection(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Collection(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Sequence(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Sequence(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_OrderedSet(T)_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/OrderedSet(T)"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="uml_Model_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="uml_Element_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="uml_Package_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="uml_Classifier_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+      </eAnnotations>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="oclstdlib_Boolean_Class">
+      <eAnnotations source="http://www.eclipse.org/ocl/1.1.0/OCL">
+        <references href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Boolean"/>
+      </eAnnotations>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/String"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="collections">
+    <eClassifiers xsi:type="ocl.ecore:SequenceType" name="Sequence(Classifier)" instanceClassName="java.util.List">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:SetType" name="Set(Element)" instanceClassName="java.util.Set">
+      <elementType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ecore:EPackage name="types">
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Class">
+      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ocl.ecore:TypeType" name="Activity">
+      <referredType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Activity"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Classifier"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Element"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="i">
+    <eType xsi:type="ocl.ecore:PrimitiveType" href="http://www.eclipse.org/ocl/1.1.0/oclstdlib.ecore#/0/Integer"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/uml2/5.0.0/UML#//Model"/>
+  </ocl.ecore:Variable>
+  <ocl.ecore:Variable name="self">
+    <eType xsi:type="ecore:EClass" href="http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </ocl.ecore:Variable>
+  <ecore:EAnnotation source="positions">
+    <eAnnotations source="positions.0" references="/0/marte2mast">
+      <details key="start" value="3879"/>
+      <details key="end" value="8861"/>
+      <details key="line" value="64"/>
+    </eAnnotations>
+    <eAnnotations source="positions.1" references="/0/marte2mast/%">
+      <details key="start" value="3963"/>
+      <details key="end" value="8738"/>
+      <details key="line" value="66"/>
+    </eAnnotations>
+    <eAnnotations source="positions.2" references="/0/marte2mast/%/%">
+      <details key="start" value="3995"/>
+      <details key="end" value="3998"/>
+      <details key="line" value="67"/>
+    </eAnnotations>
+    <eAnnotations source="positions.3" references="/0/marte2mast/%/%.1">
+      <details key="start" value="3999"/>
+      <details key="end" value="4021"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.4" references="/0/marte2mast/%/%.1/self">
+      <details key="start" value="3999"/>
+      <details key="end" value="4003"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.5" references="/0/marte2mast/%/%.2">
+      <details key="start" value="4024"/>
+      <details key="end" value="4069"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.6" references="/0/marte2mast/%/%.2/%">
+      <details key="start" value="4032"/>
+      <details key="end" value="4036"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.7" references="/0/marte2mast/%/%.2/%.1">
+      <details key="start" value="4038"/>
+      <details key="end" value="4043"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.8" references="/0/marte2mast/%/%.2/%.2">
+      <details key="start" value="4045"/>
+      <details key="end" value="4049"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.9" references="/0/marte2mast/%/%.2/%.3">
+      <details key="start" value="4051"/>
+      <details key="end" value="4056"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.10" references="/0/marte2mast/%/%.2/%.4">
+      <details key="start" value="4058"/>
+      <details key="end" value="4068"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.11" references="/0/marte2mast/%/%.2/%.4/model">
+      <details key="start" value="4058"/>
+      <details key="end" value="4063"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.12" references="/0/marte2mast/%/%.3">
+      <details key="start" value="4072"/>
+      <details key="end" value="4122"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.13" references="/0/marte2mast/%/%.3/%">
+      <details key="start" value="4080"/>
+      <details key="end" value="4121"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.14" references="/0/marte2mast/%/%.4">
+      <details key="start" value="4124"/>
+      <details key="end" value="4148"/>
+      <details key="line" value="68"/>
+    </eAnnotations>
+    <eAnnotations source="positions.15" references="/0/marte2mast/%/%.5">
+      <details key="start" value="4149"/>
+      <details key="end" value="4195"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.16" references="/0/marte2mast/%/%.5/%">
+      <details key="start" value="4157"/>
+      <details key="end" value="4194"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.17" references="/0/marte2mast/%/%.6">
+      <details key="start" value="4197"/>
+      <details key="end" value="4198"/>
+      <details key="line" value="69"/>
+    </eAnnotations>
+    <eAnnotations source="positions.18" references="/0/marte2mast/%/%.7">
+      <details key="start" value="4198"/>
+      <details key="end" value="4396"/>
+      <details key="line" value="69"/>
+    </eAnnotations>
+    <eAnnotations source="positions.19" references="/0/marte2mast/%/%.7/%">
+      <details key="start" value="4241"/>
+      <details key="end" value="4389"/>
+      <details key="line" value="70"/>
+    </eAnnotations>
+    <eAnnotations source="positions.20" references="/0/marte2mast/%/%.7/%/%">
+      <details key="start" value="4271"/>
+      <details key="end" value="4383"/>
+      <details key="line" value="71"/>
+    </eAnnotations>
+    <eAnnotations source="positions.21" references="/0/marte2mast/%/%.7/%/%/%">
+      <details key="start" value="4346"/>
+      <details key="end" value="4372"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.22" references="/0/marte2mast/%/%.7/%/%/%/self">
+      <details key="start" value="4346"/>
+      <details key="end" value="4350"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.23" references="/0/marte2mast/%/%.7/%/%/%.1">
+      <details key="start" value="4374"/>
+      <details key="end" value="4377"/>
+      <details key="line" value="72"/>
+    </eAnnotations>
+    <eAnnotations source="positions.24" references="/0/marte2mast/%/%.7/%/%/%.2">
+      <details key="start" value="4275"/>
+      <details key="end" value="4343"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.25" references="/0/marte2mast/%/%.7/%/%/%.2/%">
+      <details key="start" value="4275"/>
+      <details key="end" value="4307"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.26" references="/0/marte2mast/%/%.7/%/%/%.2/%/self">
+      <details key="start" value="4275"/>
+      <details key="end" value="4279"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.27" references="/0/marte2mast/%/%.7/%/%/%.2/%/%">
+      <details key="start" value="4294"/>
+      <details key="end" value="4306"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.28" references="/0/marte2mast/%/%.7/%/%/%.2/%.1">
+      <details key="start" value="4311"/>
+      <details key="end" value="4343"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.29" references="/0/marte2mast/%/%.7/%/%/%.2/%.1/self">
+      <details key="start" value="4311"/>
+      <details key="end" value="4315"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.30" references="/0/marte2mast/%/%.7/%/%/%.2/%.1/%">
+      <details key="start" value="4330"/>
+      <details key="end" value="4342"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.31" references="/0/marte2mast/%/%.7/%/%.1">
+      <details key="start" value="4245"/>
+      <details key="end" value="4268"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.32" references="/0/marte2mast/%/%.7/%/%.1/self">
+      <details key="start" value="4245"/>
+      <details key="end" value="4249"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.33" references="/0/marte2mast/%/%.7/%/%.1/%">
+      <details key="start" value="4262"/>
+      <details key="end" value="4267"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.34" references="/0/marte2mast/%/%.7/%.1">
+      <details key="start" value="4204"/>
+      <details key="end" value="4238"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.35" references="/0/marte2mast/%/%.7/%.1/psmPackage">
+      <details key="start" value="4227"/>
+      <details key="end" value="4237"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.36" references="/0/marte2mast/%/%.8">
+      <details key="start" value="4397"/>
+      <details key="end" value="4399"/>
+      <details key="line" value="76"/>
+    </eAnnotations>
+    <eAnnotations source="positions.37" references="/0/marte2mast/%/%.9">
+      <details key="start" value="4438"/>
+      <details key="end" value="7687"/>
+      <details key="line" value="81"/>
+    </eAnnotations>
+    <eAnnotations source="positions.38" references="/0/marte2mast/%/%.9/%">
+      <details key="start" value="4478"/>
+      <details key="end" value="4521"/>
+      <details key="line" value="82"/>
+    </eAnnotations>
+    <eAnnotations source="positions.39" references="/0/marte2mast/%/%.9/%.1">
+      <details key="start" value="4522"/>
+      <details key="end" value="4568"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.40" references="/0/marte2mast/%/%.9/%.1/%">
+      <details key="start" value="4530"/>
+      <details key="end" value="4567"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.41" references="/0/marte2mast/%/%.9/%.2">
+      <details key="start" value="4570"/>
+      <details key="end" value="4571"/>
+      <details key="line" value="84"/>
+    </eAnnotations>
+    <eAnnotations source="positions.42" references="/0/marte2mast/%/%.9/%.3">
+      <details key="start" value="4571"/>
+      <details key="end" value="4690"/>
+      <details key="line" value="84"/>
+    </eAnnotations>
+    <eAnnotations source="positions.43" references="/0/marte2mast/%/%.9/%.3/%">
+      <details key="start" value="4614"/>
+      <details key="end" value="4615"/>
+      <details key="line" value="85"/>
+    </eAnnotations>
+    <eAnnotations source="positions.44" references="/0/marte2mast/%/%.9/%.3/%.1">
+      <details key="start" value="4616"/>
+      <details key="end" value="4683"/>
+      <details key="line" value="86"/>
+    </eAnnotations>
+    <eAnnotations source="positions.45" references="/0/marte2mast/%/%.9/%.3/%.1/%">
+      <details key="start" value="4640"/>
+      <details key="end" value="4671"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.46" references="/0/marte2mast/%/%.9/%.3/%.1/%/self">
+      <details key="start" value="4640"/>
+      <details key="end" value="4644"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.47" references="/0/marte2mast/%/%.9/%.3/%.1/%.1">
+      <details key="start" value="4673"/>
+      <details key="end" value="4676"/>
+      <details key="line" value="87"/>
+    </eAnnotations>
+    <eAnnotations source="positions.48" references="/0/marte2mast/%/%.9/%.3/%.1/%.2">
+      <details key="start" value="4622"/>
+      <details key="end" value="4636"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.49" references="/0/marte2mast/%/%.9/%.3/%.1/%.2/self">
+      <details key="start" value="4631"/>
+      <details key="end" value="4635"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.50" references="/0/marte2mast/%/%.9/%.3/%.2">
+      <details key="start" value="4577"/>
+      <details key="end" value="4611"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.51" references="/0/marte2mast/%/%.9/%.3/%.2/psmPackage">
+      <details key="start" value="4600"/>
+      <details key="end" value="4610"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.52" references="/0/marte2mast/%/%.9/%.4">
+      <details key="start" value="4691"/>
+      <details key="end" value="4721"/>
+      <details key="line" value="90"/>
+    </eAnnotations>
+    <eAnnotations source="positions.53" references="/0/marte2mast/%/%.9/%.5">
+      <details key="start" value="4722"/>
+      <details key="end" value="4776"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.54" references="/0/marte2mast/%/%.9/%.5/%">
+      <details key="start" value="4730"/>
+      <details key="end" value="4775"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.55" references="/0/marte2mast/%/%.9/%.6">
+      <details key="start" value="4778"/>
+      <details key="end" value="4780"/>
+      <details key="line" value="92"/>
+    </eAnnotations>
+    <eAnnotations source="positions.56" references="/0/marte2mast/%/%.9/%.7">
+      <details key="start" value="4781"/>
+      <details key="end" value="4877"/>
+      <details key="line" value="93"/>
+    </eAnnotations>
+    <eAnnotations source="positions.57" references="/0/marte2mast/%/%.9/%.7/%">
+      <details key="start" value="4826"/>
+      <details key="end" value="4865"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.58" references="/0/marte2mast/%/%.9/%.7/%/self">
+      <details key="start" value="4826"/>
+      <details key="end" value="4830"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.59" references="/0/marte2mast/%/%.9/%.7/%.1">
+      <details key="start" value="4867"/>
+      <details key="end" value="4870"/>
+      <details key="line" value="94"/>
+    </eAnnotations>
+    <eAnnotations source="positions.60" references="/0/marte2mast/%/%.9/%.7/%.2">
+      <details key="start" value="4787"/>
+      <details key="end" value="4822"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.61" references="/0/marte2mast/%/%.9/%.7/%.2/psmPackage">
+      <details key="start" value="4811"/>
+      <details key="end" value="4821"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.62" references="/0/marte2mast/%/%.9/%.8">
+      <details key="start" value="4878"/>
+      <details key="end" value="4904"/>
+      <details key="line" value="96"/>
+    </eAnnotations>
+    <eAnnotations source="positions.63" references="/0/marte2mast/%/%.9/%.9">
+      <details key="start" value="4905"/>
+      <details key="end" value="5079"/>
+      <details key="line" value="99"/>
+    </eAnnotations>
+    <eAnnotations source="positions.64" references="/0/marte2mast/%/%.9/%.9/%">
+      <details key="start" value="5009"/>
+      <details key="end" value="5039"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.65" references="/0/marte2mast/%/%.9/%.9/%/self">
+      <details key="start" value="5009"/>
+      <details key="end" value="5013"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.66" references="/0/marte2mast/%/%.9/%.9/%.1">
+      <details key="start" value="5041"/>
+      <details key="end" value="5044"/>
+      <details key="line" value="101"/>
+    </eAnnotations>
+    <eAnnotations source="positions.67" references="/0/marte2mast/%/%.9/%.9/%.2">
+      <details key="start" value="4911"/>
+      <details key="end" value="4946"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.68" references="/0/marte2mast/%/%.9/%.9/%.2/psmPackage">
+      <details key="start" value="4935"/>
+      <details key="end" value="4945"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.69" references="/0/marte2mast/%/%.9/%.10">
+      <details key="start" value="5080"/>
+      <details key="end" value="5112"/>
+      <details key="line" value="104"/>
+    </eAnnotations>
+    <eAnnotations source="positions.70" references="/0/marte2mast/%/%.9/%.11">
+      <details key="start" value="5113"/>
+      <details key="end" value="5169"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.71" references="/0/marte2mast/%/%.9/%.11/%">
+      <details key="start" value="5121"/>
+      <details key="end" value="5168"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.72" references="/0/marte2mast/%/%.9/%.12">
+      <details key="start" value="5171"/>
+      <details key="end" value="5173"/>
+      <details key="line" value="106"/>
+    </eAnnotations>
+    <eAnnotations source="positions.73" references="/0/marte2mast/%/%.9/%.13">
+      <details key="start" value="5174"/>
+      <details key="end" value="5318"/>
+      <details key="line" value="107"/>
+    </eAnnotations>
+    <eAnnotations source="positions.74" references="/0/marte2mast/%/%.9/%.13/%">
+      <details key="start" value="5220"/>
+      <details key="end" value="5310"/>
+      <details key="line" value="108"/>
+    </eAnnotations>
+    <eAnnotations source="positions.75" references="/0/marte2mast/%/%.9/%.13/%/%">
+      <details key="start" value="5259"/>
+      <details key="end" value="5297"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.76" references="/0/marte2mast/%/%.9/%.13/%/%/self">
+      <details key="start" value="5259"/>
+      <details key="end" value="5263"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.77" references="/0/marte2mast/%/%.9/%.13/%/%.1">
+      <details key="start" value="5299"/>
+      <details key="end" value="5302"/>
+      <details key="line" value="109"/>
+    </eAnnotations>
+    <eAnnotations source="positions.78" references="/0/marte2mast/%/%.9/%.13/%/%.2">
+      <details key="start" value="5226"/>
+      <details key="end" value="5255"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.79" references="/0/marte2mast/%/%.9/%.13/%/%.2/self">
+      <details key="start" value="5250"/>
+      <details key="end" value="5254"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.80" references="/0/marte2mast/%/%.9/%.13/%.1">
+      <details key="start" value="5180"/>
+      <details key="end" value="5215"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.81" references="/0/marte2mast/%/%.9/%.13/%.1/psmPackage">
+      <details key="start" value="5204"/>
+      <details key="end" value="5214"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.82" references="/0/marte2mast/%/%.9/%.14">
+      <details key="start" value="5319"/>
+      <details key="end" value="5321"/>
+      <details key="line" value="112"/>
+    </eAnnotations>
+    <eAnnotations source="positions.83" references="/0/marte2mast/%/%.9/%.15">
+      <details key="start" value="5392"/>
+      <details key="end" value="5393"/>
+      <details key="line" value="117"/>
+    </eAnnotations>
+    <eAnnotations source="positions.84" references="/0/marte2mast/%/%.9/%.16">
+      <details key="start" value="4442"/>
+      <details key="end" value="4476"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.85" references="/0/marte2mast/%/%.9/%.16/psmPackage">
+      <details key="start" value="4464"/>
+      <details key="end" value="4474"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.86" references="/0/marte2mast/%/%.9/%.17">
+      <details key="start" value="7081"/>
+      <details key="end" value="7682"/>
+      <details key="line" value="187"/>
+    </eAnnotations>
+    <eAnnotations source="positions.87" references="/0/marte2mast/%/%.9/%.17/%">
+      <details key="start" value="7088"/>
+      <details key="end" value="7128"/>
+      <details key="line" value="188"/>
+    </eAnnotations>
+    <eAnnotations source="positions.88" references="/0/marte2mast/%/%.9/%.17/%.1">
+      <details key="start" value="7129"/>
+      <details key="end" value="7167"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.89" references="/0/marte2mast/%/%.9/%.17/%.1/%">
+      <details key="start" value="7137"/>
+      <details key="end" value="7166"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.90" references="/0/marte2mast/%/%.9/%.17/%.2">
+      <details key="start" value="7169"/>
+      <details key="end" value="7170"/>
+      <details key="line" value="190"/>
+    </eAnnotations>
+    <eAnnotations source="positions.91" references="/0/marte2mast/%/%.9/%.17/%.3">
+      <details key="start" value="7170"/>
+      <details key="end" value="7353"/>
+      <details key="line" value="190"/>
+    </eAnnotations>
+    <eAnnotations source="positions.92" references="/0/marte2mast/%/%.9/%.17/%.3/%">
+      <details key="start" value="7208"/>
+      <details key="end" value="7346"/>
+      <details key="line" value="191"/>
+    </eAnnotations>
+    <eAnnotations source="positions.93" references="/0/marte2mast/%/%.9/%.17/%.3/%/%">
+      <details key="start" value="7238"/>
+      <details key="end" value="7340"/>
+      <details key="line" value="192"/>
+    </eAnnotations>
+    <eAnnotations source="positions.94" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%">
+      <details key="start" value="7313"/>
+      <details key="end" value="7329"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.95" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%/self">
+      <details key="start" value="7313"/>
+      <details key="end" value="7317"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.96" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%.1">
+      <details key="start" value="7331"/>
+      <details key="end" value="7334"/>
+      <details key="line" value="193"/>
+    </eAnnotations>
+    <eAnnotations source="positions.97" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%.2">
+      <details key="start" value="7242"/>
+      <details key="end" value="7310"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.98" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%.2/%">
+      <details key="start" value="7242"/>
+      <details key="end" value="7274"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.99" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%.2/%/self">
+      <details key="start" value="7242"/>
+      <details key="end" value="7246"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.100" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%.2/%/%">
+      <details key="start" value="7261"/>
+      <details key="end" value="7273"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.101" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%.2/%.1">
+      <details key="start" value="7278"/>
+      <details key="end" value="7310"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.102" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%.2/%.1/self">
+      <details key="start" value="7278"/>
+      <details key="end" value="7282"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.103" references="/0/marte2mast/%/%.9/%.17/%.3/%/%/%.2/%.1/%">
+      <details key="start" value="7297"/>
+      <details key="end" value="7309"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.104" references="/0/marte2mast/%/%.9/%.17/%.3/%/%.1">
+      <details key="start" value="7212"/>
+      <details key="end" value="7235"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.105" references="/0/marte2mast/%/%.9/%.17/%.3/%/%.1/self">
+      <details key="start" value="7212"/>
+      <details key="end" value="7216"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.106" references="/0/marte2mast/%/%.9/%.17/%.3/%/%.1/%">
+      <details key="start" value="7229"/>
+      <details key="end" value="7234"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.107" references="/0/marte2mast/%/%.9/%.17/%.3/%.1">
+      <details key="start" value="7176"/>
+      <details key="end" value="7205"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.108" references="/0/marte2mast/%/%.9/%.17/%.3/%.1/psmPackage">
+      <details key="start" value="7176"/>
+      <details key="end" value="7186"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.109" references="/0/marte2mast/%/%.9/%.17/%.4">
+      <details key="start" value="7354"/>
+      <details key="end" value="7376"/>
+      <details key="line" value="197"/>
+    </eAnnotations>
+    <eAnnotations source="positions.110" references="/0/marte2mast/%/%.9/%.17/%.5">
+      <details key="start" value="7377"/>
+      <details key="end" value="7423"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.111" references="/0/marte2mast/%/%.9/%.17/%.5/%">
+      <details key="start" value="7385"/>
+      <details key="end" value="7422"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.112" references="/0/marte2mast/%/%.9/%.17/%.6">
+      <details key="start" value="7425"/>
+      <details key="end" value="7426"/>
+      <details key="line" value="199"/>
+    </eAnnotations>
+    <eAnnotations source="positions.113" references="/0/marte2mast/%/%.9/%.17/%.7">
+      <details key="start" value="7427"/>
+      <details key="end" value="7681"/>
+      <details key="line" value="199"/>
+    </eAnnotations>
+    <eAnnotations source="positions.114" references="/0/marte2mast/%/%.9/%.17/%.7/%">
+      <details key="start" value="7466"/>
+      <details key="end" value="7674"/>
+      <details key="line" value="200"/>
+    </eAnnotations>
+    <eAnnotations source="positions.115" references="/0/marte2mast/%/%.9/%.17/%.7/%/%">
+      <details key="start" value="7497"/>
+      <details key="end" value="7667"/>
+      <details key="line" value="201"/>
+    </eAnnotations>
+    <eAnnotations source="positions.116" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%">
+      <details key="start" value="7631"/>
+      <details key="end" value="7655"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.117" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%/self">
+      <details key="start" value="7631"/>
+      <details key="end" value="7635"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.118" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.1">
+      <details key="start" value="7657"/>
+      <details key="end" value="7660"/>
+      <details key="line" value="202"/>
+    </eAnnotations>
+    <eAnnotations source="positions.119" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2">
+      <details key="start" value="7501"/>
+      <details key="end" value="7628"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.120" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%">
+      <details key="start" value="7501"/>
+      <details key="end" value="7581"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.121" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%/%">
+      <details key="start" value="7501"/>
+      <details key="end" value="7542"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.122" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%/%/self">
+      <details key="start" value="7501"/>
+      <details key="end" value="7505"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.123" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%/%/%">
+      <details key="start" value="7520"/>
+      <details key="end" value="7541"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.124" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%/%.1">
+      <details key="start" value="7546"/>
+      <details key="end" value="7581"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.125" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%/%.1/self">
+      <details key="start" value="7546"/>
+      <details key="end" value="7550"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.126" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%/%.1/%">
+      <details key="start" value="7565"/>
+      <details key="end" value="7580"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.127" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%.1">
+      <details key="start" value="7585"/>
+      <details key="end" value="7628"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.128" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%.1/self">
+      <details key="start" value="7585"/>
+      <details key="end" value="7589"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.129" references="/0/marte2mast/%/%.9/%.17/%.7/%/%/%.2/%.1/%">
+      <details key="start" value="7604"/>
+      <details key="end" value="7627"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.130" references="/0/marte2mast/%/%.9/%.17/%.7/%/%.1">
+      <details key="start" value="7470"/>
+      <details key="end" value="7493"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.131" references="/0/marte2mast/%/%.9/%.17/%.7/%/%.1/self">
+      <details key="start" value="7470"/>
+      <details key="end" value="7474"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.132" references="/0/marte2mast/%/%.9/%.17/%.7/%/%.1/%">
+      <details key="start" value="7487"/>
+      <details key="end" value="7492"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.133" references="/0/marte2mast/%/%.9/%.17/%.7/%.1">
+      <details key="start" value="7433"/>
+      <details key="end" value="7462"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.134" references="/0/marte2mast/%/%.9/%.17/%.7/%.1/psmPackage">
+      <details key="start" value="7433"/>
+      <details key="end" value="7443"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.135" references="/0/marte2mast/%/%.9/%.18">
+      <details key="start" value="5393"/>
+      <details key="end" value="7081"/>
+      <details key="line" value="118"/>
+    </eAnnotations>
+    <eAnnotations source="positions.136" references="/0/marte2mast/%/%.9/%.18/%">
+      <details key="start" value="5428"/>
+      <details key="end" value="5463"/>
+      <details key="line" value="119"/>
+    </eAnnotations>
+    <eAnnotations source="positions.137" references="/0/marte2mast/%/%.9/%.18/%.1">
+      <details key="start" value="5464"/>
+      <details key="end" value="5502"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.138" references="/0/marte2mast/%/%.9/%.18/%.1/%">
+      <details key="start" value="5472"/>
+      <details key="end" value="5501"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.139" references="/0/marte2mast/%/%.9/%.18/%.2">
+      <details key="start" value="5504"/>
+      <details key="end" value="5506"/>
+      <details key="line" value="121"/>
+    </eAnnotations>
+    <eAnnotations source="positions.140" references="/0/marte2mast/%/%.9/%.18/%.3">
+      <details key="start" value="5605"/>
+      <details key="end" value="5689"/>
+      <details key="line" value="125"/>
+    </eAnnotations>
+    <eAnnotations source="positions.141" references="/0/marte2mast/%/%.9/%.18/%.3/%">
+      <details key="start" value="5648"/>
+      <details key="end" value="5649"/>
+      <details key="line" value="126"/>
+    </eAnnotations>
+    <eAnnotations source="positions.142" references="/0/marte2mast/%/%.9/%.18/%.3/%.1">
+      <details key="start" value="5650"/>
+      <details key="end" value="5678"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.143" references="/0/marte2mast/%/%.9/%.18/%.3/%.1/self">
+      <details key="start" value="5650"/>
+      <details key="end" value="5654"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.144" references="/0/marte2mast/%/%.9/%.18/%.3/%.2">
+      <details key="start" value="5680"/>
+      <details key="end" value="5683"/>
+      <details key="line" value="126"/>
+    </eAnnotations>
+    <eAnnotations source="positions.145" references="/0/marte2mast/%/%.9/%.18/%.3/%.3">
+      <details key="start" value="5611"/>
+      <details key="end" value="5645"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.146" references="/0/marte2mast/%/%.9/%.18/%.3/%.3/psmPackage">
+      <details key="start" value="5634"/>
+      <details key="end" value="5644"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.147" references="/0/marte2mast/%/%.9/%.18/%.4">
+      <details key="start" value="5690"/>
+      <details key="end" value="5713"/>
+      <details key="line" value="128"/>
+    </eAnnotations>
+    <eAnnotations source="positions.148" references="/0/marte2mast/%/%.9/%.18/%.5">
+      <details key="start" value="5714"/>
+      <details key="end" value="5760"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.149" references="/0/marte2mast/%/%.9/%.18/%.5/%">
+      <details key="start" value="5722"/>
+      <details key="end" value="5759"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.150" references="/0/marte2mast/%/%.9/%.18/%.6">
+      <details key="start" value="5762"/>
+      <details key="end" value="5763"/>
+      <details key="line" value="131"/>
+    </eAnnotations>
+    <eAnnotations source="positions.151" references="/0/marte2mast/%/%.9/%.18/%.7">
+      <details key="start" value="5764"/>
+      <details key="end" value="5845"/>
+      <details key="line" value="131"/>
+    </eAnnotations>
+    <eAnnotations source="positions.152" references="/0/marte2mast/%/%.9/%.18/%.7/%">
+      <details key="start" value="5799"/>
+      <details key="end" value="5835"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.153" references="/0/marte2mast/%/%.9/%.18/%.7/%/self">
+      <details key="start" value="5799"/>
+      <details key="end" value="5803"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.154" references="/0/marte2mast/%/%.9/%.18/%.7/%.1">
+      <details key="start" value="5837"/>
+      <details key="end" value="5838"/>
+      <details key="line" value="133"/>
+    </eAnnotations>
+    <eAnnotations source="positions.155" references="/0/marte2mast/%/%.9/%.18/%.7/%.2">
+      <details key="start" value="5770"/>
+      <details key="end" value="5795"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.156" references="/0/marte2mast/%/%.9/%.18/%.7/%.2/psmPackage">
+      <details key="start" value="5784"/>
+      <details key="end" value="5794"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.157" references="/0/marte2mast/%/%.9/%.18/%.8">
+      <details key="start" value="5846"/>
+      <details key="end" value="5860"/>
+      <details key="line" value="134"/>
+    </eAnnotations>
+    <eAnnotations source="positions.158" references="/0/marte2mast/%/%.9/%.18/%.9">
+      <details key="start" value="5861"/>
+      <details key="end" value="5899"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.159" references="/0/marte2mast/%/%.9/%.18/%.9/%">
+      <details key="start" value="5869"/>
+      <details key="end" value="5898"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.160" references="/0/marte2mast/%/%.9/%.18/%.10">
+      <details key="start" value="5901"/>
+      <details key="end" value="5902"/>
+      <details key="line" value="136"/>
+    </eAnnotations>
+    <eAnnotations source="positions.161" references="/0/marte2mast/%/%.9/%.18/%.11">
+      <details key="start" value="5903"/>
+      <details key="end" value="5978"/>
+      <details key="line" value="136"/>
+    </eAnnotations>
+    <eAnnotations source="positions.162" references="/0/marte2mast/%/%.9/%.18/%.11/%">
+      <details key="start" value="5938"/>
+      <details key="end" value="5968"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.163" references="/0/marte2mast/%/%.9/%.18/%.11/%/self">
+      <details key="start" value="5938"/>
+      <details key="end" value="5942"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.164" references="/0/marte2mast/%/%.9/%.18/%.11/%.1">
+      <details key="start" value="5970"/>
+      <details key="end" value="5971"/>
+      <details key="line" value="138"/>
+    </eAnnotations>
+    <eAnnotations source="positions.165" references="/0/marte2mast/%/%.9/%.18/%.11/%.2">
+      <details key="start" value="5909"/>
+      <details key="end" value="5934"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.166" references="/0/marte2mast/%/%.9/%.18/%.11/%.2/psmPackage">
+      <details key="start" value="5923"/>
+      <details key="end" value="5933"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.167" references="/0/marte2mast/%/%.9/%.18/%.12">
+      <details key="start" value="5979"/>
+      <details key="end" value="6011"/>
+      <details key="line" value="139"/>
+    </eAnnotations>
+    <eAnnotations source="positions.168" references="/0/marte2mast/%/%.9/%.18/%.13">
+      <details key="start" value="6012"/>
+      <details key="end" value="6068"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.169" references="/0/marte2mast/%/%.9/%.18/%.13/%">
+      <details key="start" value="6020"/>
+      <details key="end" value="6067"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.170" references="/0/marte2mast/%/%.9/%.18/%.14">
+      <details key="start" value="6070"/>
+      <details key="end" value="6072"/>
+      <details key="line" value="141"/>
+    </eAnnotations>
+    <eAnnotations source="positions.171" references="/0/marte2mast/%/%.9/%.18/%.15">
+      <details key="start" value="6073"/>
+      <details key="end" value="6207"/>
+      <details key="line" value="142"/>
+    </eAnnotations>
+    <eAnnotations source="positions.172" references="/0/marte2mast/%/%.9/%.18/%.15/%">
+      <details key="start" value="6109"/>
+      <details key="end" value="6199"/>
+      <details key="line" value="143"/>
+    </eAnnotations>
+    <eAnnotations source="positions.173" references="/0/marte2mast/%/%.9/%.18/%.15/%/%">
+      <details key="start" value="6148"/>
+      <details key="end" value="6186"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.174" references="/0/marte2mast/%/%.9/%.18/%.15/%/%/self">
+      <details key="start" value="6148"/>
+      <details key="end" value="6152"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.175" references="/0/marte2mast/%/%.9/%.18/%.15/%/%.1">
+      <details key="start" value="6188"/>
+      <details key="end" value="6191"/>
+      <details key="line" value="144"/>
+    </eAnnotations>
+    <eAnnotations source="positions.176" references="/0/marte2mast/%/%.9/%.18/%.15/%/%.2">
+      <details key="start" value="6115"/>
+      <details key="end" value="6144"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.177" references="/0/marte2mast/%/%.9/%.18/%.15/%/%.2/self">
+      <details key="start" value="6139"/>
+      <details key="end" value="6143"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.178" references="/0/marte2mast/%/%.9/%.18/%.15/%.1">
+      <details key="start" value="6079"/>
+      <details key="end" value="6104"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.179" references="/0/marte2mast/%/%.9/%.18/%.15/%.1/psmPackage">
+      <details key="start" value="6093"/>
+      <details key="end" value="6103"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.180" references="/0/marte2mast/%/%.9/%.18/%.16">
+      <details key="start" value="6208"/>
+      <details key="end" value="6209"/>
+      <details key="line" value="147"/>
+    </eAnnotations>
+    <eAnnotations source="positions.181" references="/0/marte2mast/%/%.9/%.18/%.17">
+      <details key="start" value="7009"/>
+      <details key="end" value="7010"/>
+      <details key="line" value="181"/>
+    </eAnnotations>
+    <eAnnotations source="positions.182" references="/0/marte2mast/%/%.9/%.18/%.18">
+      <details key="start" value="7078"/>
+      <details key="end" value="7081"/>
+      <details key="line" value="185"/>
+    </eAnnotations>
+    <eAnnotations source="positions.183" references="/0/marte2mast/%/%.9/%.18/%.19">
+      <details key="start" value="5401"/>
+      <details key="end" value="5426"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.184" references="/0/marte2mast/%/%.9/%.18/%.19/psmPackage">
+      <details key="start" value="5414"/>
+      <details key="end" value="5424"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.185" references="/0/marte2mast/%/%.10">
+      <details key="start" value="7688"/>
+      <details key="end" value="7702"/>
+      <details key="line" value="207"/>
+    </eAnnotations>
+    <eAnnotations source="positions.186" references="/0/marte2mast/%/%.11">
+      <details key="start" value="7703"/>
+      <details key="end" value="7740"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.187" references="/0/marte2mast/%/%.11/%">
+      <details key="start" value="7711"/>
+      <details key="end" value="7739"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.188" references="/0/marte2mast/%/%.12">
+      <details key="start" value="7742"/>
+      <details key="end" value="7743"/>
+      <details key="line" value="210"/>
+    </eAnnotations>
+    <eAnnotations source="positions.189" references="/0/marte2mast/%/%.13">
+      <details key="start" value="7743"/>
+      <details key="end" value="8036"/>
+      <details key="line" value="210"/>
+    </eAnnotations>
+    <eAnnotations source="positions.190" references="/0/marte2mast/%/%.13/%">
+      <details key="start" value="7781"/>
+      <details key="end" value="8029"/>
+      <details key="line" value="211"/>
+    </eAnnotations>
+    <eAnnotations source="positions.191" references="/0/marte2mast/%/%.13/%/%">
+      <details key="start" value="7811"/>
+      <details key="end" value="8023"/>
+      <details key="line" value="212"/>
+    </eAnnotations>
+    <eAnnotations source="positions.192" references="/0/marte2mast/%/%.13/%/%/%">
+      <details key="start" value="7913"/>
+      <details key="end" value="8014"/>
+      <details key="line" value="213"/>
+    </eAnnotations>
+    <eAnnotations source="positions.193" references="/0/marte2mast/%/%.13/%/%/%/%">
+      <details key="start" value="7943"/>
+      <details key="end" value="7969"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.194" references="/0/marte2mast/%/%.13/%/%/%/%/self">
+      <details key="start" value="7943"/>
+      <details key="end" value="7947"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.195" references="/0/marte2mast/%/%.13/%/%/%/%.1">
+      <details key="start" value="7971"/>
+      <details key="end" value="7972"/>
+      <details key="line" value="215"/>
+    </eAnnotations>
+    <eAnnotations source="positions.196" references="/0/marte2mast/%/%.13/%/%/%/%.2">
+      <details key="start" value="7917"/>
+      <details key="end" value="7940"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.197" references="/0/marte2mast/%/%.13/%/%/%/%.2/psmPackage">
+      <details key="start" value="7929"/>
+      <details key="end" value="7939"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.198" references="/0/marte2mast/%/%.13/%/%/%/%.3">
+      <details key="start" value="7974"/>
+      <details key="end" value="8009"/>
+      <details key="line" value="215"/>
+    </eAnnotations>
+    <eAnnotations source="positions.199" references="/0/marte2mast/%/%.13/%/%/%/%.3/%">
+      <details key="start" value="7982"/>
+      <details key="end" value="8004"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.200" references="/0/marte2mast/%/%.13/%/%/%/%.3/%/self">
+      <details key="start" value="7982"/>
+      <details key="end" value="7986"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.201" references="/0/marte2mast/%/%.13/%/%/%/%.3/%.1">
+      <details key="start" value="8006"/>
+      <details key="end" value="8007"/>
+      <details key="line" value="217"/>
+    </eAnnotations>
+    <eAnnotations source="positions.202" references="/0/marte2mast/%/%.13/%/%/%.1">
+      <details key="start" value="7815"/>
+      <details key="end" value="7909"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.203" references="/0/marte2mast/%/%.13/%/%/%.1/%">
+      <details key="start" value="7815"/>
+      <details key="end" value="7853"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.204" references="/0/marte2mast/%/%.13/%/%/%.1/%/self">
+      <details key="start" value="7815"/>
+      <details key="end" value="7819"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.205" references="/0/marte2mast/%/%.13/%/%/%.1/%/%">
+      <details key="start" value="7834"/>
+      <details key="end" value="7852"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.206" references="/0/marte2mast/%/%.13/%/%/%.1/%.1">
+      <details key="start" value="7858"/>
+      <details key="end" value="7909"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.207" references="/0/marte2mast/%/%.13/%/%/%.1/%.1/%">
+      <details key="start" value="7862"/>
+      <details key="end" value="7909"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.208" references="/0/marte2mast/%/%.13/%/%/%.1/%.1/%/self">
+      <details key="start" value="7862"/>
+      <details key="end" value="7866"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.209" references="/0/marte2mast/%/%.13/%/%/%.1/%.1/%/%">
+      <details key="start" value="7881"/>
+      <details key="end" value="7908"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.210" references="/0/marte2mast/%/%.13/%/%.1">
+      <details key="start" value="7785"/>
+      <details key="end" value="7808"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.211" references="/0/marte2mast/%/%.13/%/%.1/self">
+      <details key="start" value="7785"/>
+      <details key="end" value="7789"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.212" references="/0/marte2mast/%/%.13/%/%.1/%">
+      <details key="start" value="7802"/>
+      <details key="end" value="7807"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.213" references="/0/marte2mast/%/%.13/%.1">
+      <details key="start" value="7749"/>
+      <details key="end" value="7778"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.214" references="/0/marte2mast/%/%.13/%.1/psmPackage">
+      <details key="start" value="7749"/>
+      <details key="end" value="7759"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.215" references="/0/marte2mast/%/%.14">
+      <details key="start" value="8037"/>
+      <details key="end" value="8038"/>
+      <details key="line" value="221"/>
+    </eAnnotations>
+    <eAnnotations source="positions.216" references="/0/marte2mast/%/%.15">
+      <details key="start" value="8038"/>
+      <details key="end" value="8208"/>
+      <details key="line" value="222"/>
+    </eAnnotations>
+    <eAnnotations source="positions.217" references="/0/marte2mast/%/%.15/%">
+      <details key="start" value="8076"/>
+      <details key="end" value="8201"/>
+      <details key="line" value="223"/>
+    </eAnnotations>
+    <eAnnotations source="positions.218" references="/0/marte2mast/%/%.15/%/%">
+      <details key="start" value="8106"/>
+      <details key="end" value="8195"/>
+      <details key="line" value="224"/>
+    </eAnnotations>
+    <eAnnotations source="positions.219" references="/0/marte2mast/%/%.15/%/%/%">
+      <details key="start" value="8160"/>
+      <details key="end" value="8184"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.220" references="/0/marte2mast/%/%.15/%/%/%/self">
+      <details key="start" value="8160"/>
+      <details key="end" value="8164"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.221" references="/0/marte2mast/%/%.15/%/%/%.1">
+      <details key="start" value="8186"/>
+      <details key="end" value="8189"/>
+      <details key="line" value="225"/>
+    </eAnnotations>
+    <eAnnotations source="positions.222" references="/0/marte2mast/%/%.15/%/%/%.2">
+      <details key="start" value="8110"/>
+      <details key="end" value="8157"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.223" references="/0/marte2mast/%/%.15/%/%/%.2/self">
+      <details key="start" value="8110"/>
+      <details key="end" value="8114"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.224" references="/0/marte2mast/%/%.15/%/%/%.2/%">
+      <details key="start" value="8129"/>
+      <details key="end" value="8156"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.225" references="/0/marte2mast/%/%.15/%/%.1">
+      <details key="start" value="8080"/>
+      <details key="end" value="8103"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.226" references="/0/marte2mast/%/%.15/%/%.1/self">
+      <details key="start" value="8080"/>
+      <details key="end" value="8084"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.227" references="/0/marte2mast/%/%.15/%/%.1/%">
+      <details key="start" value="8097"/>
+      <details key="end" value="8102"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.228" references="/0/marte2mast/%/%.15/%.1">
+      <details key="start" value="8044"/>
+      <details key="end" value="8073"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.229" references="/0/marte2mast/%/%.15/%.1/psmPackage">
+      <details key="start" value="8044"/>
+      <details key="end" value="8054"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.230" references="/0/marte2mast/%/%.16">
+      <details key="start" value="8209"/>
+      <details key="end" value="8211"/>
+      <details key="line" value="229"/>
+    </eAnnotations>
+    <eAnnotations source="positions.231" references="/0/marte2mast/%/%.17">
+      <details key="start" value="8212"/>
+      <details key="end" value="8267"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.232" references="/0/marte2mast/%/%.17/%">
+      <details key="start" value="8220"/>
+      <details key="end" value="8266"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.233" references="/0/marte2mast/%/%.18">
+      <details key="start" value="8269"/>
+      <details key="end" value="8270"/>
+      <details key="line" value="231"/>
+    </eAnnotations>
+    <eAnnotations source="positions.234" references="/0/marte2mast/%/%.19">
+      <details key="start" value="8270"/>
+      <details key="end" value="8635"/>
+      <details key="line" value="231"/>
+    </eAnnotations>
+    <eAnnotations source="positions.235" references="/0/marte2mast/%/%.19/%">
+      <details key="start" value="8308"/>
+      <details key="end" value="8628"/>
+      <details key="line" value="232"/>
+    </eAnnotations>
+    <eAnnotations source="positions.236" references="/0/marte2mast/%/%.19/%/%">
+      <details key="start" value="8452"/>
+      <details key="end" value="8477"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.237" references="/0/marte2mast/%/%.19/%/%/self">
+      <details key="start" value="8452"/>
+      <details key="end" value="8456"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.238" references="/0/marte2mast/%/%.19/%/%.1">
+      <details key="start" value="8479"/>
+      <details key="end" value="8480"/>
+      <details key="line" value="234"/>
+    </eAnnotations>
+    <eAnnotations source="positions.239" references="/0/marte2mast/%/%.19/%/%.2">
+      <details key="start" value="8481"/>
+      <details key="end" value="8622"/>
+      <details key="line" value="234"/>
+    </eAnnotations>
+    <eAnnotations source="positions.240" references="/0/marte2mast/%/%.19/%/%.2/%">
+      <details key="start" value="8504"/>
+      <details key="end" value="8614"/>
+      <details key="line" value="235"/>
+    </eAnnotations>
+    <eAnnotations source="positions.241" references="/0/marte2mast/%/%.19/%/%.2/%/%">
+      <details key="start" value="8578"/>
+      <details key="end" value="8604"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.242" references="/0/marte2mast/%/%.19/%/%.2/%/%/self">
+      <details key="start" value="8578"/>
+      <details key="end" value="8582"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.243" references="/0/marte2mast/%/%.19/%/%.2/%/%.1">
+      <details key="start" value="8606"/>
+      <details key="end" value="8607"/>
+      <details key="line" value="237"/>
+    </eAnnotations>
+    <eAnnotations source="positions.244" references="/0/marte2mast/%/%.19/%/%.2/%/%.2">
+      <details key="start" value="8508"/>
+      <details key="end" value="8575"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.245" references="/0/marte2mast/%/%.19/%/%.2/%/%.2/%">
+      <details key="start" value="8508"/>
+      <details key="end" value="8534"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.246" references="/0/marte2mast/%/%.19/%/%.2/%/%.2/%/self">
+      <details key="start" value="8508"/>
+      <details key="end" value="8512"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.247" references="/0/marte2mast/%/%.19/%/%.2/%/%.2/%/%">
+      <details key="start" value="8525"/>
+      <details key="end" value="8533"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.248" references="/0/marte2mast/%/%.19/%/%.2/%/%.2/%.1">
+      <details key="start" value="8539"/>
+      <details key="end" value="8575"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.249" references="/0/marte2mast/%/%.19/%/%.2/%/%.2/%.1/self">
+      <details key="start" value="8539"/>
+      <details key="end" value="8543"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.250" references="/0/marte2mast/%/%.19/%/%.2/%/%.2/%.1/%">
+      <details key="start" value="8558"/>
+      <details key="end" value="8574"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.251" references="/0/marte2mast/%/%.19/%/%.2/%.1">
+      <details key="start" value="8487"/>
+      <details key="end" value="8499"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.252" references="/0/marte2mast/%/%.19/%/%.2/%.1/self">
+      <details key="start" value="-1"/>
+      <details key="end" value="-1"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.253" references="/0/marte2mast/%/%.19/%/%.3">
+      <details key="start" value="8312"/>
+      <details key="end" value="8449"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.254" references="/0/marte2mast/%/%.19/%/%.3/%">
+      <details key="start" value="8312"/>
+      <details key="end" value="8379"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.255" references="/0/marte2mast/%/%.19/%/%.3/%/%">
+      <details key="start" value="8312"/>
+      <details key="end" value="8335"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.256" references="/0/marte2mast/%/%.19/%/%.3/%/%/self">
+      <details key="start" value="8312"/>
+      <details key="end" value="8316"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.257" references="/0/marte2mast/%/%.19/%/%.3/%/%/%">
+      <details key="start" value="8329"/>
+      <details key="end" value="8334"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.258" references="/0/marte2mast/%/%.19/%/%.3/%/%.1">
+      <details key="start" value="8340"/>
+      <details key="end" value="8379"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.259" references="/0/marte2mast/%/%.19/%/%.3/%/%.1/self">
+      <details key="start" value="8340"/>
+      <details key="end" value="8344"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.260" references="/0/marte2mast/%/%.19/%/%.3/%/%.1/%">
+      <details key="start" value="8359"/>
+      <details key="end" value="8378"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.261" references="/0/marte2mast/%/%.19/%/%.3/%.1">
+      <details key="start" value="8384"/>
+      <details key="end" value="8449"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.262" references="/0/marte2mast/%/%.19/%/%.3/%.1/%">
+      <details key="start" value="8384"/>
+      <details key="end" value="8413"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.263" references="/0/marte2mast/%/%.19/%/%.3/%.1/%/%">
+      <details key="start" value="8384"/>
+      <details key="end" value="8408"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.264" references="/0/marte2mast/%/%.19/%/%.3/%.1/%/%/self">
+      <details key="start" value="8384"/>
+      <details key="end" value="8388"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.265" references="/0/marte2mast/%/%.19/%/%.3/%.1/%.1">
+      <details key="start" value="8431"/>
+      <details key="end" value="8448"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.266" references="/0/marte2mast/%/%.19/%.1">
+      <details key="start" value="8276"/>
+      <details key="end" value="8305"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.267" references="/0/marte2mast/%/%.19/%.1/psmPackage">
+      <details key="start" value="8276"/>
+      <details key="end" value="8286"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.268" references="/0/marte2mast/%/%.20">
+      <details key="start" value="8637"/>
+      <details key="end" value="8673"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.269" references="/0/marte2mast/%/%.20/self">
+      <details key="start" value="8637"/>
+      <details key="end" value="8641"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.270" references="/0/marte2mast/%/%.21">
+      <details key="start" value="8676"/>
+      <details key="end" value="8728"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.271" references="/0/marte2mast/%/%.21/%">
+      <details key="start" value="8684"/>
+      <details key="end" value="8727"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.272" references="/0/marte2mast/%/%.22">
+      <details key="start" value="8730"/>
+      <details key="end" value="8731"/>
+      <details key="line" value="242"/>
+    </eAnnotations>
+    <eAnnotations source="positions.273" references="/0/marte2mast/%/%.23">
+      <details key="start" value="3970"/>
+      <details key="end" value="3985"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.274" references="/0/marte2mast/%/%.23/self">
+      <details key="start" value="3970"/>
+      <details key="end" value="3974"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.275" references="/0/marte2mast/%.1">
+      <details key="start" value="8739"/>
+      <details key="end" value="8780"/>
+      <details key="line" value="243"/>
+    </eAnnotations>
+    <eAnnotations source="positions.276" references="/0/marte2mast/%.1/%">
+      <details key="start" value="8746"/>
+      <details key="end" value="8764"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.277" references="/0/marte2mast/%.1/%/%">
+      <details key="start" value="8746"/>
+      <details key="end" value="8756"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.278" references="/0/marte2mast/%.1/%/%/model">
+      <details key="start" value="8746"/>
+      <details key="end" value="8751"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.279" references="/0/marte2mast/%.1/%/%.1">
+      <details key="start" value="8757"/>
+      <details key="end" value="8764"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.280" references="/0/marte2mast/%.2">
+      <details key="start" value="8782"/>
+      <details key="end" value="8828"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.281" references="/0/marte2mast/%.2/%">
+      <details key="start" value="8790"/>
+      <details key="end" value="8827"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.282" references="/0/marte2mast/%.3">
+      <details key="start" value="8830"/>
+      <details key="end" value="8831"/>
+      <details key="line" value="246"/>
+    </eAnnotations>
+    <eAnnotations source="positions.283" references="/0/marte2mast/%.4">
+      <details key="start" value="8832"/>
+      <details key="end" value="8847"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.284" references="/0/marte2mast/%.4/self">
+      <details key="start" value="8832"/>
+      <details key="end" value="8836"/>
+      <details key="line" value="0"/>
+    </eAnnotations>
+    <eAnnotations source="positions.285" references="/0/marte2mast/model">
+      <details key="start" value="3907"/>
+      <details key="end" value="3920"/>
+      <details key="line" value="64"/>
+    </eAnnotations>
+    <eAnnotations source="positions.286" references="/0/marte2mast/psmPackage">
+      <details key="start" value="3922"/>
+      <details key="end" value="3942"/>
+      <details key="line" value="64"/>
+    </eAnnotations>
+  </ecore:EAnnotation>
+</xmi:XMI>

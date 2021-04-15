@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+   
+    Copyright (c) 2020 Intecs SpA 
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v2.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v20.html
+   
+    Contributors:
+    Felicien Ihirwe
+    Initial API and implementation and/or initial documentation
+ -->
+
+<paletteDefinition>
+	<content>
+		<drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT_SM_DRAWER" name="CHESSIoT_SM">
+
+			<aspectTool description="IoT Initial"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_initial.gif"
+				id="createFinalStateCreationTool_1317125020980" name="IoT InitialState"
+				refToolId="statemachine.createNodesGroup.initial">
+				
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::IoTState"/>
+					</stereotypesToApply>
+				</postAction>
+				
+			</aspectTool>		
+				
+            <aspectTool description="Create a IoTState" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/State.gif" id="IoTState" name="IoTState" refToolId="statemachine.createNodesGroup.state">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::IoTState"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>	
+			
+			<aspectTool description="IoT FinalState"
+				iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/FinalState.gif"
+				id="createFinalStateCreationTool_1317125020980" name="IoT FinalState"
+				refToolId="statemachine.createNodesGroup.finalstate">
+				
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::IoTState"/>
+					</stereotypesToApply>
+				</postAction>
+				
+			</aspectTool>				
+		</drawer>
+		
+		<drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT_SM_DRAWER_EDGE" name="CHESSIoT_SM_EDGE">	
+				
+            <aspectTool description="Create a Choice" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_choice.gif" id="IoTChoice" name="IoTChoice" refToolId="statemachine.createNodesGroup.choice">
+			</aspectTool>	
+			
+			<aspectTool description="Create a StateTransition" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Transition_local.gif" id="StateTransition" name="StateTransition" refToolId="statemachine.createEdgesGroup.transition">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::StateTransition"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+            <aspectTool description="Create a Junction" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Pseudostate_junction.gif" id="IoTJunction" name="IoTJunction" refToolId="statemachine.createNodesGroup.junction">
+			</aspectTool>
+		</drawer>
+		
+		
+	</content>
+</paletteDefinition>

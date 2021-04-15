@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="true"
+            objectClass="org.eclipse.core.resources.IFile"
+            nameFilter="*.uml"
+            icon="icons/CHESSicon.gif"
+            id="org.ihirwe.iot.generator.ui.thingml.action.contribution.IFile">
+         <menu id="org.eclipse.acceleo.module.menu" label="CHESSIoT" path="additionsAcceleo">
+               <groupMarker name="acceleo"/> 
+         </menu>
+         <action
+               class="org.polarsys.chess.iot.generator.ui.thingml.action.AcceleoGenerateThingMLAction"
+               enablesFor="+"
+               id="org.polarsys.chess.iot.generator.ui.thingml.action.AcceleoGenerateThingMLAction"
+               icon="icons/CHESSicon.gif"
+               label="Generate Thingml"
+               menubarPath="org.eclipse.acceleo.module.menu/acceleo"/>
+      </objectContribution>
+   </extension>
+</plugin>

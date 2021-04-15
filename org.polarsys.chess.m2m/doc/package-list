@@ -1,0 +1,6 @@
+org.polarsys.chess.m2m
+org.polarsys.chess.m2m.backpropagation
+org.polarsys.chess.m2m.blackbox
+org.polarsys.chess.m2m.handlers
+org.polarsys.chess.m2m.transformations
+org.polarsys.chess.m2m.ui

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/uml2/2.2.0/GenModel"
+    modelDirectory="/org.polarsys.chess.iot.profile/src" modelPluginID="org.polarsys.chess.iot.profile"
+    modelName="CHESSIoT" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.uml2.uml.ecore.importer" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../org.eclipse.papyrus.marte.static.profile/resources/MARTE.genmodel#//MARTE ../org.eclipse.papyrus.marte.static.profile/resources/MARTE.genmodel#//MARTE_Library ../org.eclipse.uml2.uml.profile.standard/model/Standard.genmodel#//standard ../org.eclipse.papyrus.sysml/model/SysML.profile.genmodel#//sysml ../org.eclipse.uml2.types/model/Types.genmodel#//types ../org.eclipse.uml2.uml/model/UML.genmodel#//uml"
+    operationReflection="true" importOrganizing="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/importer/org.eclipse.uml2.uml.ecore.importer">
+    <details key="OPPOSITE_ROLE_NAMES" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURES" value="DISCARD"/>
+    <details key="ANNOTATION_DETAILS" value="PROCESS"/>
+    <details key="PROPERTY_DEFAULT_EXPRESSIONS" value="IGNORE"/>
+    <details key="DUPLICATE_FEATURE_INHERITANCE" value="DISCARD"/>
+    <details key="COMMENTS" value="PROCESS"/>
+    <details key="DERIVED_FEATURES" value="PROCESS"/>
+    <details key="SUPER_CLASS_ORDER" value="PROCESS"/>
+    <details key="DUPLICATE_OPERATION_INHERITANCE" value="DISCARD"/>
+    <details key="REDEFINING_OPERATIONS" value="REPORT"/>
+    <details key="INVARIANT_CONSTRAINTS" value="PROCESS"/>
+    <details key="UNION_PROPERTIES" value="REPORT"/>
+    <details key="DUPLICATE_OPERATIONS" value="DISCARD"/>
+    <details key="NON_API_INVARIANTS" value="IGNORE"/>
+    <details key="CAMEL_CASE_NAMES" value="IGNORE"/>
+    <details key="SUBSETTING_PROPERTIES" value="REPORT"/>
+    <details key="OPERATION_BODIES" value="IGNORE"/>
+    <details key="ECORE_TAGGED_VALUES" value="PROCESS"/>
+    <details key="UNTYPED_PROPERTIES" value="REPORT"/>
+    <details key="REDEFINING_PROPERTIES" value="REPORT"/>
+    <details key="INVOCATION_DELEGATES" value="IGNORE"/>
+    <details key="VALIDATION_DELEGATES" value="IGNORE"/>
+  </genAnnotations>
+  <foreignModel>CHESSIoT.profile.uml</foreignModel>
+  <genPackages xsi:type="genmodel:GenPackage" prefix="CHESSIoT" basePackage="org.polarsys.chess.iot.profile"
+      disposableProviderFactory="true" ecorePackage="CHESSIoT.ecore#/">
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="CHESSIoTSoftware" disposableProviderFactory="true"
+        ecorePackage="CHESSIoT.ecore#//CHESSIoTSoftware">
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard/Name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard/base_Component"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard/base_Class"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard/ioTState"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/IoTState">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IoTState/onEntry"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IoTState/onExit"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IoTState/base_State"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/IoTEvent">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IoTEvent/base_Class"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_VirtualBoard">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_VirtualBoard/Name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_VirtualBoard/base_Component"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_VirtualBoard/base_Class"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_VirtualBoard/ioTState"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_VirtualBoard/VE"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/VirtualEntity">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualEntity/physicalEntity"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualEntity/base_Block"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/SystemSW">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/SystemSW/base_Class"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/SystemSW/base_Component"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_CopyOf_VirtualBoard_1">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_CopyOf_VirtualBoard_1/Name"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_CopyOf_VirtualBoard_1/base_Component"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_CopyOf_VirtualBoard_1/base_Class"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_CopyOf_VirtualBoard_1/ioTState"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/VirtualBoard_CopyOf_VirtualBoard_1/VE"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/IncomingEvent">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IncomingEvent/base_Behavior"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IncomingEvent/receive"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IncomingEvent/incoming"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/ReceivePayload">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/ReceivePayload/base_Operation"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/ReceivePayload/payload"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/ReceivePayload/base_Event"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/ReceivePayload/base_Action"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/ReceivePayload/port"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/IoTAction">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IoTAction/base_Class"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/Payload">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/Payload/Content"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/Payload/base_Message"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/Payload/payloadName"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/Payload/base_Comment"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/OutgoingEvent">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/OutgoingEvent/isPeriodic"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/OutgoingEvent/timeInterval"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/OutgoingEvent/send"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/OutgoingEvent/outgoing"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/SendPayload">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/SendPayload/base_Operation"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/SendPayload/payload"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/SendPayload/base_Event"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/SendPayload/base_Action"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/SendPayload/port"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/StateTransition">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/StateTransition/base_Transition"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/StateTransition/stateSource"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/StateTransition/stateTarget"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/StateTransition/guardExpression"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/IoTElement">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IoTElement/base_Component"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/IoTElement/ioTState"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/InternalEvent">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/InternalEvent/isPeriodic"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/InternalEvent/timeInterval"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSoftware/InternalEvent/do"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSoftware/DoIoTAction">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSoftware/DoIoTAction/actionName"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="CHESSIoTSystem" disposableProviderFactory="true"
+        ecorePackage="CHESSIoT.ecore#//CHESSIoTSystem">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTSystem/BoardType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTSystem/BoardType/RasberryPi"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTSystem/BoardType/Arduino"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTSystem/BoardType/Teensy"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTSystem/BoardType/BeagleBoneBlack"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTSystem/BoardType/Adafruit"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTSystem/TransmissionMode">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTSystem/TransmissionMode/SERIAL"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTSystem/TransmissionMode/WIRELESS"/>
+      </genEnums>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/IoTBoard">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSystem/IoTBoard/boardType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTSystem/IoTBoard/mode"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/SensorBlock"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/RFModule"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/ActuatingBlock"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/PowerSource"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/SerialInOut"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/IoTGateway"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/IoTServer"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/User">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSystem/User/_"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTSystem/User/base_Actor"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTSystem/PhysicalEntity"/>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="CHESSIoTOperationalProfile"
+        disposableProviderFactory="true" ecorePackage="CHESSIoT.ecore#//CHESSIoTOperationalProfile">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationType/MQTT"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationType/Wifi"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationType/Bluetooth"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationType/SERIAL"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationType/USB"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationType/undefined"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationMode">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationMode/WIRELESS"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTOperationalProfile/CommunicationMode/WIRED"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTOperationalProfile/WIRELESS"/>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTOperationalProfile/WIRED"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTOperationalProfile/Service">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTOperationalProfile/Service/base_Class"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTOperationalProfile/Service/serviceName"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTOperationalProfile/Communication">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTOperationalProfile/Communication/comType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTOperationalProfile/Communication/comMode"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTOperationalProfile/Communication/base_Class"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTOperationalProfile/Server">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTOperationalProfile/Server/serverName"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTOperationalProfile/Server/serverUrl"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTOperationalProfile/Server/serverPortNumber"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTOperationalProfile/Server/base_Class"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTOperationalProfile/ComSystem">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTOperationalProfile/ComSystem/base_Class"/>
+      </genClasses>
+    </nestedGenPackages>
+    <nestedGenPackages xsi:type="genmodel:GenPackage" prefix="CHESSIoTHardware" disposableProviderFactory="true"
+        ecorePackage="CHESSIoT.ecore#//CHESSIoTHardware">
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTHardware/PortType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/PortType/ANALOG"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/PortType/DIGITAL"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTHardware/SensorType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/SensorType/Humidity"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/SensorType/Temeperature"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/SensorType/Gaz"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/SensorType/Ultrasonic"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/SensorType/Body"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/SensorType/Undefined"/>
+      </genEnums>
+      <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="CHESSIoT.ecore#//CHESSIoTHardware/ActuatorType">
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/ActuatorType/Servo"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/ActuatorType/Relay"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/ActuatorType/Sonore"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/ActuatorType/Led"/>
+        <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="CHESSIoT.ecore#//CHESSIoTHardware/ActuatorType/Undefined"/>
+      </genEnums>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTHardware/SensorUnit">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTHardware/SensorUnit/sensorType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTHardware/SensorUnit/base_Component"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTHardware/ActuatorUnit">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTHardware/ActuatorUnit/actuatorType"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTHardware/ActuatorUnit/base_Component"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTHardware/IoTBaord">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTHardware/IoTBaord/boardName"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTHardware/IoTBaord/virtualBoard"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTHardware/IoTBaord/base_Component"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTHardware/SystemHW">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTHardware/SystemHW/base_Component"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTHardware/portIn"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTHardware/IoTPort">
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTHardware/IoTPort/type"/>
+        <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute CHESSIoT.ecore#//CHESSIoTHardware/IoTPort/aaportName"/>
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTHardware/IoTPort/base_Port"/>
+      </genClasses>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTHardware/portOut"/>
+      <genClasses xsi:type="genmodel:GenClass" ecoreClass="CHESSIoT.ecore#//CHESSIoTHardware/TagUnit">
+        <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+            propertySortChoices="true" ecoreFeature="ecore:EReference CHESSIoT.ecore#//CHESSIoTHardware/TagUnit/base_Component"/>
+      </genClasses>
+    </nestedGenPackages>
+  </genPackages>
+</genmodel:GenModel>

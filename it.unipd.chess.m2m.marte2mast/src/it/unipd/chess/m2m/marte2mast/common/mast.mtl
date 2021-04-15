@@ -1,0 +1,8 @@
+[module mast('http://www.eclipse.org/uml2/3.0.0/UML')/]
+
+[query public openGmast(arg0 : Element, arg1 : String) : Integer
+	= invoke('it.unipd.chess.m2m.marte2mast.common.Mast', 'openGmast(org.eclipse.uml2.uml.Element, java.lang.String)', Sequence{arg0, arg1}) /]
+	
+[query public recoverMastResults(arg0 : Model, arg1 : Package) : OclVoid
+	= invoke('it.unipd.chess.m2m.marte2mast.common.Mast', 'recoverMastResults(org.eclipse.uml2.uml.Model, org.eclipse.uml2.uml.Package)', Sequence{arg0, arg1}) /]
+

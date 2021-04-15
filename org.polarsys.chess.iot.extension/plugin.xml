@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.polarsys.chess.addprofile">
+      <client class="org.polarsys.chess.iot.extension.managers.ApplyCHESSIoTProfile"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="performanalysis"
+            name="Performance analysis">
+      </command>
+      <command
+            id="generateC"
+            name="C">
+      </command>
+      <command
+            id="GenerateThingMLmodel"
+            name="Generate ThingML model">
+      </command>
+      <command
+            id="generateC++"
+            name="C++">
+      </command>
+      <command
+            id="generateJava"
+            name="Java">
+      </command>
+      <command
+            id="exportToLowcomotive"
+            name="Export Model to Lowcomotive repository">
+      </command>
+      
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.polarsys.chess.iot.extension.handlers.CallGenerateThingMLgenerator"
+            commandId="GenerateThingMLmodel">
+      </handler>
+      <handler
+            commandId="generateC"
+            class="org.polarsys.chess.iot.extension.handlers.chessiotmainCommand">
+      </handler>
+      <handler
+            commandId="generateC++"
+            class="org.polarsys.chess.iot.extension.handlers.chessiotmainCommand">
+      </handler>
+      <handler
+            class="org.polarsys.chess.iot.extension.handlers.chessiotmainCommand"
+            commandId="generateJava">
+      </handler>
+      <handler
+            class="org.polarsys.chess.iot.extension.handlers.UploadModelsToRepo"
+            commandId="exportToLowcomotive">
+      </handler>
+      <handler
+            class="org.polarsys.chess.iot.extension.handlers.chessiotmainCommand"
+            commandId="performanalysis">
+      </handler>
+      
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="org.ihirwe.iot.extension.commands.sampleCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.polarsys.chess.mainMenu?after=chess.menu.tests.id">
+         <menu
+               id="chess.menu.debug.idd"
+               label="CHESSIoT">
+            <menu
+                  id="org.polarsys.chess.iot.generatecode"
+                  label="Generate code">
+               <command
+                     commandId="generateC"
+                     icon="/icons/CHESSicon.gif"
+                     style="push"
+                     tooltip="Generate C code">
+               </command>
+               <command
+                     commandId="generateC++"
+                     icon="/icons/CHESSicon.gif"
+                     style="push"
+                     tooltip="Generate C++ code">
+               </command>
+               <command
+                     commandId="generateJava"
+                     icon="/icons/CHESSicon.gif"
+                     style="push"
+                     tooltip="Generate Java code">
+               </command>
+            </menu>
+            <command
+                  commandId="GenerateThingMLmodel"
+                  icon="/icons/CHESSicon.gif"
+                  style="push"
+                  tooltip="Generate ThingML model">
+            </command>
+            <command
+                  commandId="exportToLowcomotive"
+                  icon="/icons/CHESSicon.gif"
+                  style="push"
+                  tooltip="Export Model to Lowcomotive repository">
+            </command>
+            <command
+                  commandId="performanalysis"
+                  icon="/icons/CHESSicon.gif"
+                  style="push"
+                  tooltip="Perform performance analysis">
+            </command>
+         </menu>
+      </menuContribution>  
+      
+      
+      
+   </extension>
+
+</plugin>

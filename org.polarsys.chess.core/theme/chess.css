@@ -1,0 +1,139 @@
+/*Add multiplicity to the Port label in all diagrams*/ 
+Port {
+	maskLabel: direction name type multiplicity;
+}
+
+/*Add multiplicity to the Port label in InternalBlockDiagram*/ 
+InternalBlockDiagram Port > Label{
+	maskLabel: direction name type multiplicity;
+}
+
+/*Show stereotype labels in IBD */
+InternalBlockDiagram Label[type=StereotypeLabel]{
+	visible: true;
+}
+
+/*Hide the Block stereotype label in IBD */
+InternalBlockDiagram Label[stereotype="SysML::Blocks::Block"]{
+	visible: false;
+}
+
+/*Hide the System stereotype label in IBD */
+InternalBlockDiagram Label[stereotype="CHESSContract::System"]{
+	visible: false;
+}
+
+/*Hide stereotype labels for flowports */
+[appliedStereotypes~=FlowPort] > Label:StereotypeLabel{ 
+	visible:false;
+}
+
+/*Add multiplicity to the subcomponent label in IBD*/ 
+InternalBlockDiagram Property {
+	maskLabel: name type multiplicity;
+}
+
+/*Shows the transition guard instead of "..." */
+Transition > Label {
+bodyCutLength: 5;
+indicateParameters: true;
+}
+Transition { /* for internal transitions */
+bodyCutLength: 5;
+indicateParameters: true;
+}
+
+ /* remove the tag <<part>> on blocks */
+Property {
+    displayTags: false;
+}
+
+/*Hide the labels sourceMultiplicity and targetMultiplicity of the association*/
+Association > Label:sourceMultiplicity {
+	visible:false;
+} 
+Association > Label:targetMultiplicity {
+	visible:false;
+}
+
+/*Add multiplicity to the association labels*/ 
+Association > Label:sourceRole {
+	maskLabel: name multiplicity;
+} 
+Association > Label:targetRole {
+	maskLabel: name multiplicity;
+}
+ 
+/*Hide the label name of the association*/
+Association > Label:name {
+	visible:false;
+}
+Connector > Label:name {
+	visible:false;
+}
+
+/* Show the StuckAt compartment in state machine diagrams */
+StateMachineDiagram State > Compartment[stereotype="CHESS::Dependability::ThreatsPropagation::StuckAt"]{
+	visible:true;
+}
+
+/* Show the ErrorState compartment in state machine diagrams */
+StateMachineDiagram State > Compartment[stereotype="CHESS::Dependability::ThreatsPropagation::ErrorState"]{
+	visible:true;
+}
+
+/* Hide the unit property of the ErrorState compartment in state machine diagrams */
+StateMachineDiagram State > Compartment[stereotype="CHESS::Dependability::ThreatsPropagation::ErrorState"]>[property="unit"]{
+	visible:false;
+}
+
+/* Hide compartments in brace section of state machine diagrams */
+StateMachineDiagram State > Compartment[type=StereotypeBrace]{
+	visible:false;
+}
+
+/* Hide the compartments of the State element */
+StateMachineDiagram State > Compartment {
+	visible:false;
+}
+
+/* This one is not working, don't know why...
+StateMachineDiagram State > Compartment[kind=StateCompartment] {
+	visible:false;
+}*/
+
+/* Hide the stereotype label from the Transition if the given stereotype is applied */
+StateMachineDiagram Transition[appliedStereotypes~="CHESS::StateMachines::PrioritizedTransition"] > Label[type="Transition_StereotypeLabel"]{
+	visible: false;
+}
+
+/* The following two directives should work too, but there is a bug in the Transition element
+StateMachineDiagram Transition > Label[kind=stereotype] { visible: false; }
+StateMachineDiagram Transition > Label:stereotype { visible: false; }
+*/
+
+/* Show the GaAnalysisContext compartment in class diagrams */
+ClassDiagram Compartment[stereotype="MARTE::MARTE_AnalysisModel::GQAM::GaAnalysisContext"]{
+	visible:true;
+}
+
+/* Hide compartments in brace section of class diagrams */
+ClassDiagram Compartment[type=StereotypeBrace]{
+	visible:false;
+}
+
+/* Hide the s... from inside the port icon in IBDs */
+InternalBlockDiagram Port > Compartment[kind="symbol"] {
+    visible:false;
+}
+
+/* Hide the icons on Class and Port inside IBDs */
+InternalBlockDiagram Class, InternalBlockDiagram Port {
+	elementIcon: false;
+}
+
+/* Hide the icon on Class inside BDDs */
+BlockDefinitionDiagram Class {
+	elementIcon: false;
+}
+

@@ -1,0 +1,54 @@
+[comment encoding = UTF-8 /]
+[module generateStateMachine('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+
+[template public generateStateMachine (stateM : uml::StateMachine)]
+
+				[for(state:uml::Element | stateM.allOwnedElements() -> filter(uml::State))]
+				
+				statechart [stateM.name/] init [state.toString()/] {
+	
+						state  {
+				
+							on entry do
+								
+							end
+							
+							transition -> [state.toString()/] event e: ------
+							
+							on exit do
+								
+							end
+						}
+
+						state [state.toString()/] {
+				
+							on entry do
+								
+							end
+							
+							transition -> [state.toString()/] event e: ------
+							
+							on exit do
+								
+							end
+						}
+
+						state [state.toString()/] {
+				
+							on entry do
+								
+							end
+							
+							transition -> [state.toString()/] event e: ------
+							
+							on exit do
+								
+							end
+						}
+
+	
+					}
+
+				[/for]
+[/template]

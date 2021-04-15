@@ -1,0 +1,21 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import org::polarsys::chess::iot::generator::services::usesUML2Services/]
+[import org::polarsys::chess::iot::generator::files::generateStateMachine/]
+[import org::polarsys::chess::iot::generator::files::generateAThing/]
+[import org::polarsys::chess::iot::generator::files::generateMainThing/]
+
+[template public generateElement (aPackage : uml::Element)]
+
+	[for (component : Component | aPackage.allOwnedElements()->filter(Component))]
+		[if(component.hasStereotype('VirtualBoard'))]
+			[generateMainThing (component,aPackage)/]
+		[else]
+			[generateAThing (component)/]
+		[/if]
+	[/for]
+[/template]
+
+
+

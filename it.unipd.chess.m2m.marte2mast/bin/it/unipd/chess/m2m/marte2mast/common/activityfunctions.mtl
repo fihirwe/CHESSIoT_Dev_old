@@ -1,0 +1,13 @@
+[module activityfunctions('http://www.eclipse.org/uml2/3.0.0/UML')/]
+
+
+[query public extractContextInfo(arg0 : Element) : OclVoid
+	= invoke('it.unipd.chess.m2m.marte2mast.common.ActivityFunctions', 'extractContextInfo(org.eclipse.uml2.uml.Element)', Sequence{arg0}) /]
+	
+[query public extractActivityData(arg0 : Element) : OclVoid
+	= invoke('it.unipd.chess.m2m.marte2mast.common.ActivityFunctions', 'extractActivityData(org.eclipse.uml2.uml.Element)', Sequence{arg0}) /]
+
+[query public getOperationsTransactionsText(arg0 : Element) : OclAny
+	= invoke('it.unipd.chess.m2m.marte2mast.common.ActivityFunctions', 'getOperationsTransactionsText(org.eclipse.uml2.uml.Element)', Sequence{arg0}) /]
+	
+

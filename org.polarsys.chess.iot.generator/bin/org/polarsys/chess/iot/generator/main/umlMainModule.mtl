@@ -1,0 +1,15 @@
+[comment encoding = UTF-8 /]
+[module umlMainModule('http://www.eclipse.org/uml2/5.0.0/UML')]
+
+[import org::polarsys::chess::iot::generator::files::generate /]
+[template public main(b: uml:: Model)]
+[comment @main/]
+[for (elt :uml::Element | self.ownedElement)]
+
+	[if (elt.oclIsTypeOf(uml::Package) )]
+			[generateElement(elt)/]
+	[/if]
+
+[/for]
+
+[/template]

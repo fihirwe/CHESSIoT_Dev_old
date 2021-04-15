@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+   
+    Copyright (c) 2021 Intecs SpA 
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v2.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v20.html
+   
+    Contributors:
+    Felicien Ihirwe
+ -->
+
+<paletteDefinition>
+	<content>		
+<drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT__SW_DRAWER" name="IoT_Software">
+            <aspectTool description="Create a SystemSW" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="SystemSW" name="SystemSW (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::SystemSW"/>
+					</stereotypesToApply>
+				</postAction>				
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESS::ComponentModel::ComponentImplementation" />
+					</stereotypesToApply>
+				</postAction>
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESS::Core::CHGaResourcePlatform" />
+					</stereotypesToApply>
+				</postAction>
+
+			</aspectTool>
+
+            <aspectTool description="Create a VirtualEntity" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="VirtualEntity" name="VirtualEntity (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::VirtualEntity"/>
+					</stereotypesToApply>
+				</postAction>				
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESS::ComponentModel::ComponentImplementation" />
+					</stereotypesToApply>
+				</postAction>
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESS::Core::CHGaResourcePlatform" />
+					</stereotypesToApply>
+				</postAction>
+
+			</aspectTool>
+									
+			<aspectTool description="Create a IoT Virtual Board" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="IoTVirtualBoard" name="VirtualBoard (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::VirtualBoard"/>
+					</stereotypesToApply>
+				</postAction>				
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESS::ComponentModel::ComponentImplementation" />
+					</stereotypesToApply>
+				</postAction>
+
+			</aspectTool>
+
+			<aspectTool description="Create an IoT Element" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="IoTElement" name="IoT Element (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::IoTElement"/>
+					</stereotypesToApply>
+				</postAction>
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESS::ComponentModel::ComponentImplementation" />
+					</stereotypesToApply>
+				</postAction>
+
+			</aspectTool>
+</drawer>
+		
+		
+		
+		
+<drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT_Communication" name="IoT_Operational">
+            <aspectTool description="Create a Service" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="Service" name="Service" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTOperationalProfile::Service"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			<aspectTool description="Create a Communication" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="Communication" name="Communication" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTOperationalProfile::Communication"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			<aspectTool description="Create a Server" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="Server" name="Server (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTOperationalProfile::Server"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			<aspectTool description="Create a Communication System instance" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="ComSystem" name="Communication System" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTOperationalProfile::ComSystem"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			
+</drawer>		
+	</content>
+</paletteDefinition>

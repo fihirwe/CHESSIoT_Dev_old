@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://resources/org.polarsys.chess.iot.profile/"
+            target="platform:/plugin/org.polarsys.chess.iot.profile/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="CHESSIoT profile"
+            iconpath="gifs/main_page_1.gif"
+            name="CHESSIoT"
+            path="pathmap://resources/org.polarsys.chess.iot.profile/CHESSIoT.profile.uml"
+            provider="Ihirwe">
+      </profile>
+   </extension>
+  
+      <extension point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+      <paletteDefinition
+            ID="CompV_CHESSIoT_ClassD_SW.Palette"
+            class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+            name="CompV_CHESSIoT_ClassD_SW.Palette"
+            path="palettes/CompV_CHESSIoT_ClassD_SW.Palette.xml">
+         <Priority
+               name="Highest">
+         </Priority>
+         <editor
+               id="org.eclipse.papyrus.uml.diagram.clazz">
+         </editor>
+      </paletteDefinition>
+   </extension>
+      <extension
+            point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+         <paletteDefinition
+               ID="CompV_CHESSIoT_CompD_SW.Palette"
+               class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+               name="CompV_CHESSIoT_CompD_SW.Palette"
+               path="palettes/CompV_CHESSIoT_CompSD_SW.Palette.xml">
+            <Priority
+                  name="Highest">
+            </Priority>
+            <editor
+                  id="org.eclipse.papyrus.uml.diagram.composite">
+            </editor>
+         </paletteDefinition>
+      </extension>
+   
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+      <paletteDefinition
+            ID="DeployV_CHESSIoT_ClassD_HW.Palette"
+            class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+            name="DeployV_CHESSIoT_ClassD_HW.Palette"
+            path="palettes/DeployV_CHESSIoT_ClassD_HW.Palette.xml">
+         <Priority
+               name="Highest">
+         </Priority>
+         <editor
+               id="org.eclipse.papyrus.uml.diagram.clazz">
+         </editor>
+      </paletteDefinition>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+      <paletteDefinition
+            ID="SysmV_CHESSIoT_BlockDD.Palette"
+            class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+            name="SysmV_CHESSIoT_BlockDD.Palette"
+            path="palettes/SysmV_CHESSIoT_BlockDD.Palette.xml">
+         <Priority
+               name="Highest">
+         </Priority>
+         <editor
+               id="org.eclipse.papyrus.sysml.diagram.blockdefinition">
+         </editor>
+      </paletteDefinition>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+      <paletteDefinition
+            ID="SysmV_CHESSIoT_StateM.Palette"
+            class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+            name="SysmV_CHESSIoT_StateM.Palette"
+            path="palettes/SysmV_CHESSIoT_StateM.Palette.xml">
+         <Priority
+               name="Highest">
+         </Priority>
+         <editor
+               id="org.eclipse.papyrus.uml.diagram.statemachine">
+         </editor>
+      </paletteDefinition>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
+      <paletteDefinition
+            ID="SysmV_CHESSIoT_InternalBD.Palette"
+            class="org.eclipse.papyrus.uml.diagram.common.service.PluginPaletteProvider"
+            name="SysmV_CHESSIoT_InternalBD.Palette"
+            path="palettes/SysmV_CHESSIoT_InternalBD.Palette.xml">
+         <Priority
+               name="Highest">
+         </Priority>
+         <editor
+               id="org.eclipse.papyrus.sysml.diagram.internalblock">
+         </editor>
+      </paletteDefinition>
+   </extension>
+   
+   
+   
+   
+   
+
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated chessIoT -->
+      <package
+            uri="http:///CHESSIoT/CHESSIoTHardware.ecore"
+            class="org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage"
+            genModel="chessIoT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated chessIoT -->
+      <package
+            uri="http:///CHESSIoT/CHESSIoTSoftware.ecore"
+            class="org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage"
+            genModel="chessIoT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CHESSIoT.profile -->
+      <package
+            uri="http:///CHESSIoT/CHESSIoTSystem.ecore"
+            class="org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSystem.CHESSIoTSystemPackage"
+            genModel="CHESSIoT.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CHESSIoT.profile -->
+      <package
+            uri="http:///CHESSIoT/CHESSIoTOperationalProfile.ecore"
+            class="org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.CHESSIoTOperationalProfilePackage"
+            genModel="CHESSIoT.profile.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated chessIoT -->
+      <package
+            uri="http:///CHESSIoT/CHESSIoTCommunication.ecore"
+            class="org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTCommunication.CHESSIoTCommunicationPackage"
+            genModel="chessIoT.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CHESSIoT -->
+      <package
+            uri="http:///CHESSIoT/CHESSIoTHardware.ecore"
+            class="org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage"
+            genModel="CHESSIoT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CHESSIoT -->
+      <package
+            uri="http:///CHESSIoT/CHESSIoTSoftware.ecore"
+            class="org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage"
+            genModel="CHESSIoT.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated CHESSIoT -->
+      <package
+            uri="http:///CHESSIoT/CHESSIoTCommunication.ecore"
+            class="org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTCommunication.CHESSIoTCommunicationPackage"
+            genModel="CHESSIoT.genmodel"/>
+   </extension>
+</plugin>

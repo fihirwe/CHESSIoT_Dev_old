@@ -1,0 +1,14 @@
+[comment encoding = Cp1252 /]
+[module usesUML2Services('http://www.eclipse.org/uml2/5.0.0/UML')/]
+
+[query public hasStereotype(clz : Class, nam : String) : Boolean
+	= invoke('org.polarsys.chess.iot.generator.services.UML2Services','hasStereotype(org.eclipse.uml2.uml.Class, java.lang.String)', Sequence{clz, nam})
+/]
+
+[query public getMillisecond() : String
+	= invoke('org.polarsys.chess.iot.generator.services.UML2Services','getMillisecond()', Sequence{})
+/]
+
+[query public printMe(nam2 : String) : String
+	= invoke('org.polarsys.chess.iot.generator.services.UML2Services','printMe(java.lang.String)', Sequence{nam2})
+/]

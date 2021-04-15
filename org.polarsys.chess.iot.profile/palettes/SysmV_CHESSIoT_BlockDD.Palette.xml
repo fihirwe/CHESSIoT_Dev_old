@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   
+    Copyright (c) 2020 Intecs SpA 
+    All rights reserved. This program and the accompanying materials
+    are made available under the terms of the Eclipse Public License v2.0
+    which accompanies this distribution, and is available at
+    http://www.eclipse.org/legal/epl-v20.html
+   
+    Contributors:
+    Felicien Ihirwe
+ -->
+<paletteDefinition>
+   <content>
+      <drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT_BDD_DRAWER" name="IoT_Elements">
+         <aspectTool description="Create a PhysicalEntity" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="User" name="User(Actor)" refToolId="blockdefinition_modelelements.tool.actor">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::User" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         <aspectTool description="Create a PhysicalEntity" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="PhysicalEntity" name="PhysicalEntity(Block)" refToolId="blockdefinition_modelelements.tool.block">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::PhysicalEntity" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+
+         <aspectTool description="Create a IoTBoard (Block)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="IoTBoard" name="IoTBoard (Block)" refToolId="blockdefinition_modelelements.tool.block">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::IoTBoard" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         
+         
+         <aspectTool description="Create a PowerSource (Block)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="PowerSource" name="PowerSource (Block)" refToolId="blockdefinition_modelelements.tool.block">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::PowerSource" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         <aspectTool description="Create a SensorBlock (Block)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="SensorBlock" name="SensorBlock (Block)" refToolId="blockdefinition_modelelements.tool.block">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::SensorBlock" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         <aspectTool description="Create a ActuatingBlock (Block)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="ActuatingBlock" name="ActuatingBlock (Block)" refToolId="blockdefinition_modelelements.tool.block">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::ActuatingBlock" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         <aspectTool description="Create a RFModule (Block)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="RFModule" name="RFModule (Block)" refToolId="blockdefinition_modelelements.tool.block">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::RFModule" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         <aspectTool description="Create a IoTGateway (Block)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="IoTGateway" name="IoTGateway (Block)" refToolId="blockdefinition_modelelements.tool.block">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::IoTGateway" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         <aspectTool description="Create an IoTServer (Block)" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/blocks/Block.gif" id="IoTServer" name="IoTServer (Block)" refToolId="blockdefinition_modelelements.tool.block">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::IoTServer" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+
+      </drawer>
+      
+      <drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT_BDD_DRAWER_Ports" name="IoT_I/O">
+         <aspectTool description="Create a new SerialIN" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/portandflows/FlowPort_IN.gif" id="internalblock.tool.flowport_in_1386261494628" name="SerialIN" refToolId="blockdefinition.tool.flowport">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::SerialIn" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         <aspectTool description="Create a new SerialOUT" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/portandflows/FlowPort_OUT.gif" id="internalblock.tool.flowport_inout_1386261495772" name="SerialOUT" refToolId="blockdefinition.tool.flowport">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::SerialOut" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+         <aspectTool description="Create a new SerialIN_OUT" iconpath="platform:/plugin/org.eclipse.papyrus.sysml/icons/portandflows/FlowPort_INOUT.gif" id="internalblock.tool.flowport_out_1386261505899" name="SerialIN_OUT" refToolId="blockdefinition.tool.flowport">
+            <postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+               <stereotypesToApply>
+                  <stereotype stereotypeName="CHESSIoT::CHESSIoTSystem::SerialInOut" />
+               </stereotypesToApply>
+            </postAction>
+         </aspectTool>
+      </drawer>
+   </content>
+</paletteDefinition>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev" version="1.8.0_171">
+<bootpath>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\resources.jar"/>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\rt.jar"/>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\jsse.jar"/>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\jce.jar"/>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\charsets.jar"/>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\jfr.jar"/>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\ext"/>
+<entry path="C:\WINDOWS\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

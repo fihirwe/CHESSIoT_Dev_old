@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<paletteDefinition>
+	<content>
+<drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT__HW_DRAWER" name="CHESSIoT_HW">
+
+			
+			<aspectTool description="Create a IoTBoard" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="IoTBoard" name="IoTBoard (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESS::Core::CHGaResourcePlatform" />
+					</stereotypesToApply>
+				</postAction>
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTHardware::PhysicalBaord"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			<aspectTool description="Create a SystemHW" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="SystemHW" name="SystemHW (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESS::Core::CHGaResourcePlatform" />
+					</stereotypesToApply>
+				</postAction>
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTHardware::SystemHW"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			<aspectTool description="Create a Sensor" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="Sensor" name="Sensor (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTHardware::Sensor"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			<aspectTool description="Create an Actuator" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="Actuator" name="Actuator (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTHardware::Actuator"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+            <aspectTool description="Create a Tag" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="Tag" name="Tag (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTHardware::Tag"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+            <aspectTool description="Create a PortIn" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Port.gif" id="PortIn" name="PortIn" refToolId="composite.tool.port">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="MARTE::MARTE_DesignModel::GCM::FlowPort">
+							<property propertyName="MARTE::MARTE_DesignModel::GCM::FlowPort::direction">
+								<value>in</value>
+							</property>
+						</stereotype>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTHardware::PortIn"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+            <aspectTool description="Create a PortOut" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Port.gif" id="PortIn" name="PortIn" refToolId="composite.tool.port">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="MARTE::MARTE_DesignModel::GCM::FlowPort">
+							<property propertyName="MARTE::MARTE_DesignModel::GCM::FlowPort::direction">
+								<value>out</value>
+							</property>
+						</stereotype>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTHardware::PortOut"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create a Gateway" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="Gateway" name="Gateway (Component)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTHardware::Sensor"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+</drawer>		
+	</content>
+</paletteDefinition>

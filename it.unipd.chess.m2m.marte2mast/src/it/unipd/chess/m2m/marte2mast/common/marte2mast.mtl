@@ -1,0 +1,247 @@
+[comment encoding = UTF-8 /]
+[comment]--------------------------------------------------------------
+--                           Marte2Mast                              --
+--      Converter of Schedulability analysis models made with UML2   --
+--   and The UML Profile for MARTE to MAST, the Analysis Suite for   --
+--                      Real-Time Applications                       --
+--                                                                   --
+--                     Copyright (C) 2010-2011                       --
+--                 Universidad de Cantabria, SPAIN                   --
+--                                                                   --
+--                                                                   --
+--           URL: http://mast.unican.es/umlmast/marte2mast           --
+--                                                                   --
+--  Authors: Alvaro Garcia Cuesta   alvaro@binarynonsense.com        --
+--           Julio Medina           julio.medina@unican.es           --
+--                                                                   --
+-- This program is free software; you can redistribute it and/or     --
+-- modify it under the terms of the GNU General Public               --
+-- License as published by the Free Software Foundation; either      --
+-- version 2 of the License, or (at your option) any later version.  --
+--                                                                   --
+-- This program is distributed in the hope that it will be useful,   --
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of    --
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU --
+-- General Public License for more details.                          --
+--                                                                   --
+-- You should have received a copy of the GNU General Public         --
+-- License along with this program; if not, write to the             --
+-- Free Software Foundation, Inc., 59 Temple Place - Suite 330,      --
+-- Boston, MA 02111-1307, USA.                                       --
+--                                                                   --
+-------------------------------------------------------------[/comment]
+[module marte2mast('http://www.eclipse.org/uml2/3.0.0/UML')/]
+[import it::unipd::chess::m2m::marte2mast::common::helperfunctions/]
+[import it::unipd::chess::m2m::marte2mast::common::activityfunctions/]
+[import it::unipd::chess::m2m::marte2mast::common::processing_resource/]
+[import it::unipd::chess::m2m::marte2mast::common::scheduling_server/]
+
+[import it::unipd::chess::m2m::marte2mast::common::ima_partitions/]
+[import it::unipd::chess::m2m::marte2mast::common::ima_partitions_sched/]
+[import it::unipd::chess::m2m::marte2mast::common::ima_secondary_scheduling_servers/]
+[import it::unipd::chess::m2m::marte2mast::common::ima_secondary_schedulers/]
+
+
+[import it::unipd::chess::m2m::marte2mast::common::partitioned_multicore_schedulers/]
+[import it::unipd::chess::m2m::marte2mast::common::partitioned_multicore_scheduling_servers/]
+
+
+[import it::unipd::chess::m2m::marte2mast::common::run_primary_scheduling_servers/]
+[import it::unipd::chess::m2m::marte2mast::common::run_primary_schedulers/]
+[import it::unipd::chess::m2m::marte2mast::common::run_secondary_scheduling_servers/]
+[import it::unipd::chess::m2m::marte2mast::common::run_secondary_schedulers/]
+
+[import it::unipd::chess::m2m::marte2mast::common::scheduler/]
+[import it::unipd::chess::m2m::marte2mast::common::shared_resource/]
+[import it::unipd::chess::m2m::marte2mast::common::mrspshared_resource/]
+[import it::unipd::chess::m2m::marte2mast::common::mutualex_resource/]
+
+[import it::unipd::chess::m2m::marte2mast::common::mast/]
+
+[import it::unipd::chess::m2m::marte2mast::common::log/]
+[import it::unipd::chess::m2m::marte2mast::common::log2file/]
+
+[template public marte2mast(model : Model, psmPackage : Package)]
+[comment @main /]
+[file (self.fileName(), false)]
+-- [self.printHeaderData()/][initLog(true, false, true, false, model.name)/][logLine('>>> Starting MARTE to MAST conversion\n')/]
+-- Processing Resources[logLine('>> Extracting Processing Resources:')/]
+[for (getMulticoreProcessors(psmPackage))]
+[if self.oclIsTypeOf(Class)]
+	[if self.hasStereotype('SaExecHost') or self.hasStereotype('SaCommHost')]
+[self.processing_resource()/]		
+	[/if]
+[/if]
+[/for]
+
+
+[comment 
+Are there any partitions?
+/]
+[if (functionalPartitions(psmPackage))]
+-- Analysis type: IMA
+-- Primary Schedulers[logLine('\n>> Extracting Primary Schedulers:')/]
+[for (getMulticoreProcessors(psmPackage))]
+
+	[for (getCores(self))]
+[self.ima_partitions_scheduler()/]		
+	[/for]
+[/for]
+
+-- Primary Scheduling Servers[logLine('\n>> Extracting Primary Scheduling Servers:')/]
+
+	[for (getFunctionalPartitions(psmPackage))]
+[self.ima_partitions_scheduling_server()/]		
+	[/for]
+
+-- Secondary Schedulers
+
+	[for (getFunctionalPartitions(psmPackage))]
+		[comment][for (getSchedulableResources(self))][/comment]
+[self.ima_secondary_scheduler()/]		
+		[comment][/for][/comment]
+	[/for]
+
+-- Secondary Scheduling Servers[logLine('\n>> Extracting Secondary Scheduling Servers:')/]
+
+	[for (getFunctionalPartitions(psmPackage))]
+		[for (getSchedulableResources(self))]
+[self.ima_secondary_scheduling_server()/]		
+		[/for]
+	[/for]
+
+
+[comment]  
+If it is RUN... TODO it is always false for now
+[/comment]
+
+[elseif (isRUNSystem(psmPackage))]
+-- Analysis type: RUN
+-- Schedulers[logLine('\n>> Extracting Schedulers:')/]
+
+[comment]  
+RUN support is valid only if the system contains one end only one processor
+[/comment]
+[for (getMulticoreProcessors(psmPackage))]
+	[self.run_primary_scheduler()/]		
+[/for]
+
+
+-- Scheduling Servers[logLine('\n>> Extracting Scheduling Servers:')/]
+	[for (getSupertasks(psmPackage))]
+[self.run_primary_scheduling_server()/]
+	[/for]
+
+-- Schedulers[logLine('\n>> Extracting Schedulers:')/]
+	[for (getSupertasks(psmPackage))]
+[self.run_secondary_scheduler()/]
+	[/for]
+
+-- Secondary Scheduling Servers[logLine('\n>> Extracting Secondary Scheduling Servers:')/]
+
+	[for (getSupertasks(psmPackage))]
+		[for (getSchedulableResources(self))]
+[self.run_secondary_scheduling_server()/]		
+		[/for]
+	[/for]
+
+[comment]  
+
+-- Primary Schedulers[logLine('\n>> Extracting Primary Schedulers:')/]
+[for (getMulticoreProcessors(psmPackage))]
+
+	[for (getCores(self))]
+[self.run_primary_scheduler()/]		
+	[/for]
+[/for]
+
+-- Primary Scheduling Servers[logLine('\n>> Extracting Primary Scheduling Servers:')/]
+
+	[for (getFunctionalPartitions(psmPackage))]
+[self.run_primary_scheduling_server()/]		
+	[/for]
+
+-- Secondary Schedulers
+
+	[for (getFunctionalPartitions(psmPackage))]
+		[for (getSchedulableResources(self))]
+[self.run_secondary_scheduler()/]		
+		[/for]
+	[/for]
+
+-- Secondary Scheduling Servers[logLine('\n>> Extracting Secondary Scheduling Servers:')/]
+
+	[for (getFunctionalPartitions(psmPackage))]
+		[for (getSchedulableResources(self))]
+[self.run_secondary_scheduling_server()/]		
+		[/for]
+	[/for]
+
+[/comment]
+
+[comment 
+Else begin old CHESS generation extended for multicore
+/]
+
+	
+[else]
+-- Analysis type: Standard
+-- Schedulers[logLine('\n>> Extracting Schedulers:')/]
+[for (psmPackage.allOwnedElements())]
+[if self.oclIsTypeOf(Class)]
+	[if self.hasStereotype('SaExecHost') or self.hasStereotype('SaCommHost')]
+[self.scheduler()/]		
+	[/if]
+[/if]
+[/for]
+
+-- Scheduling Servers[logLine('\n>> Extracting Scheduling Servers:')/]
+	[for (psmPackage.allOwnedElements())]
+	[if self.oclIsTypeOf(Class)]
+		[if self.hasStereotype('SchedulableResource') or self.hasStereotype('GaCommChannel') or self.hasStereotype('SwSchedulableResource')]
+[self.scheduling_server()/]		
+		[/if]
+	[/if]
+[/for]
+[/if]
+
+
+-- Resources[logLine('\n>> Extracting Resources:')/]
+[for (psmPackage.allOwnedElements())]
+[if self.oclIsTypeOf(Class)]
+	[if self.hasStereotype('SaSharedResource') and not self.hasStereotype('SwMutualExclusionResource')]
+		[if isRUNSystem(psmPackage)]
+[self.mrspshared_resource()/]
+		[else]
+[self.shared_resource()/]
+		[/if]		
+	[/if]
+[/if]
+[/for]
+
+[for (psmPackage.allOwnedElements())]
+[if self.oclIsTypeOf(Class)]
+	[if self.hasStereotype('SwMutualExclusionResource')]
+[self.mutualex_resource()/]		
+	[/if]
+[/if]
+[/for]
+	
+[logLine('\n>> Extracting Operations and Transactions:')/]
+[for (psmPackage.allOwnedElements())]
+[if self.oclIsTypeOf(Class) and self.hasStereotype('SaAnalysisContext') and self.getNearestPackage().name.equalsIgnoreCase('AnalysisContext')]
+[self.extractContextInfo()/]
+	[for (ownedElement)]
+		[if self.oclIsTypeOf(Activity) and self.hasStereotype('SaEndtoEndFlow')]
+[self.extractActivityData()/]
+		[/if]
+	[/for]
+[/if]
+[/for]
+[self.getOperationsTransactionsText()/][logLine('\n>>> Finished MARTE to MAST conversion\n')/]
+[/file]
+[file (model.name+'.mast', true)]
+[/file]
+[logLine('\n>>> Marte2Mast finished running\n')/]
+[self.log2file()/]
+[/template]

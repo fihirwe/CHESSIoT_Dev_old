@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CHESS Contracts Profile (Incubation)
+Bundle-SymbolicName: org.polarsys.chess.contract.profile;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: Eclipse Chess Project
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.polarsys.chess.contracts.profile.chesscontract,
+ org.polarsys.chess.contracts.profile.chesscontract.DataTypes,
+ org.polarsys.chess.contracts.profile.chesscontract.DataTypes.impl,
+ org.polarsys.chess.contracts.profile.chesscontract.DataTypes.util,
+ org.polarsys.chess.contracts.profile.chesscontract.impl,
+ org.polarsys.chess.contracts.profile.chesscontract.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport,
+ org.eclipse.papyrus.marte.static.profile;visibility:=reexport,
+ org.eclipse.emf.ecore.xmi;visibility:=reexport,
+ org.eclipse.uml2.uml.profile.standard;visibility:=reexport,
+ org.eclipse.papyrus.sysml;visibility:=reexport,
+ org.eclipse.uml2.types;visibility:=reexport,
+ org.eclipse.uml2.uml;visibility:=reexport,
+ org.eclipse.ui;bundle-version="3.7.0",
+ org.eclipse.papyrus.uml.diagram.common;bundle-version="1.0.0",
+ org.eclipse.papyrus.views.properties;bundle-version="2.0.0",
+ org.eclipse.papyrus.customization.properties;bundle-version="2.0.0",
+ org.eclipse.papyrus.uml.tools,
+ org.eclipse.papyrus.views.modelexplorer,
+ eu.fbk.eclipse.standardtools.utils,
+ org.polarsys.chess.chessmlprofile
+Bundle-ActivationPolicy: lazy
+Import-Package: org.apache.log4j;version="1.2.15",
+ org.eclipse.papyrus.sysml.service.types.element,
+ org.eclipse.papyrus.uml.service.types.utils,
+ org.eclipse.papyrus.views.modelexplorer,
+ org.polarsys.chess.core.util.uml

@@ -1,0 +1,9 @@
+[2021-03-25 15:56:41] Executing startup tasks
+[2021-03-25 15:56:41] Java(TM) SE Runtime Environment 1.8.0_171-b11
+[2021-03-25 15:56:41] Product self.product.version
+[2021-03-25 15:56:41] Bundle org.eclipse.oomph.setup 1.7.0.v20170224-1311, build=2932, branch=cc66c993507ade50e4b3a824a3adb4e94c4ac25f
+[2021-03-25 15:56:41] Bundle org.eclipse.oomph.setup.core 1.7.0.v20170301-0747, build=2932, branch=cc66c993507ade50e4b3a824a3adb4e94c4ac25f
+[2021-03-25 15:56:41] Bundle org.eclipse.oomph.setup.p2 1.7.0.v20170217-1051, build=2932, branch=cc66c993507ade50e4b3a824a3adb4e94c4ac25f
+[2021-03-25 15:56:42] Performing Preference /instance/org.polarsys.chess.core/DiagramInView = false
+[2021-03-25 15:56:42] Performing Preference /instance/org.polarsys.chess.core/SupportedDiagram = false
+[2021-03-25 15:56:42] 

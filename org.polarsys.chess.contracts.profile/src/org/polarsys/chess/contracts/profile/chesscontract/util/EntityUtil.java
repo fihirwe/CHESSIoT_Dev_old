@@ -145,7 +145,8 @@ public class EntityUtil {
 	public static final String BOUNDED_TYPE = "MARTE::MARTE_Annexes::VSL::DataTypes::BoundedSubtype";
 	private static final String COMP_TYPE = "CHESS::ComponentModel::ComponentType";
 	private static final String COMP_IMPL = "CHESS::ComponentModel::ComponentImplementation";
-	private static final String SYSVIEW = "CHESS::Core::CHESSViews::SystemView";
+	private static final String SYSTEM_VIEW = "CHESS::Core::CHESSViews::SystemView";
+	private static final String ANALYSIS_VIEW = "CHESS::Core::CHESSViews::AnalysisView";
 
 	public static final String INSTANTIATED_ARCHITECTURE_CONFIGURATION = "CHESS::ParameterizedArchitecture::InstantiatedArchitectureConfiguration";
 
@@ -589,7 +590,7 @@ public class EntityUtil {
 					UMLPackage.eINSTANCE.getPackage());
 
 			for (Package p : packages) {
-				if (p.getAppliedStereotype(SYSVIEW) != null) {
+				if (p.getAppliedStereotype(SYSTEM_VIEW) != null) {
 					logger.debug("Found systemView!");
 					return p;
 				}
@@ -599,8 +600,44 @@ public class EntityUtil {
 		return null;
 	}
 
+	/**
+	 * Returns the Analysis View package that is found in the given UML model.
+	 * 
+	 * @param umlModel
+	 *            the model to use
+	 * @return the package
+	 */
+	public Package getAnalysisView(UmlModel umlModel) {
+		if (umlModel == null) {
+			logger.error("No Models are open");
+			return null;
+		}
+
+		logger.debug("UML Model name = " + umlModel.getIdentifier());
+
+		TreeIterator<EObject> allElements = umlModel.getResource().getAllContents();
+
+		if (allElements != null) {
+			Collection<Package> packages = EcoreUtil.getObjectsByType(iterator2Collection(allElements),
+					UMLPackage.eINSTANCE.getPackage());
+
+			for (Package p : packages) {
+				if (p.getAppliedStereotype(ANALYSIS_VIEW) != null) {
+					logger.debug("Found analysisView!");
+					return (Package) p;
+				}
+			}
+		}
+		logger.error("AnalysisView not found!");
+		return null;
+	}
+
 	public Package getCurrentSystemView() {
 		return getSystemView(UmlUtils.getUmlModel());
+	}
+
+	public Package getCurrentAnalysisView() {
+		return getAnalysisView(UmlUtils.getUmlModel());
 	}
 
 	public Package createPackage(Package owner, final String elementName) {
@@ -1055,6 +1092,25 @@ public class EntityUtil {
 				for (Package p : packages) {
 					//FIXME stereotype
 					if (isSystemViewPackage(p)) {
+						return p;
+					}
+				}
+			}
+		}
+		throw new Exception("Element does not exist.");
+	}
+
+	public Package getAnalysisViewPackage(Model model) throws Exception {
+
+		if (model != null) {
+			TreeIterator<EObject> allElements = model.eResource().getAllContents();
+			if (allElements != null) {
+				Collection<org.eclipse.uml2.uml.Package> packages = EcoreUtil
+						.getObjectsByType(iterator2Collection(allElements), UMLPackage.eINSTANCE.getPackage());
+
+				for (Package p : packages) {
+					//FIXME stereotype
+					if (isAnalysisView(p)) {
 						return p;
 					}
 				}
@@ -2335,13 +2391,38 @@ public class EntityUtil {
 	public boolean isSystemViewPackage(Element obj) {
 		if (obj instanceof Package) {
 			final Package pkg = (Package) obj;
-			if (pkg.getAppliedStereotype(SYSVIEW) != null) {
+			if (pkg.getAppliedStereotype(SYSTEM_VIEW) != null) {
 				return true;
 			} else {
 				EList<Package> owningPackages = pkg.allOwningPackages();
 				for (Package owningPackage : owningPackages) {
 					//FIXME stereotype
-					if (owningPackage.getAppliedStereotype(SYSVIEW) != null) {
+					if (owningPackage.getAppliedStereotype(SYSTEM_VIEW) != null) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Checks if the selected object is a package in the &lt&ltAnalysisView&gt&gt branch.
+	 * 
+	 * @param pkg
+	 *            the selected element
+	 * @return true if the package is valid
+	 */
+	public boolean isAnalysisView(Element obj) {
+		if (obj instanceof Package) {
+			final Package pkg = (Package) obj;
+			if (pkg.getAppliedStereotype(ANALYSIS_VIEW) != null) {
+				return true;
+			} else {
+				EList<Package> owningPackages = pkg.allOwningPackages();
+				for (Package owningPackage : owningPackages) {
+					//FIXME stereotype
+					if (owningPackage.getAppliedStereotype(ANALYSIS_VIEW) != null) {
 						return true;
 					}
 				}

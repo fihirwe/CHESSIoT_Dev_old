@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: CHESS Contracts Profile (Incubation)
-Bundle-SymbolicName: org.polarsys.chess.contract.profile;singleton:=true
+Bundle-SymbolicName: org.polarsys.chess.contracts.profile;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: Eclipse Chess Project

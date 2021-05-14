@@ -10,13 +10,13 @@
   <contexts name="AdvanceStyle" applied="false"/>
   <contexts name="welcome-diagrams" appliedByDefault="true"/>
   <contexts name="nattable" appliedByDefault="true"/>
+  <contexts name="MARTE" appliedByDefault="true"/>
+  <contexts name="SysML" appliedByDefault="true"/>
   <contexts name="UMLStereotypeApplicationExternalResource" appliedByDefault="true"/>
   <contexts name="SequenceNotation" appliedByDefault="true"/>
   <contexts name="Symbols" appliedByDefault="true"/>
   <contexts name="UML" applied="false" appliedByDefault="true"/>
   <contexts name="UMLNotation" appliedByDefault="true"/>
-  <contexts name="SysML" appliedByDefault="true"/>
-  <contexts name="MARTE" appliedByDefault="true"/>
-  <contexts name="UML for CHESS" prototype="//@contexts.13" appliedByDefault="true"/>
+  <contexts name="UML for CHESS" prototype="//@contexts.15" appliedByDefault="true"/>
   <contexts name="CHESS" appliedByDefault="true"/>
 </pref:Preferences>

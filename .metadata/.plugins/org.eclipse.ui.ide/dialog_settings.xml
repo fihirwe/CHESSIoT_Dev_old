@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
-		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value="C:\Users\Ihirwe\Desktop\CHESS All\CHESS Dev plugins\chess\plugins\org.polarsys.chess.m2m"/>
 			<item value="C:\Users\Ihirwe\Desktop\Eclipse CHESSIoT_Dev\CHESSIoT"/>
+			<item value="C:\Users\Ihirwe\Desktop\chess-devel\MAY14\chess-devel\org.polarsys.chess.parent\features\org.polarsys.chess.feature"/>
+			<item value="C:\Users\Ihirwe\Desktop\chess-devel\MAY14\chess-devel\org.polarsys.chess.parent"/>
+			<item value="C:\Users\Ihirwe\Desktop\chess-devel\MAY14\chess-devel\plugins"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
@@ -17,7 +19,7 @@
 		</list>
 	</section>
 	<section name="ChooseWorkspaceDialogSettings">
-		<item value="600" key="DIALOG_X_ORIGIN"/>
-		<item value="103" key="DIALOG_Y_ORIGIN"/>
+		<item value="440" key="DIALOG_X_ORIGIN"/>
+		<item value="190" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

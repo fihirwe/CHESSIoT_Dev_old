@@ -2,13 +2,42 @@
 <section name="Workbench">
 	<section name="PDEFormActionManager">
 	</section>
-	<section name="org.eclipse.pde.ui.PLUGIN_STATUS_DIALOG">
-		<item value="418" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="413" key="DIALOG_HEIGHT"/>
-		<item value="760" key="DIALOG_X_ORIGIN"/>
-		<item value="274" key="DIALOG_Y_ORIGIN"/>
+	<section name="org.eclipse.pde.ui.dialogs.PluginSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History/&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="509" key="DIALOG_X_ORIGIN"/>
+			<item value="107" key="DIALOG_Y_ORIGIN"/>
+		</section>
 	</section>
 	<section name="quick_assist_proposal_size">
+	</section>
+	<section name="FeatureExportWizard">
+		<item value="C:\Users\Ihirwe\Desktop\FeaturesTests\May14" key="destination0"/>
+		<item value="C:\Users\Ihirwe\Desktop\FeaturesTests\May14" key="destination1"/>
+		<item value="" key="keypass"/>
+		<item value="" key="siteURL"/>
+		<item value="true" key="create_categories"/>
+		<item value="Generate source bundles" key="exportSourceFormat"/>
+		<item value="false" key="signJAR"/>
+		<item value="C:\Users\Ihirwe\Desktop\CHESS1.0\CHESS1.0 MAY2021\FeaturesTests\May14" key="destination2"/>
+		<item value="true" key="exportUpdate"/>
+		<item value="false" key="saveAsAnt"/>
+		<item value="false" key="exportSource"/>
+		<item value="" key="category_file"/>
+		<item value="true" key="allowBinaryCycles"/>
+		<item value="" key="password"/>
+		<item value="202105131847" key="qualifierName"/>
+		<item value="false" key="useWorkspaceCompiledClasses"/>
+		<item value="1" key="exportType"/>
+		<item value="false" key="qualifier"/>
+		<item value="" key="alias"/>
+		<item value="false" key="jnlp"/>
+		<item value="" key="keystore"/>
+		<item value="" key="jre"/>
+		<item value="true" key="p2metadata"/>
 	</section>
 </section>

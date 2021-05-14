@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;hu.bme.chess.instance.view&apos;" deleteContents="true" description="Delete resource &apos;hu.bme.chess.instance.view&apos;" element1="/hu.bme.chess.instance.view" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1616683651361"/>&#x0A;&#x0A;<refactoring comment="Delete resource &apos;org.polarsys.chess.iot.profile&apos;" deleteContents="false" description="Delete resource &apos;org.polarsys.chess.iot.profile&apos;" element1="/org.polarsys.chess.iot.profile" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1616697875683"/>
-</session>

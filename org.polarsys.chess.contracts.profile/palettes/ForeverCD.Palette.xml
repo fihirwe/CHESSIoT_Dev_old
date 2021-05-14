@@ -24,6 +24,34 @@
 					</stereotypesToApply>
 				</postAction>
 			</aspectTool>
+			<aspectTool description="Create a ContractProperty" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif" id="clazz.tool.property_1355874680081" name="ContractProperty (Property)" refToolId="clazz.tool.property">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSContract::ContractProperty"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create a FormalProperty" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif" id="clazz.tool.constraint_1355874696383" name="FormalProperty (Constraint)" refToolId="clazz.tool.constraint">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSContract::FormalProperty"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create System" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="clazz.tool.component_1301932910315_1355874714027" name="System (ComponentImplementation)" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSContract::System"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			<aspectTool description="Create SRAComponent" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Component.gif" id="clazz.tool.component_1301932822500_1355874736163" name="SRAComponent (ComponentImplementation (Component))" refToolId="clazz.tool.component">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSContract::SRAComponent"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
 		</drawer>
 	</content>
 </paletteDefinition>

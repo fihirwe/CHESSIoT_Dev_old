@@ -2,7 +2,7 @@
 
 This repository contain an extension of [CHESS tool](https://www.eclipse.org/chess/start.html) covenring IoT domain. 
 CHESS is a reputable model driven engineering environment used to model and analyse safety critical complex systems.
-CHESS is an oprn shource tool and can be accessed at https://www.eclipse.org/chess/start.html. 
+CHESS is an open shource tool and can be accessed at https://www.eclipse.org/chess/start.html. 
 
 The CHESSIoT extension can be installed on-top of CHESS by following this [link](https://github.com/feliIhirwe/CHESSIoT-features)
 

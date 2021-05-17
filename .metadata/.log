@@ -326,3 +326,1385 @@ Created Time: 2021-05-13 20:33:20.423
 !MESSAGE Commands should really have a category: plug-in='org.polarsys.chess.statebased', id='org.polarsys.chess.stateBasedTransformationCommandID', categoryId='it.unipd.chess.commands.category'
 !SUBENTRY 1 org.eclipse.ui 2 0 2021-05-13 20:33:21.718
 !MESSAGE Commands should really have a category: plug-in='org.polarsys.chess.statebased', id='org.polarsys.chess.stateBasedWithParametersCommandID', categoryId='it.unipd.chess.commands.category'
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:05:15.215
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:05:15.216
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:07:59.293
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:07:59.294
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:07:59.358
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:07:59.359
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:07:59.410
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:07:59.410
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:07:59.515
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:07:59.516
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.062
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.062
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.212
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.212
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.271
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.271
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.327
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.327
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.386
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.386
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.453
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.453
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.515
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.515
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.759
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.759
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.817
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.817
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.881
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.881
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:00.960
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:00.960
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:01.046
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:01.046
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:01.126
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:01.126
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:01.544
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:01.544
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:01.756
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:01.756
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:01.986
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:01.986
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.151
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.151
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.256
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.257
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.330
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.330
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.391
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.391
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.440
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.440
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.556
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.556
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.659
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.659
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.699
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.699
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.737
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.737
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:02.944
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:02.944
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.156
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.157
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.230
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.230
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.282
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.282
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.334
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.334
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.385
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.385
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.434
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.434
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.483
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.483
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.532
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.532
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.583
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.583
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:03.642
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:03.642
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:04.081
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:04.081
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.pde.core 4 0 2021-05-14 04:09:04.281
+!MESSAGE The resource tree is locked for modifications.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: The resource tree is locked for modifications.
+	at org.eclipse.core.internal.resources.WorkManager.checkIn(WorkManager.java:119)
+	at org.eclipse.core.internal.resources.Workspace.prepareOperation(Workspace.java:2188)
+	at org.eclipse.core.internal.resources.Resource.touch(Resource.java:1797)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.touchFeatures(FeatureRebuilder.java:81)
+	at org.eclipse.pde.internal.core.builders.FeatureRebuilder.modelsChanged(FeatureRebuilder.java:58)
+	at org.eclipse.pde.internal.core.PluginModelManager.fireDelta(PluginModelManager.java:356)
+	at org.eclipse.pde.internal.core.PluginModelManager.modelsChanged(PluginModelManager.java:256)
+	at org.eclipse.pde.internal.core.AbstractModelManager.fireModelProviderEvent(AbstractModelManager.java:34)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.createAndFireEvent(WorkspaceModelManager.java:259)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.createAndFireEvent(WorkspacePluginModelManager.java:481)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:231)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.processModelChanges(WorkspaceModelManager.java:193)
+	at org.eclipse.pde.internal.core.WorkspacePluginModelManager.processModelChanges(WorkspacePluginModelManager.java:470)
+	at org.eclipse.pde.internal.core.WorkspaceModelManager.resourceChanged(WorkspaceModelManager.java:117)
+	at org.eclipse.core.internal.events.NotificationManager$1.run(NotificationManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:289)
+	at org.eclipse.core.internal.events.NotificationManager.handleEvent(NotificationManager.java:253)
+	at org.eclipse.core.internal.resources.Workspace.broadcastEvent(Workspace.java:369)
+	at org.eclipse.core.internal.resources.Project.close(Project.java:189)
+	at org.eclipse.ui.actions.CloseResourceAction.invokeOperation(CloseResourceAction.java:135)
+	at org.eclipse.ui.actions.WorkspaceAction.execute(WorkspaceAction.java:156)
+	at org.eclipse.ui.actions.WorkspaceAction$1.runInWorkspace(WorkspaceAction.java:456)
+	at org.eclipse.core.internal.resources.InternalWorkspaceJob.run(InternalWorkspaceJob.java:39)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.core.resources 4 380 2021-05-14 04:09:04.281
+!MESSAGE The resource tree is locked for modifications.
+
+!ENTRY org.eclipse.equinox.p2.ui.sdk 2 0 2021-05-14 17:16:12.356
+!MESSAGE Could not locate the running profile instance. The eclipse.p2.data.area and eclipse.p2.profile properties may not be set correctly in this application's config.ini file.
+
+!ENTRY org.eclipse.equinox.p2.ui.sdk 2 0 2021-05-15 01:09:57.299
+!MESSAGE Could not locate the running profile instance. The eclipse.p2.data.area and eclipse.p2.profile properties may not be set correctly in this application's config.ini file.

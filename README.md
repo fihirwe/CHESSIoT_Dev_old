@@ -1,4 +1,4 @@
-## ChessIoT_Dev
+## CHESSIoT_Dev
 
 This repository contains an extension of [CHESS tool](https://www.eclipse.org/chess/start.html) covering the IoT domain. 
 CHESS is a reputable model-driven engineering environment used to model and analyze safety-critical complex systems.

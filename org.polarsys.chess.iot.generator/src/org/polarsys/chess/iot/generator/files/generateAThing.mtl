@@ -21,19 +21,21 @@
  *
  *****************************************************************************/
 
+[if(component.ownedComment.hasKeyword('Payload')=true)]
+thing fragment [component.name.toUpperFirst()/]_Frag
+[/if]
+
+
 thing [component.name.toUpperFirst()/] 
 	{ 
-	   [for (p: Property | component.attribute) separator('\n')]
-	     property  [p.name/] : [p.type.name/] 
-	   [/for]
-	 
-	   [for (o: Operation | component.ownedOperation) separator('\n')]
-	     function  [o.name/]([o.ownedParameter/]) do
-			
-	       // TODO Should be implemented
-	     end
-	   [/for]
+	   [for (p: Property | component.ownedAttribute) separator('\n')] property  [p.name/] : [p.type.name/][/for]
 
+	   [for (o: Operation | component.ownedOperation) separator('\n')]
+	     function  [o.name/]([o.ownedParameter/]) 
+			do
+	    	// TODO functional body
+	     	end
+	   [/for]
 
 		[for (sm: StateMachine | component.ownedBehavior)]
 				[generateStateMachine(sm)/]

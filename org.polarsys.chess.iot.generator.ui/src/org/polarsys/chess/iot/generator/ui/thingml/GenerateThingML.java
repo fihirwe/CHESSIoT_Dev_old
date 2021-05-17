@@ -133,38 +133,38 @@ public class GenerateThingML extends AbstractHandler {
 					boolean oldSuperUserStatus = diagramStatus.isSuperuser();
 					diagramStatus.setSuperuser(true);
 
-					subMonitor.subTask("Generating AnalysisContext");
+//					subMonitor.subTask("Generating AnalysisContext");
 
 					contextClass = null;
-					try {
-						contextClass = createAnalysisContext(shell, model);
+//					try {
+//						contextClass = createAnalysisContext(shell, model);
+//
+//						((PapyrusMultiDiagramEditor) editor).doSave(subMonitor.newChild(5));
+//					} catch (ModelError e1) {
+//						MessageDialog.openError(shell, "CHESS", "Unable to create analysis context: " + e1.getMessage());
+//					} finally {
+//						diagramStatus.setSuperuser(oldSuperUserStatus);
+//					}
 
-						((PapyrusMultiDiagramEditor) editor).doSave(subMonitor.newChild(5));
-					} catch (ModelError e1) {
-						MessageDialog.openError(shell, "CHESS", "Unable to create analysis context: " + e1.getMessage());
-					} finally {
-						diagramStatus.setSuperuser(oldSuperUserStatus);
-					}
-
-					if (contextClass==null)
-						return null;
+//					if (contextClass==null)
+//						return null;
 					IFile filecopy = CHESSProjectSupport.resourceToFile(inResource);
 
-					subMonitor.subTask("Generating PSM");
+//					subMonitor.subTask("Generating PSM");
 
 					//generate the PSM
-					try {
-						filecopy = GenerateThingML.this.performPIM2PSMtransformation(inResource, contextClass, editor, subMonitor.newChild(55));
-						//Reopen the editor
-						CHESSEditorUtils.reopenEditor(editor, false);
-
-					} catch (Exception e) {
-						e.printStackTrace();
-						throw e;
-
-					} finally {
-
-					}
+//					try {
+//						filecopy = GenerateThingML.this.performPIM2PSMtransformation(inResource, contextClass, editor, subMonitor.newChild(55));
+//						//Reopen the editor
+//						CHESSEditorUtils.reopenEditor(editor, false);
+//
+//					} catch (Exception e) {
+//						e.printStackTrace();
+//						throw e;
+//
+//					} finally {
+//
+//					}
 
 					subMonitor.subTask("Generating code");
 					//now generate the code
@@ -244,10 +244,10 @@ public class GenerateThingML extends AbstractHandler {
 		if (!(editor instanceof PapyrusMultiDiagramEditor))
 			return false;
 
-		//inputFile = CHESSProjectSupport.resourceToFile(inResource);
-		final String saAnalysisName = contextClass.getQualifiedName();
-
-		CHESSTransformation.performXMLGeneration(inputFile, saAnalysisName, monitor);
+//		//inputFile = CHESSProjectSupport.resourceToFile(inResource);
+//		final String saAnalysisName = contextClass.getQualifiedName();
+//
+//		CHESSTransformation.performXMLGeneration(inputFile, saAnalysisName, monitor);
 
 		if(CHESSTransformation.performCodeGeneration((PapyrusMultiDiagramEditor)editor, inputFile, monitor)){
 			setSuccess(true);

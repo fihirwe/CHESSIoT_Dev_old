@@ -338,8 +338,8 @@ public class PaletteManager {
 
 			if (diagramName.equals(ViewDiagramAssociations.classDiagram) && isComponentActive()){
 				paletteDrawer.setVisible(true);
-				if (!paletteId.contains("CHESSIoT__SW_DRAWER") && !paletteId.contains("CHESSIoT_Communication") && paletteId.compareTo("CHESSNodesFunctionalViewDrawerID")!=0 && 	
-						paletteId.compareTo("CHESSEdgeFunctionalViewDrawerID")!=0 ){
+				if (!paletteId.contains("CHESSIoT__SW_DRAWER") && !paletteId.contains("CHESSIoT_CSD_SW_DRAWER") && !paletteId.contains("CHESSIoT_Communication") && paletteId.compareTo("CHESSNodesFunctionalViewDrawerID")!=0 && 	
+						paletteId.compareTo("CHESSEdgeFunctionalViewDrawerID")!=0){
 					paletteDrawer.setVisible(false);
 				}
 

@@ -15,7 +15,23 @@
 	<content>		
 <drawer iconpath="platform:/plugin/org.polarsys.chess.core/resources/CHESSicon.gif" id="CHESSIoT_CSD_SW_DRAWER" name="IoT_Behavior">
 
-			<aspectTool description="Create a GenericEvent" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="GenericEvent" name="GenericEvent" refToolId="clazz.tool.class">
+			<aspectTool description="Create a Payload" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif" id="Payload" name="Payload" refToolId="clazz.tool.class">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::Payload"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+			
+			<aspectTool description="Create a PayloadContent" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Message_synchCall.gif" id="PayloadContent" name="PayloadContent" refToolId="clazz.tool.property">
+				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
+					<stereotypesToApply>
+						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::MessageContent"/>
+					</stereotypesToApply>
+				</postAction>
+			</aspectTool>
+
+			<aspectTool description="Create a GenericEvent" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionInputPin.gif" id="GenericEvent" name="GenericEvent" refToolId="clazz.tool.class">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
 						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::GenericEvent"/>
@@ -23,14 +39,14 @@
 				</postAction>
 			</aspectTool>				
 
-			<aspectTool description="Create an IncomingEvent" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="IncomingEvent" name="IncomingEvent" refToolId="clazz.tool.class">
+			<aspectTool description="Create an IncomingEvent" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Message_reply.gif" id="IncomingEvent" name="IncomingEvent" refToolId="clazz.tool.class">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
 						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::IncomingEvent"/>
 					</stereotypesToApply>
 				</postAction>
 			</aspectTool>
-			<aspectTool description="Create an OutgoingEvent" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="OutgoingEvent" name="OutgoingEvent" refToolId="clazz.tool.class">
+			<aspectTool description="Create an OutgoingEvent" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Message_createMessage.gif" id="OutgoingEvent" name="OutgoingEvent" refToolId="clazz.tool.class">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
 						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::OutgoingEvent"/>
@@ -39,23 +55,15 @@
 			</aspectTool>
 						
 			
-			<aspectTool description="Create a GenericIoTAction" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="GenericIoTAction" name="GenericIoTAction" refToolId="clazz.tool.class">
+			<aspectTool description="Create a GenericIoTAction" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ActionExecutionSpecification.gif" id="GenericIoTAction" name="GenericIoTAction" refToolId="clazz.tool.class">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
 						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::GenericIoTAction"/>
 					</stereotypesToApply>
 				</postAction>
 			</aspectTool>			
-					
-			<aspectTool description="Create a Payload" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif" id="Payload" name="Payload" refToolId="composite.tool.comment">
-				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
-					<stereotypesToApply>
-						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::Payload"/>
-					</stereotypesToApply>
-				</postAction>
-			</aspectTool>	
 			
-			<aspectTool description="Create a SendPayload" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="SendPayload" name="SendPayload" refToolId="clazz.tool.class">
+			<aspectTool description="Create a SendPayload" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif" id="SendPayload" name="SendPayload" refToolId="clazz.tool.class">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
 						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::SendPayload"/>
@@ -63,7 +71,7 @@
 				</postAction>
 			</aspectTool>	
 			
-			<aspectTool description="Create a ReceivePayload" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif" id="ReceivePayload" name="ReceivePayload" refToolId="clazz.tool.class">
+			<aspectTool description="Create a ReceivePayload" iconpath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/OpaqueAction.gif" id="ReceivePayload" name="ReceivePayload" refToolId="clazz.tool.class">
 				<postAction id="org.eclipse.papyrus.applystereotypeactionprovider">
 					<stereotypesToApply>
 						<stereotype stereotypeName="CHESSIoT::CHESSIoTSoftware::ReceivePayload"/>

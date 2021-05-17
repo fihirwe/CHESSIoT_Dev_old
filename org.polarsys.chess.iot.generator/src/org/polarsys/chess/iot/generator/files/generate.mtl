@@ -9,7 +9,7 @@
 [template public generateElement (aPackage : uml::Element)]
 
 	[for (component : Component | aPackage.allOwnedElements()->filter(Component))]
-		[if(component.hasStereotype('VirtualBoard'))]
+		[if(component.hasStereotype('VirtualEntity'))]
 			[generateMainThing (component,aPackage)/]
 		[else]
 			[generateAThing (component)/]

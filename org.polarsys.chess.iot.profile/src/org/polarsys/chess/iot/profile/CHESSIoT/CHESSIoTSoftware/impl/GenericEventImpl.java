@@ -10,25 +10,25 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage;
-import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTAction;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Internal Event</b></em>'.
+ * An implementation of the model object '<em><b>Generic Event</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.InternalEventImpl#isPeriodic <em>Is Periodic</em>}</li>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.InternalEventImpl#getTimeInterval <em>Time Interval</em>}</li>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.InternalEventImpl#getDo <em>Do</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericEventImpl#isPeriodic <em>Is Periodic</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericEventImpl#getTimeInterval <em>Time Interval</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericEventImpl#getDo <em>Do</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
+public class GenericEventImpl extends IoTEventImpl implements GenericEvent {
 	/**
 	 * The default value of the '{@link #isPeriodic() <em>Is Periodic</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -84,7 +84,7 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected InternalEventImpl() {
+	protected GenericEventImpl() {
 		super();
 	}
 
@@ -95,7 +95,7 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CHESSIoTSoftwarePackage.Literals.INTERNAL_EVENT;
+		return CHESSIoTSoftwarePackage.Literals.GENERIC_EVENT;
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 		boolean oldIsPeriodic = isPeriodic;
 		isPeriodic = newIsPeriodic;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.INTERNAL_EVENT__IS_PERIODIC, oldIsPeriodic, isPeriodic));
+			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.GENERIC_EVENT__IS_PERIODIC, oldIsPeriodic, isPeriodic));
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 		int oldTimeInterval = timeInterval;
 		timeInterval = newTimeInterval;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.INTERNAL_EVENT__TIME_INTERVAL, oldTimeInterval, timeInterval));
+			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.GENERIC_EVENT__TIME_INTERVAL, oldTimeInterval, timeInterval));
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 			do_ = (IoTAction)eResolveProxy(oldDo);
 			if (do_ != oldDo) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CHESSIoTSoftwarePackage.INTERNAL_EVENT__DO, oldDo, do_));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CHESSIoTSoftwarePackage.GENERIC_EVENT__DO, oldDo, do_));
 			}
 		}
 		return do_;
@@ -175,7 +175,7 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 		IoTAction oldDo = do_;
 		do_ = newDo;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.INTERNAL_EVENT__DO, oldDo, do_));
+			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.GENERIC_EVENT__DO, oldDo, do_));
 	}
 
 	/**
@@ -186,11 +186,11 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__IS_PERIODIC:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__IS_PERIODIC:
 				return isPeriodic();
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__TIME_INTERVAL:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__TIME_INTERVAL:
 				return getTimeInterval();
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__DO:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__DO:
 				if (resolve) return getDo();
 				return basicGetDo();
 		}
@@ -205,13 +205,13 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__IS_PERIODIC:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__IS_PERIODIC:
 				setIsPeriodic((Boolean)newValue);
 				return;
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__TIME_INTERVAL:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__TIME_INTERVAL:
 				setTimeInterval((Integer)newValue);
 				return;
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__DO:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__DO:
 				setDo((IoTAction)newValue);
 				return;
 		}
@@ -226,13 +226,13 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__IS_PERIODIC:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__IS_PERIODIC:
 				setIsPeriodic(IS_PERIODIC_EDEFAULT);
 				return;
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__TIME_INTERVAL:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__TIME_INTERVAL:
 				setTimeInterval(TIME_INTERVAL_EDEFAULT);
 				return;
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__DO:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__DO:
 				setDo((IoTAction)null);
 				return;
 		}
@@ -247,11 +247,11 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__IS_PERIODIC:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__IS_PERIODIC:
 				return isPeriodic != IS_PERIODIC_EDEFAULT;
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__TIME_INTERVAL:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__TIME_INTERVAL:
 				return timeInterval != TIME_INTERVAL_EDEFAULT;
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT__DO:
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT__DO:
 				return do_ != null;
 		}
 		return super.eIsSet(featureID);
@@ -275,4 +275,4 @@ public class InternalEventImpl extends IoTEventImpl implements InternalEvent {
 		return result.toString();
 	}
 
-} //InternalEventImpl
+} //GenericEventImpl

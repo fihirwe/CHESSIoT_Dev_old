@@ -59,12 +59,12 @@ public class CHESSIoTHardwareFactoryImpl extends EFactoryImpl implements CHESSIo
 		switch (eClass.getClassifierID()) {
 			case CHESSIoTHardwarePackage.SENSOR_UNIT: return createSensorUnit();
 			case CHESSIoTHardwarePackage.ACTUATOR_UNIT: return createActuatorUnit();
-			case CHESSIoTHardwarePackage.IO_TBAORD: return createIoTBaord();
 			case CHESSIoTHardwarePackage.SYSTEM_HW: return createSystemHW();
 			case CHESSIoTHardwarePackage.PORT_IN: return createportIn();
 			case CHESSIoTHardwarePackage.IO_TPORT: return createIoTPort();
 			case CHESSIoTHardwarePackage.PORT_OUT: return createportOut();
 			case CHESSIoTHardwarePackage.TAG_UNIT: return createTagUnit();
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD: return createPhysicalBaord();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -133,16 +133,6 @@ public class CHESSIoTHardwareFactoryImpl extends EFactoryImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IoTBaord createIoTBaord() {
-		IoTBaordImpl ioTBaord = new IoTBaordImpl();
-		return ioTBaord;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public SystemHW createSystemHW() {
 		SystemHWImpl systemHW = new SystemHWImpl();
 		return systemHW;
@@ -186,6 +176,16 @@ public class CHESSIoTHardwareFactoryImpl extends EFactoryImpl implements CHESSIo
 	public TagUnit createTagUnit() {
 		TagUnitImpl tagUnit = new TagUnitImpl();
 		return tagUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PhysicalBaord createPhysicalBaord() {
+		PhysicalBaordImpl physicalBaord = new PhysicalBaordImpl();
+		return physicalBaord;
 	}
 
 	/**

@@ -47,13 +47,14 @@ import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.C
 
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwareFactory;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage;
-import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.DoIoTAction;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericIoTAction;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IncomingEvent;
-import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTAction;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTElement;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTEvent;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.OutgoingEvent;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.ReceivePayload;
@@ -186,14 +187,21 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass internalEventEClass = null;
+	private EClass genericEventEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass doIoTActionEClass = null;
+	private EClass genericIoTActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass messageContentEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -358,6 +366,15 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 */
 	public EReference getIoTState_Base_State() {
 		return (EReference)ioTStateEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIoTState_Internal() {
+		return (EReference)ioTStateEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -662,26 +679,8 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPayload_Content() {
-		return (EAttribute)payloadEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getPayload_Base_Message() {
-		return (EReference)payloadEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getPayload_PayloadName() {
-		return (EAttribute)payloadEClass.getEStructuralFeatures().get(2);
+		return (EReference)payloadEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -690,7 +689,16 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * @generated
 	 */
 	public EReference getPayload_Base_Comment() {
-		return (EReference)payloadEClass.getEStructuralFeatures().get(3);
+		return (EReference)payloadEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPayload_Base_Class() {
+		return (EReference)payloadEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -869,8 +877,8 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getInternalEvent() {
-		return internalEventEClass;
+	public EClass getGenericEvent() {
+		return genericEventEClass;
 	}
 
 	/**
@@ -878,8 +886,8 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInternalEvent_IsPeriodic() {
-		return (EAttribute)internalEventEClass.getEStructuralFeatures().get(0);
+	public EAttribute getGenericEvent_IsPeriodic() {
+		return (EAttribute)genericEventEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -887,8 +895,8 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getInternalEvent_TimeInterval() {
-		return (EAttribute)internalEventEClass.getEStructuralFeatures().get(1);
+	public EAttribute getGenericEvent_TimeInterval() {
+		return (EAttribute)genericEventEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -896,8 +904,8 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getInternalEvent_Do() {
-		return (EReference)internalEventEClass.getEStructuralFeatures().get(2);
+	public EReference getGenericEvent_Do() {
+		return (EReference)genericEventEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -905,8 +913,8 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDoIoTAction() {
-		return doIoTActionEClass;
+	public EClass getGenericIoTAction() {
+		return genericIoTActionEClass;
 	}
 
 	/**
@@ -914,8 +922,44 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getDoIoTAction_ActionName() {
-		return (EAttribute)doIoTActionEClass.getEStructuralFeatures().get(0);
+	public EAttribute getGenericIoTAction_ActionName() {
+		return (EAttribute)genericIoTActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMessageContent() {
+		return messageContentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageContent_Base_Operation() {
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageContent__() {
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getMessageContent_Base_Property() {
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -956,6 +1000,7 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 		createEReference(ioTStateEClass, IO_TSTATE__ON_ENTRY);
 		createEReference(ioTStateEClass, IO_TSTATE__ON_EXIT);
 		createEReference(ioTStateEClass, IO_TSTATE__BASE_STATE);
+		createEReference(ioTStateEClass, IO_TSTATE__INTERNAL);
 
 		ioTEventEClass = createEClass(IO_TEVENT);
 		createEReference(ioTEventEClass, IO_TEVENT__BASE_CLASS);
@@ -998,10 +1043,9 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 		createEReference(ioTActionEClass, IO_TACTION__BASE_CLASS);
 
 		payloadEClass = createEClass(PAYLOAD);
-		createEAttribute(payloadEClass, PAYLOAD__CONTENT);
 		createEReference(payloadEClass, PAYLOAD__BASE_MESSAGE);
-		createEAttribute(payloadEClass, PAYLOAD__PAYLOAD_NAME);
 		createEReference(payloadEClass, PAYLOAD__BASE_COMMENT);
+		createEReference(payloadEClass, PAYLOAD__BASE_CLASS);
 
 		outgoingEventEClass = createEClass(OUTGOING_EVENT);
 		createEAttribute(outgoingEventEClass, OUTGOING_EVENT__IS_PERIODIC);
@@ -1026,13 +1070,18 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 		createEReference(ioTElementEClass, IO_TELEMENT__BASE_COMPONENT);
 		createEReference(ioTElementEClass, IO_TELEMENT__IO_TSTATE);
 
-		internalEventEClass = createEClass(INTERNAL_EVENT);
-		createEAttribute(internalEventEClass, INTERNAL_EVENT__IS_PERIODIC);
-		createEAttribute(internalEventEClass, INTERNAL_EVENT__TIME_INTERVAL);
-		createEReference(internalEventEClass, INTERNAL_EVENT__DO);
+		genericEventEClass = createEClass(GENERIC_EVENT);
+		createEAttribute(genericEventEClass, GENERIC_EVENT__IS_PERIODIC);
+		createEAttribute(genericEventEClass, GENERIC_EVENT__TIME_INTERVAL);
+		createEReference(genericEventEClass, GENERIC_EVENT__DO);
 
-		doIoTActionEClass = createEClass(DO_IO_TACTION);
-		createEAttribute(doIoTActionEClass, DO_IO_TACTION__ACTION_NAME);
+		genericIoTActionEClass = createEClass(GENERIC_IO_TACTION);
+		createEAttribute(genericIoTActionEClass, GENERIC_IO_TACTION__ACTION_NAME);
+
+		messageContentEClass = createEClass(MESSAGE_CONTENT);
+		createEReference(messageContentEClass, MESSAGE_CONTENT__BASE_OPERATION);
+		createEReference(messageContentEClass, MESSAGE_CONTENT__);
+		createEReference(messageContentEClass, MESSAGE_CONTENT__BASE_PROPERTY);
 	}
 
 	/**
@@ -1075,8 +1124,8 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 		receivePayloadEClass.getESuperTypes().add(this.getIoTAction());
 		outgoingEventEClass.getESuperTypes().add(this.getIoTEvent());
 		sendPayloadEClass.getESuperTypes().add(this.getIoTAction());
-		internalEventEClass.getESuperTypes().add(this.getIoTEvent());
-		doIoTActionEClass.getESuperTypes().add(this.getIoTAction());
+		genericEventEClass.getESuperTypes().add(this.getIoTEvent());
+		genericIoTActionEClass.getESuperTypes().add(this.getIoTAction());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(virtualBoardEClass, VirtualBoard.class, "VirtualBoard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1089,6 +1138,7 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 		initEReference(getIoTState_OnEntry(), this.getIoTEvent(), null, "onEntry", null, 0, -1, IoTState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIoTState_OnExit(), this.getIoTEvent(), null, "onExit", null, 0, -1, IoTState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIoTState_Base_State(), theUMLPackage.getState(), null, "base_State", null, 1, 1, IoTState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIoTState_Internal(), this.getIoTEvent(), null, "internal", null, 1, 1, IoTState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(ioTEventEClass, IoTEvent.class, "IoTEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIoTEvent_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, IoTEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1131,10 +1181,9 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 		initEReference(getIoTAction_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, IoTAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(payloadEClass, Payload.class, "Payload", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPayload_Content(), theTypesPackage.getString(), "Content", null, 1, 1, Payload.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPayload_Base_Message(), theUMLPackage.getMessage(), null, "base_Message", null, 1, 1, Payload.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getPayload_PayloadName(), theTypesPackage.getString(), "payloadName", null, 1, 1, Payload.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getPayload_Base_Comment(), theUMLPackage.getComment(), null, "base_Comment", null, 1, 1, Payload.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPayload_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Payload.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(outgoingEventEClass, OutgoingEvent.class, "OutgoingEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOutgoingEvent_IsPeriodic(), theTypesPackage.getBoolean(), "isPeriodic", null, 1, 1, OutgoingEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1159,13 +1208,18 @@ public class CHESSIoTSoftwarePackageImpl extends EPackageImpl implements CHESSIo
 		initEReference(getIoTElement_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 1, 1, IoTElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIoTElement_IoTState(), this.getIoTState(), null, "ioTState", null, 1, 1, IoTElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(internalEventEClass, InternalEvent.class, "InternalEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInternalEvent_IsPeriodic(), theTypesPackage.getBoolean(), "isPeriodic", null, 1, 1, InternalEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getInternalEvent_TimeInterval(), theTypesPackage.getInteger(), "timeInterval", null, 1, 1, InternalEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getInternalEvent_Do(), this.getIoTAction(), null, "do", null, 1, 1, InternalEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(genericEventEClass, GenericEvent.class, "GenericEvent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGenericEvent_IsPeriodic(), theTypesPackage.getBoolean(), "isPeriodic", null, 1, 1, GenericEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getGenericEvent_TimeInterval(), theTypesPackage.getInteger(), "timeInterval", null, 1, 1, GenericEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getGenericEvent_Do(), this.getIoTAction(), null, "do", null, 1, 1, GenericEvent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(doIoTActionEClass, DoIoTAction.class, "DoIoTAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDoIoTAction_ActionName(), theTypesPackage.getString(), "actionName", null, 1, 1, DoIoTAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(genericIoTActionEClass, GenericIoTAction.class, "GenericIoTAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGenericIoTAction_ActionName(), theTypesPackage.getString(), "actionName", null, 1, 1, GenericIoTAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(messageContentEClass, MessageContent.class, "MessageContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getMessageContent_Base_Operation(), theUMLPackage.getOperation(), null, "base_Operation", null, 1, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMessageContent__(), this.getPayload(), null, "_", null, 1, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getMessageContent_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

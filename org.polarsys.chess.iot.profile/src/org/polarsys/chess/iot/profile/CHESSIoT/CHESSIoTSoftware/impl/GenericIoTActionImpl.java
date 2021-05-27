@@ -9,22 +9,22 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage;
-import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.DoIoTAction;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericIoTAction;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Do Io TAction</b></em>'.
+ * An implementation of the model object '<em><b>Generic Io TAction</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.DoIoTActionImpl#getActionName <em>Action Name</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericIoTActionImpl#getActionName <em>Action Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
+public class GenericIoTActionImpl extends IoTActionImpl implements GenericIoTAction {
 	/**
 	 * The default value of the '{@link #getActionName() <em>Action Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -50,7 +50,7 @@ public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DoIoTActionImpl() {
+	protected GenericIoTActionImpl() {
 		super();
 	}
 
@@ -61,7 +61,7 @@ public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CHESSIoTSoftwarePackage.Literals.DO_IO_TACTION;
+		return CHESSIoTSoftwarePackage.Literals.GENERIC_IO_TACTION;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
 		String oldActionName = actionName;
 		actionName = newActionName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.DO_IO_TACTION__ACTION_NAME, oldActionName, actionName));
+			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.GENERIC_IO_TACTION__ACTION_NAME, oldActionName, actionName));
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CHESSIoTSoftwarePackage.DO_IO_TACTION__ACTION_NAME:
+			case CHESSIoTSoftwarePackage.GENERIC_IO_TACTION__ACTION_NAME:
 				return getActionName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +107,7 @@ public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CHESSIoTSoftwarePackage.DO_IO_TACTION__ACTION_NAME:
+			case CHESSIoTSoftwarePackage.GENERIC_IO_TACTION__ACTION_NAME:
 				setActionName((String)newValue);
 				return;
 		}
@@ -122,7 +122,7 @@ public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CHESSIoTSoftwarePackage.DO_IO_TACTION__ACTION_NAME:
+			case CHESSIoTSoftwarePackage.GENERIC_IO_TACTION__ACTION_NAME:
 				setActionName(ACTION_NAME_EDEFAULT);
 				return;
 		}
@@ -137,7 +137,7 @@ public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CHESSIoTSoftwarePackage.DO_IO_TACTION__ACTION_NAME:
+			case CHESSIoTSoftwarePackage.GENERIC_IO_TACTION__ACTION_NAME:
 				return ACTION_NAME_EDEFAULT == null ? actionName != null : !ACTION_NAME_EDEFAULT.equals(actionName);
 		}
 		return super.eIsSet(featureID);
@@ -159,4 +159,4 @@ public class DoIoTActionImpl extends IoTActionImpl implements DoIoTAction {
 		return result.toString();
 	}
 
-} //DoIoTActionImpl
+} //GenericIoTActionImpl

@@ -161,17 +161,23 @@ public class CHESSIoTSoftwareSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT: {
-				InternalEvent internalEvent = (InternalEvent)theEObject;
-				T result = caseInternalEvent(internalEvent);
-				if (result == null) result = caseIoTEvent(internalEvent);
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT: {
+				GenericEvent genericEvent = (GenericEvent)theEObject;
+				T result = caseGenericEvent(genericEvent);
+				if (result == null) result = caseIoTEvent(genericEvent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CHESSIoTSoftwarePackage.DO_IO_TACTION: {
-				DoIoTAction doIoTAction = (DoIoTAction)theEObject;
-				T result = caseDoIoTAction(doIoTAction);
-				if (result == null) result = caseIoTAction(doIoTAction);
+			case CHESSIoTSoftwarePackage.GENERIC_IO_TACTION: {
+				GenericIoTAction genericIoTAction = (GenericIoTAction)theEObject;
+				T result = caseGenericIoTAction(genericIoTAction);
+				if (result == null) result = caseIoTAction(genericIoTAction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CHESSIoTSoftwarePackage.MESSAGE_CONTENT: {
+				MessageContent messageContent = (MessageContent)theEObject;
+				T result = caseMessageContent(messageContent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -405,32 +411,47 @@ public class CHESSIoTSoftwareSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Internal Event</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Generic Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Internal Event</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Generic Event</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseInternalEvent(InternalEvent object) {
+	public T caseGenericEvent(GenericEvent object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Do Io TAction</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Generic Io TAction</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Do Io TAction</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Generic Io TAction</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDoIoTAction(DoIoTAction object) {
+	public T caseGenericIoTAction(GenericIoTAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message Content</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message Content</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessageContent(MessageContent object) {
 		return null;
 	}
 

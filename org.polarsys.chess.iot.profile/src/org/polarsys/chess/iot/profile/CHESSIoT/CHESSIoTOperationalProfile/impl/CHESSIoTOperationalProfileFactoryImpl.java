@@ -60,7 +60,7 @@ public class CHESSIoTOperationalProfileFactoryImpl extends EFactoryImpl implemen
 			case CHESSIoTOperationalProfilePackage.SERVICE: return createService();
 			case CHESSIoTOperationalProfilePackage.COMMUNICATION: return createCommunication();
 			case CHESSIoTOperationalProfilePackage.SERVER: return createServer();
-			case CHESSIoTOperationalProfilePackage.COM_SYSTEM: return createComSystem();
+			case CHESSIoTOperationalProfilePackage.RESOURCES: return createResources();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -82,6 +82,8 @@ public class CHESSIoTOperationalProfileFactoryImpl extends EFactoryImpl implemen
 				return createWIRELESSFromString(eDataType, initialValue);
 			case CHESSIoTOperationalProfilePackage.WIRED:
 				return createWIREDFromString(eDataType, initialValue);
+			case CHESSIoTOperationalProfilePackage.RESOURCE_TYPE:
+				return createresourceTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -103,6 +105,8 @@ public class CHESSIoTOperationalProfileFactoryImpl extends EFactoryImpl implemen
 				return convertWIRELESSToString(eDataType, instanceValue);
 			case CHESSIoTOperationalProfilePackage.WIRED:
 				return convertWIREDToString(eDataType, instanceValue);
+			case CHESSIoTOperationalProfilePackage.RESOURCE_TYPE:
+				return convertresourceTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -143,9 +147,9 @@ public class CHESSIoTOperationalProfileFactoryImpl extends EFactoryImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComSystem createComSystem() {
-		ComSystemImpl comSystem = new ComSystemImpl();
-		return comSystem;
+	public Resources createResources() {
+		ResourcesImpl resources = new ResourcesImpl();
+		return resources;
 	}
 
 	/**
@@ -225,6 +229,26 @@ public class CHESSIoTOperationalProfileFactoryImpl extends EFactoryImpl implemen
 	 * @generated
 	 */
 	public String convertWIREDToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public resourceType createresourceTypeFromString(EDataType eDataType, String initialValue) {
+		resourceType result = resourceType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertresourceTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

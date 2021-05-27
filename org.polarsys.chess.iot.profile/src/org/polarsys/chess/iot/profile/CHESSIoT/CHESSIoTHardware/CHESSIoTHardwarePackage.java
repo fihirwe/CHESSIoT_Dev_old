@@ -150,61 +150,6 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	int ACTUATOR_UNIT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.IoTBaordImpl <em>Io TBaord</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.IoTBaordImpl
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getIoTBaord()
-	 * @generated
-	 */
-	int IO_TBAORD = 2;
-
-	/**
-	 * The feature id for the '<em><b>Board Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IO_TBAORD__BOARD_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Virtual Board</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IO_TBAORD__VIRTUAL_BOARD = 1;
-
-	/**
-	 * The feature id for the '<em><b>Base Component</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IO_TBAORD__BASE_COMPONENT = 2;
-
-	/**
-	 * The number of structural features of the '<em>Io TBaord</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IO_TBAORD_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Io TBaord</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IO_TBAORD_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.SystemHWImpl <em>System HW</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -212,7 +157,7 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getSystemHW()
 	 * @generated
 	 */
-	int SYSTEM_HW = 3;
+	int SYSTEM_HW = 2;
 
 	/**
 	 * The feature id for the '<em><b>Base Component</b></em>' reference.
@@ -249,7 +194,7 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getIoTPort()
 	 * @generated
 	 */
-	int IO_TPORT = 5;
+	int IO_TPORT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -304,7 +249,7 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getportIn()
 	 * @generated
 	 */
-	int PORT_IN = 4;
+	int PORT_IN = 3;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -359,7 +304,7 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getportOut()
 	 * @generated
 	 */
-	int PORT_OUT = 6;
+	int PORT_OUT = 5;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -414,7 +359,7 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getTagUnit()
 	 * @generated
 	 */
-	int TAG_UNIT = 7;
+	int TAG_UNIT = 6;
 
 	/**
 	 * The feature id for the '<em><b>Base Component</b></em>' reference.
@@ -442,6 +387,61 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	 * @ordered
 	 */
 	int TAG_UNIT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.PhysicalBaordImpl <em>Physical Baord</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.PhysicalBaordImpl
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getPhysicalBaord()
+	 * @generated
+	 */
+	int PHYSICAL_BAORD = 7;
+
+	/**
+	 * The feature id for the '<em><b>Board Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_BAORD__BOARD_NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Virtual Board</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_BAORD__VIRTUAL_BOARD = 1;
+
+	/**
+	 * The feature id for the '<em><b>Base Component</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_BAORD__BASE_COMPONENT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Physical Baord</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_BAORD_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Physical Baord</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PHYSICAL_BAORD_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PortType <em>Port Type</em>}' enum.
@@ -537,49 +537,6 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getActuatorUnit_Base_Component();
-
-	/**
-	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord <em>Io TBaord</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Io TBaord</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord
-	 * @generated
-	 */
-	EClass getIoTBaord();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getBoardName <em>Board Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Board Name</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getBoardName()
-	 * @see #getIoTBaord()
-	 * @generated
-	 */
-	EAttribute getIoTBaord_BoardName();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getVirtualBoard <em>Virtual Board</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Virtual Board</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getVirtualBoard()
-	 * @see #getIoTBaord()
-	 * @generated
-	 */
-	EReference getIoTBaord_VirtualBoard();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getBase_Component <em>Base Component</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Component</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getBase_Component()
-	 * @see #getIoTBaord()
-	 * @generated
-	 */
-	EReference getIoTBaord_Base_Component();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.SystemHW <em>System HW</em>}'.
@@ -687,6 +644,49 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 	EReference getTagUnit_Base_Component();
 
 	/**
+	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord <em>Physical Baord</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Physical Baord</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord
+	 * @generated
+	 */
+	EClass getPhysicalBaord();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getBoardName <em>Board Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Board Name</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getBoardName()
+	 * @see #getPhysicalBaord()
+	 * @generated
+	 */
+	EAttribute getPhysicalBaord_BoardName();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getVirtualBoard <em>Virtual Board</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Virtual Board</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getVirtualBoard()
+	 * @see #getPhysicalBaord()
+	 * @generated
+	 */
+	EReference getPhysicalBaord_VirtualBoard();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getBase_Component <em>Base Component</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Component</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getBase_Component()
+	 * @see #getPhysicalBaord()
+	 * @generated
+	 */
+	EReference getPhysicalBaord_Base_Component();
+
+	/**
 	 * Returns the meta object for enum '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PortType <em>Port Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -792,40 +792,6 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 		EReference ACTUATOR_UNIT__BASE_COMPONENT = eINSTANCE.getActuatorUnit_Base_Component();
 
 		/**
-		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.IoTBaordImpl <em>Io TBaord</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.IoTBaordImpl
-		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getIoTBaord()
-		 * @generated
-		 */
-		EClass IO_TBAORD = eINSTANCE.getIoTBaord();
-
-		/**
-		 * The meta object literal for the '<em><b>Board Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IO_TBAORD__BOARD_NAME = eINSTANCE.getIoTBaord_BoardName();
-
-		/**
-		 * The meta object literal for the '<em><b>Virtual Board</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IO_TBAORD__VIRTUAL_BOARD = eINSTANCE.getIoTBaord_VirtualBoard();
-
-		/**
-		 * The meta object literal for the '<em><b>Base Component</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IO_TBAORD__BASE_COMPONENT = eINSTANCE.getIoTBaord_Base_Component();
-
-		/**
 		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.SystemHWImpl <em>System HW</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -914,6 +880,40 @@ public interface CHESSIoTHardwarePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TAG_UNIT__BASE_COMPONENT = eINSTANCE.getTagUnit_Base_Component();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.PhysicalBaordImpl <em>Physical Baord</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.PhysicalBaordImpl
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHardwarePackageImpl#getPhysicalBaord()
+		 * @generated
+		 */
+		EClass PHYSICAL_BAORD = eINSTANCE.getPhysicalBaord();
+
+		/**
+		 * The meta object literal for the '<em><b>Board Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PHYSICAL_BAORD__BOARD_NAME = eINSTANCE.getPhysicalBaord_BoardName();
+
+		/**
+		 * The meta object literal for the '<em><b>Virtual Board</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PHYSICAL_BAORD__VIRTUAL_BOARD = eINSTANCE.getPhysicalBaord_VirtualBoard();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Component</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PHYSICAL_BAORD__BASE_COMPONENT = eINSTANCE.getPhysicalBaord_Base_Component();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PortType <em>Port Type</em>}' enum.

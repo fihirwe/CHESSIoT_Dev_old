@@ -38,8 +38,8 @@ import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.ActuatorType;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.ActuatorUnit;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwareFactory;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage;
-import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTPort;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PortType;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.SensorType;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.SensorUnit;
@@ -86,13 +86,6 @@ public class CHESSIoTHardwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass ioTBaordEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass systemHWEClass = null;
 
 	/**
@@ -122,6 +115,13 @@ public class CHESSIoTHardwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * @generated
 	 */
 	private EClass tagUnitEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass physicalBaordEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -287,42 +287,6 @@ public class CHESSIoTHardwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIoTBaord() {
-		return ioTBaordEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIoTBaord_BoardName() {
-		return (EAttribute)ioTBaordEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getIoTBaord_VirtualBoard() {
-		return (EReference)ioTBaordEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getIoTBaord_Base_Component() {
-		return (EReference)ioTBaordEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSystemHW() {
 		return systemHWEClass;
 	}
@@ -413,6 +377,42 @@ public class CHESSIoTHardwarePackageImpl extends EPackageImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getPhysicalBaord() {
+		return physicalBaordEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPhysicalBaord_BoardName() {
+		return (EAttribute)physicalBaordEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPhysicalBaord_VirtualBoard() {
+		return (EReference)physicalBaordEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPhysicalBaord_Base_Component() {
+		return (EReference)physicalBaordEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getPortType() {
 		return portTypeEEnum;
 	}
@@ -471,11 +471,6 @@ public class CHESSIoTHardwarePackageImpl extends EPackageImpl implements CHESSIo
 		createEAttribute(actuatorUnitEClass, ACTUATOR_UNIT__ACTUATOR_TYPE);
 		createEReference(actuatorUnitEClass, ACTUATOR_UNIT__BASE_COMPONENT);
 
-		ioTBaordEClass = createEClass(IO_TBAORD);
-		createEAttribute(ioTBaordEClass, IO_TBAORD__BOARD_NAME);
-		createEReference(ioTBaordEClass, IO_TBAORD__VIRTUAL_BOARD);
-		createEReference(ioTBaordEClass, IO_TBAORD__BASE_COMPONENT);
-
 		systemHWEClass = createEClass(SYSTEM_HW);
 		createEReference(systemHWEClass, SYSTEM_HW__BASE_COMPONENT);
 
@@ -490,6 +485,11 @@ public class CHESSIoTHardwarePackageImpl extends EPackageImpl implements CHESSIo
 
 		tagUnitEClass = createEClass(TAG_UNIT);
 		createEReference(tagUnitEClass, TAG_UNIT__BASE_COMPONENT);
+
+		physicalBaordEClass = createEClass(PHYSICAL_BAORD);
+		createEAttribute(physicalBaordEClass, PHYSICAL_BAORD__BOARD_NAME);
+		createEReference(physicalBaordEClass, PHYSICAL_BAORD__VIRTUAL_BOARD);
+		createEReference(physicalBaordEClass, PHYSICAL_BAORD__BASE_COMPONENT);
 
 		// Create enums
 		portTypeEEnum = createEEnum(PORT_TYPE);
@@ -542,11 +542,6 @@ public class CHESSIoTHardwarePackageImpl extends EPackageImpl implements CHESSIo
 		initEAttribute(getActuatorUnit_ActuatorType(), this.getActuatorType(), "actuatorType", null, 1, 1, ActuatorUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getActuatorUnit_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 1, 1, ActuatorUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(ioTBaordEClass, IoTBaord.class, "IoTBaord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIoTBaord_BoardName(), theTypesPackage.getString(), "boardName", null, 1, 1, IoTBaord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getIoTBaord_VirtualBoard(), theCHESSIoTSoftwarePackage.getVirtualBoard(), null, "virtualBoard", null, 1, 1, IoTBaord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getIoTBaord_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 1, 1, IoTBaord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(systemHWEClass, SystemHW.class, "SystemHW", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getSystemHW_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 1, 1, SystemHW.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
@@ -561,6 +556,11 @@ public class CHESSIoTHardwarePackageImpl extends EPackageImpl implements CHESSIo
 
 		initEClass(tagUnitEClass, TagUnit.class, "TagUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTagUnit_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 1, 1, TagUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(physicalBaordEClass, PhysicalBaord.class, "PhysicalBaord", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPhysicalBaord_BoardName(), theTypesPackage.getString(), "boardName", null, 1, 1, PhysicalBaord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPhysicalBaord_VirtualBoard(), theCHESSIoTSoftwarePackage.getVirtualBoard(), null, "virtualBoard", null, 1, 1, PhysicalBaord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getPhysicalBaord_Base_Component(), theUMLPackage.getComponent(), null, "base_Component", null, 1, 1, PhysicalBaord.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(portTypeEEnum, PortType.class, "PortType");

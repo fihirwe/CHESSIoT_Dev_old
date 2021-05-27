@@ -223,41 +223,50 @@ public interface CHESSIoTOperationalProfilePackage extends EPackage {
 	int SERVER_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.ComSystemImpl <em>Com System</em>}' class.
+	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.ResourcesImpl <em>Resources</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.ComSystemImpl
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.CHESSIoTOperationalProfilePackageImpl#getComSystem()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.ResourcesImpl
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.CHESSIoTOperationalProfilePackageImpl#getResources()
 	 * @generated
 	 */
-	int COM_SYSTEM = 3;
+	int RESOURCES = 3;
 
 	/**
-	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * The feature id for the '<em><b>Source</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COM_SYSTEM__BASE_CLASS = 0;
+	int RESOURCES__SOURCE = 0;
 
 	/**
-	 * The number of structural features of the '<em>Com System</em>' class.
+	 * The feature id for the '<em><b>Resouce Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COM_SYSTEM_FEATURE_COUNT = 1;
+	int RESOURCES__RESOUCE_TYPE = 1;
 
 	/**
-	 * The number of operations of the '<em>Com System</em>' class.
+	 * The number of structural features of the '<em>Resources</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COM_SYSTEM_OPERATION_COUNT = 0;
+	int RESOURCES_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Resources</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESOURCES_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.CommunicationType <em>Communication Type</em>}' enum.
@@ -298,6 +307,16 @@ public interface CHESSIoTOperationalProfilePackage extends EPackage {
 	 * @generated
 	 */
 	int WIRED = 7;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.resourceType <em>resource Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.resourceType
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.CHESSIoTOperationalProfilePackageImpl#getresourceType()
+	 * @generated
+	 */
+	int RESOURCE_TYPE = 8;
 
 
 	/**
@@ -430,25 +449,36 @@ public interface CHESSIoTOperationalProfilePackage extends EPackage {
 	EReference getServer_Base_Class();
 
 	/**
-	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.ComSystem <em>Com System</em>}'.
+	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Com System</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.ComSystem
+	 * @return the meta object for class '<em>Resources</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources
 	 * @generated
 	 */
-	EClass getComSystem();
+	EClass getResources();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.ComSystem#getBase_Class <em>Base Class</em>}'.
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Class</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.ComSystem#getBase_Class()
-	 * @see #getComSystem()
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources#getSource()
+	 * @see #getResources()
 	 * @generated
 	 */
-	EReference getComSystem_Base_Class();
+	EReference getResources_Source();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources#getResouceType <em>Resouce Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Resouce Type</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources#getResouceType()
+	 * @see #getResources()
+	 * @generated
+	 */
+	EAttribute getResources_ResouceType();
 
 	/**
 	 * Returns the meta object for enum '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.CommunicationType <em>Communication Type</em>}'.
@@ -489,6 +519,16 @@ public interface CHESSIoTOperationalProfilePackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getWIRED();
+
+	/**
+	 * Returns the meta object for enum '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.resourceType <em>resource Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>resource Type</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.resourceType
+	 * @generated
+	 */
+	EEnum getresourceType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -616,22 +656,30 @@ public interface CHESSIoTOperationalProfilePackage extends EPackage {
 		EReference SERVER__BASE_CLASS = eINSTANCE.getServer_Base_Class();
 
 		/**
-		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.ComSystemImpl <em>Com System</em>}' class.
+		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.ResourcesImpl <em>Resources</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.ComSystemImpl
-		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.CHESSIoTOperationalProfilePackageImpl#getComSystem()
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.ResourcesImpl
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.CHESSIoTOperationalProfilePackageImpl#getResources()
 		 * @generated
 		 */
-		EClass COM_SYSTEM = eINSTANCE.getComSystem();
+		EClass RESOURCES = eINSTANCE.getResources();
 
 		/**
-		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COM_SYSTEM__BASE_CLASS = eINSTANCE.getComSystem_Base_Class();
+		EReference RESOURCES__SOURCE = eINSTANCE.getResources_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Resouce Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESOURCES__RESOUCE_TYPE = eINSTANCE.getResources_ResouceType();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.CommunicationType <em>Communication Type</em>}' enum.
@@ -672,6 +720,16 @@ public interface CHESSIoTOperationalProfilePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum WIRED = eINSTANCE.getWIRED();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.resourceType <em>resource Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.resourceType
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.impl.CHESSIoTOperationalProfilePackageImpl#getresourceType()
+		 * @generated
+		 */
+		EEnum RESOURCE_TYPE = eINSTANCE.getresourceType();
 
 	}
 

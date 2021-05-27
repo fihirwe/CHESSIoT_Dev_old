@@ -84,9 +84,9 @@ public class CHESSIoTOperationalProfileSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CHESSIoTOperationalProfilePackage.COM_SYSTEM: {
-				ComSystem comSystem = (ComSystem)theEObject;
-				T result = caseComSystem(comSystem);
+			case CHESSIoTOperationalProfilePackage.RESOURCES: {
+				Resources resources = (Resources)theEObject;
+				T result = caseResources(resources);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -140,17 +140,17 @@ public class CHESSIoTOperationalProfileSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Com System</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Resources</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Com System</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Resources</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComSystem(ComSystem object) {
+	public T caseResources(Resources object) {
 		return null;
 	}
 

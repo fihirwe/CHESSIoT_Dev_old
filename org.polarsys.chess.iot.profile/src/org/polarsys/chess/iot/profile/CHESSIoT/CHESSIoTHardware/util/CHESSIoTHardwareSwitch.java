@@ -78,12 +78,6 @@ public class CHESSIoTHardwareSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CHESSIoTHardwarePackage.IO_TBAORD: {
-				IoTBaord ioTBaord = (IoTBaord)theEObject;
-				T result = caseIoTBaord(ioTBaord);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case CHESSIoTHardwarePackage.SYSTEM_HW: {
 				SystemHW systemHW = (SystemHW)theEObject;
 				T result = caseSystemHW(systemHW);
@@ -113,6 +107,12 @@ public class CHESSIoTHardwareSwitch<T> extends Switch<T> {
 			case CHESSIoTHardwarePackage.TAG_UNIT: {
 				TagUnit tagUnit = (TagUnit)theEObject;
 				T result = caseTagUnit(tagUnit);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD: {
+				PhysicalBaord physicalBaord = (PhysicalBaord)theEObject;
+				T result = casePhysicalBaord(physicalBaord);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -147,21 +147,6 @@ public class CHESSIoTHardwareSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseActuatorUnit(ActuatorUnit object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Io TBaord</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Io TBaord</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIoTBaord(IoTBaord object) {
 		return null;
 	}
 
@@ -237,6 +222,21 @@ public class CHESSIoTHardwareSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseTagUnit(TagUnit object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Physical Baord</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Physical Baord</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePhysicalBaord(PhysicalBaord object) {
 		return null;
 	}
 

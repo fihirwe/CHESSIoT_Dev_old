@@ -40,12 +40,13 @@ import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.CHESSIoTHar
 
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.CHESSIoTOperationalProfileFactory;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.CHESSIoTOperationalProfilePackage;
-import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.ComSystem;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Communication;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.CommunicationMode;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.CommunicationType;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Server;
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Service;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.resourceType;
 
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage;
 
@@ -88,7 +89,7 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass comSystemEClass = null;
+	private EClass resourcesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,6 +118,13 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 	 * @generated
 	 */
 	private EEnum wiredEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum resourceTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -315,8 +323,8 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getComSystem() {
-		return comSystemEClass;
+	public EClass getResources() {
+		return resourcesEClass;
 	}
 
 	/**
@@ -324,8 +332,17 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComSystem_Base_Class() {
-		return (EReference)comSystemEClass.getEStructuralFeatures().get(0);
+	public EReference getResources_Source() {
+		return (EReference)resourcesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getResources_ResouceType() {
+		return (EAttribute)resourcesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -362,6 +379,15 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 	 */
 	public EEnum getWIRED() {
 		return wiredEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getresourceType() {
+		return resourceTypeEEnum;
 	}
 
 	/**
@@ -407,14 +433,16 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 		createEAttribute(serverEClass, SERVER__SERVER_PORT_NUMBER);
 		createEReference(serverEClass, SERVER__BASE_CLASS);
 
-		comSystemEClass = createEClass(COM_SYSTEM);
-		createEReference(comSystemEClass, COM_SYSTEM__BASE_CLASS);
+		resourcesEClass = createEClass(RESOURCES);
+		createEReference(resourcesEClass, RESOURCES__SOURCE);
+		createEAttribute(resourcesEClass, RESOURCES__RESOUCE_TYPE);
 
 		// Create enums
 		communicationTypeEEnum = createEEnum(COMMUNICATION_TYPE);
 		communicationModeEEnum = createEEnum(COMMUNICATION_MODE);
 		wirelessEEnum = createEEnum(WIRELESS);
 		wiredEEnum = createEEnum(WIRED);
+		resourceTypeEEnum = createEEnum(RESOURCE_TYPE);
 	}
 
 	/**
@@ -443,6 +471,7 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 		// Obtain other dependent packages
 		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
+		CHESSIoTHardwarePackage theCHESSIoTHardwarePackage = (CHESSIoTHardwarePackage)EPackage.Registry.INSTANCE.getEPackage(CHESSIoTHardwarePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -466,8 +495,9 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 		initEAttribute(getServer_ServerPortNumber(), theTypesPackage.getInteger(), "serverPortNumber", null, 1, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getServer_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
-		initEClass(comSystemEClass, ComSystem.class, "ComSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getComSystem_Base_Class(), theUMLPackage.getClass_(), null, "base_Class", null, 1, 1, ComSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEClass(resourcesEClass, Resources.class, "Resources", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getResources_Source(), theCHESSIoTHardwarePackage.getPhysicalBaord(), null, "source", null, 1, 1, Resources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getResources_ResouceType(), this.getresourceType(), "resouceType", null, 1, 1, Resources.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(communicationTypeEEnum, CommunicationType.class, "CommunicationType");
@@ -485,6 +515,8 @@ public class CHESSIoTOperationalProfilePackageImpl extends EPackageImpl implemen
 		initEEnum(wirelessEEnum, org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.WIRELESS.class, "WIRELESS");
 
 		initEEnum(wiredEEnum, org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.WIRED.class, "WIRED");
+
+		initEEnum(resourceTypeEEnum, resourceType.class, "resourceType");
 
 		// Create resource
 		createResource(eNS_URI);

@@ -158,13 +158,22 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	int IO_TSTATE__BASE_STATE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Internal</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IO_TSTATE__INTERNAL = 3;
+
+	/**
 	 * The number of structural features of the '<em>Io TState</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IO_TSTATE_FEATURE_COUNT = 3;
+	int IO_TSTATE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Io TState</em>' class.
@@ -662,31 +671,13 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	int PAYLOAD = 10;
 
 	/**
-	 * The feature id for the '<em><b>Content</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYLOAD__CONTENT = 0;
-
-	/**
 	 * The feature id for the '<em><b>Base Message</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAYLOAD__BASE_MESSAGE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Payload Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAYLOAD__PAYLOAD_NAME = 2;
+	int PAYLOAD__BASE_MESSAGE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Base Comment</b></em>' reference.
@@ -695,7 +686,16 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYLOAD__BASE_COMMENT = 3;
+	int PAYLOAD__BASE_COMMENT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Base Class</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAYLOAD__BASE_CLASS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Payload</em>' class.
@@ -704,7 +704,7 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAYLOAD_FEATURE_COUNT = 4;
+	int PAYLOAD_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Payload</em>' class.
@@ -981,14 +981,14 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	int IO_TELEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.InternalEventImpl <em>Internal Event</em>}' class.
+	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericEventImpl <em>Generic Event</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.InternalEventImpl
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getInternalEvent()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericEventImpl
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getGenericEvent()
 	 * @generated
 	 */
-	int INTERNAL_EVENT = 15;
+	int GENERIC_EVENT = 15;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -997,7 +997,7 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EVENT__BASE_CLASS = IO_TEVENT__BASE_CLASS;
+	int GENERIC_EVENT__BASE_CLASS = IO_TEVENT__BASE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Is Periodic</b></em>' attribute.
@@ -1006,7 +1006,7 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EVENT__IS_PERIODIC = IO_TEVENT_FEATURE_COUNT + 0;
+	int GENERIC_EVENT__IS_PERIODIC = IO_TEVENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Time Interval</b></em>' attribute.
@@ -1015,7 +1015,7 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EVENT__TIME_INTERVAL = IO_TEVENT_FEATURE_COUNT + 1;
+	int GENERIC_EVENT__TIME_INTERVAL = IO_TEVENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Do</b></em>' reference.
@@ -1024,35 +1024,35 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EVENT__DO = IO_TEVENT_FEATURE_COUNT + 2;
+	int GENERIC_EVENT__DO = IO_TEVENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>Internal Event</em>' class.
+	 * The number of structural features of the '<em>Generic Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EVENT_FEATURE_COUNT = IO_TEVENT_FEATURE_COUNT + 3;
+	int GENERIC_EVENT_FEATURE_COUNT = IO_TEVENT_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>Internal Event</em>' class.
+	 * The number of operations of the '<em>Generic Event</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INTERNAL_EVENT_OPERATION_COUNT = IO_TEVENT_OPERATION_COUNT + 0;
+	int GENERIC_EVENT_OPERATION_COUNT = IO_TEVENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.DoIoTActionImpl <em>Do Io TAction</em>}' class.
+	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericIoTActionImpl <em>Generic Io TAction</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.DoIoTActionImpl
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getDoIoTAction()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericIoTActionImpl
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getGenericIoTAction()
 	 * @generated
 	 */
-	int DO_IO_TACTION = 16;
+	int GENERIC_IO_TACTION = 16;
 
 	/**
 	 * The feature id for the '<em><b>Base Class</b></em>' reference.
@@ -1061,7 +1061,7 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_IO_TACTION__BASE_CLASS = IO_TACTION__BASE_CLASS;
+	int GENERIC_IO_TACTION__BASE_CLASS = IO_TACTION__BASE_CLASS;
 
 	/**
 	 * The feature id for the '<em><b>Action Name</b></em>' attribute.
@@ -1070,25 +1070,80 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DO_IO_TACTION__ACTION_NAME = IO_TACTION_FEATURE_COUNT + 0;
+	int GENERIC_IO_TACTION__ACTION_NAME = IO_TACTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Do Io TAction</em>' class.
+	 * The number of structural features of the '<em>Generic Io TAction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_IO_TACTION_FEATURE_COUNT = IO_TACTION_FEATURE_COUNT + 1;
+	int GENERIC_IO_TACTION_FEATURE_COUNT = IO_TACTION_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of operations of the '<em>Do Io TAction</em>' class.
+	 * The number of operations of the '<em>Generic Io TAction</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DO_IO_TACTION_OPERATION_COUNT = IO_TACTION_OPERATION_COUNT + 0;
+	int GENERIC_IO_TACTION_OPERATION_COUNT = IO_TACTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.MessageContentImpl <em>Message Content</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.MessageContentImpl
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getMessageContent()
+	 * @generated
+	 */
+	int MESSAGE_CONTENT = 17;
+
+	/**
+	 * The feature id for the '<em><b>Base Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__BASE_OPERATION = 0;
+
+	/**
+	 * The feature id for the '<em><b></b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__ = 1;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__BASE_PROPERTY = 2;
+
+	/**
+	 * The number of structural features of the '<em>Message Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Message Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT_OPERATION_COUNT = 0;
 
 
 	/**
@@ -1187,6 +1242,17 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIoTState_Base_State();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState#getInternal <em>Internal</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Internal</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState#getInternal()
+	 * @see #getIoTState()
+	 * @generated
+	 */
+	EReference getIoTState_Internal();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTEvent <em>Io TEvent</em>}'.
@@ -1543,17 +1609,6 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	EClass getPayload();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload#getContent <em>Content</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Content</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload#getContent()
-	 * @see #getPayload()
-	 * @generated
-	 */
-	EAttribute getPayload_Content();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload#getBase_Message <em>Base Message</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1565,17 +1620,6 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	EReference getPayload_Base_Message();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload#getPayloadName <em>Payload Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Payload Name</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload#getPayloadName()
-	 * @see #getPayload()
-	 * @generated
-	 */
-	EAttribute getPayload_PayloadName();
-
-	/**
 	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload#getBase_Comment <em>Base Comment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1585,6 +1629,17 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPayload_Base_Comment();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload#getBase_Class <em>Base Class</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Class</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.Payload#getBase_Class()
+	 * @see #getPayload()
+	 * @generated
+	 */
+	EReference getPayload_Base_Class();
 
 	/**
 	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.OutgoingEvent <em>Outgoing Event</em>}'.
@@ -1792,68 +1847,111 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 	EReference getIoTElement_IoTState();
 
 	/**
-	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent <em>Internal Event</em>}'.
+	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent <em>Generic Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Internal Event</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent
+	 * @return the meta object for class '<em>Generic Event</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent
 	 * @generated
 	 */
-	EClass getInternalEvent();
+	EClass getGenericEvent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#isPeriodic <em>Is Periodic</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#isPeriodic <em>Is Periodic</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Is Periodic</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#isPeriodic()
-	 * @see #getInternalEvent()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#isPeriodic()
+	 * @see #getGenericEvent()
 	 * @generated
 	 */
-	EAttribute getInternalEvent_IsPeriodic();
+	EAttribute getGenericEvent_IsPeriodic();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#getTimeInterval <em>Time Interval</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#getTimeInterval <em>Time Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Time Interval</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#getTimeInterval()
-	 * @see #getInternalEvent()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#getTimeInterval()
+	 * @see #getGenericEvent()
 	 * @generated
 	 */
-	EAttribute getInternalEvent_TimeInterval();
+	EAttribute getGenericEvent_TimeInterval();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#getDo <em>Do</em>}'.
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#getDo <em>Do</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Do</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#getDo()
-	 * @see #getInternalEvent()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#getDo()
+	 * @see #getGenericEvent()
 	 * @generated
 	 */
-	EReference getInternalEvent_Do();
+	EReference getGenericEvent_Do();
 
 	/**
-	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.DoIoTAction <em>Do Io TAction</em>}'.
+	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericIoTAction <em>Generic Io TAction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Do Io TAction</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.DoIoTAction
+	 * @return the meta object for class '<em>Generic Io TAction</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericIoTAction
 	 * @generated
 	 */
-	EClass getDoIoTAction();
+	EClass getGenericIoTAction();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.DoIoTAction#getActionName <em>Action Name</em>}'.
+	 * Returns the meta object for the attribute '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericIoTAction#getActionName <em>Action Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Action Name</em>'.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.DoIoTAction#getActionName()
-	 * @see #getDoIoTAction()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericIoTAction#getActionName()
+	 * @see #getGenericIoTAction()
 	 * @generated
 	 */
-	EAttribute getDoIoTAction_ActionName();
+	EAttribute getGenericIoTAction_ActionName();
+
+	/**
+	 * Returns the meta object for class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent <em>Message Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message Content</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent
+	 * @generated
+	 */
+	EClass getMessageContent();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent#getBase_Operation <em>Base Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Operation</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent#getBase_Operation()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EReference getMessageContent_Base_Operation();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent#get_ <em></em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em></em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent#get_()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EReference getMessageContent__();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent#getBase_Property <em>Base Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Property</em>'.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent#getBase_Property()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EReference getMessageContent_Base_Property();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1953,6 +2051,14 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 		 * @generated
 		 */
 		EReference IO_TSTATE__BASE_STATE = eINSTANCE.getIoTState_Base_State();
+
+		/**
+		 * The meta object literal for the '<em><b>Internal</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IO_TSTATE__INTERNAL = eINSTANCE.getIoTState_Internal();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.IoTEventImpl <em>Io TEvent</em>}' class.
@@ -2237,14 +2343,6 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 		EClass PAYLOAD = eINSTANCE.getPayload();
 
 		/**
-		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAYLOAD__CONTENT = eINSTANCE.getPayload_Content();
-
-		/**
 		 * The meta object literal for the '<em><b>Base Message</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2253,20 +2351,20 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 		EReference PAYLOAD__BASE_MESSAGE = eINSTANCE.getPayload_Base_Message();
 
 		/**
-		 * The meta object literal for the '<em><b>Payload Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PAYLOAD__PAYLOAD_NAME = eINSTANCE.getPayload_PayloadName();
-
-		/**
 		 * The meta object literal for the '<em><b>Base Comment</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PAYLOAD__BASE_COMMENT = eINSTANCE.getPayload_Base_Comment();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Class</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAYLOAD__BASE_CLASS = eINSTANCE.getPayload_Base_Class();
 
 		/**
 		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.OutgoingEventImpl <em>Outgoing Event</em>}' class.
@@ -2429,14 +2527,14 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 		EReference IO_TELEMENT__IO_TSTATE = eINSTANCE.getIoTElement_IoTState();
 
 		/**
-		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.InternalEventImpl <em>Internal Event</em>}' class.
+		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericEventImpl <em>Generic Event</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.InternalEventImpl
-		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getInternalEvent()
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericEventImpl
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getGenericEvent()
 		 * @generated
 		 */
-		EClass INTERNAL_EVENT = eINSTANCE.getInternalEvent();
+		EClass GENERIC_EVENT = eINSTANCE.getGenericEvent();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Periodic</b></em>' attribute feature.
@@ -2444,7 +2542,7 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INTERNAL_EVENT__IS_PERIODIC = eINSTANCE.getInternalEvent_IsPeriodic();
+		EAttribute GENERIC_EVENT__IS_PERIODIC = eINSTANCE.getGenericEvent_IsPeriodic();
 
 		/**
 		 * The meta object literal for the '<em><b>Time Interval</b></em>' attribute feature.
@@ -2452,7 +2550,7 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute INTERNAL_EVENT__TIME_INTERVAL = eINSTANCE.getInternalEvent_TimeInterval();
+		EAttribute GENERIC_EVENT__TIME_INTERVAL = eINSTANCE.getGenericEvent_TimeInterval();
 
 		/**
 		 * The meta object literal for the '<em><b>Do</b></em>' reference feature.
@@ -2460,17 +2558,17 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference INTERNAL_EVENT__DO = eINSTANCE.getInternalEvent_Do();
+		EReference GENERIC_EVENT__DO = eINSTANCE.getGenericEvent_Do();
 
 		/**
-		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.DoIoTActionImpl <em>Do Io TAction</em>}' class.
+		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericIoTActionImpl <em>Generic Io TAction</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.DoIoTActionImpl
-		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getDoIoTAction()
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.GenericIoTActionImpl
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getGenericIoTAction()
 		 * @generated
 		 */
-		EClass DO_IO_TACTION = eINSTANCE.getDoIoTAction();
+		EClass GENERIC_IO_TACTION = eINSTANCE.getGenericIoTAction();
 
 		/**
 		 * The meta object literal for the '<em><b>Action Name</b></em>' attribute feature.
@@ -2478,7 +2576,41 @@ public interface CHESSIoTSoftwarePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute DO_IO_TACTION__ACTION_NAME = eINSTANCE.getDoIoTAction_ActionName();
+		EAttribute GENERIC_IO_TACTION__ACTION_NAME = eINSTANCE.getGenericIoTAction_ActionName();
+
+		/**
+		 * The meta object literal for the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.MessageContentImpl <em>Message Content</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.MessageContentImpl
+		 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.CHESSIoTSoftwarePackageImpl#getMessageContent()
+		 * @generated
+		 */
+		EClass MESSAGE_CONTENT = eINSTANCE.getMessageContent();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Operation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_CONTENT__BASE_OPERATION = eINSTANCE.getMessageContent_Base_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b></b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_CONTENT__ = eINSTANCE.getMessageContent__();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_CONTENT__BASE_PROPERTY = eINSTANCE.getMessageContent_Base_Property();
 
 	}
 

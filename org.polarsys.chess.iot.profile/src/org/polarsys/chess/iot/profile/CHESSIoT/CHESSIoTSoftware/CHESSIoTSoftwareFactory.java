@@ -157,22 +157,31 @@ public interface CHESSIoTSoftwareFactory extends EFactory {
 	IoTElement createIoTElement();
 
 	/**
-	 * Returns a new object of class '<em>Internal Event</em>'.
+	 * Returns a new object of class '<em>Generic Event</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Internal Event</em>'.
+	 * @return a new object of class '<em>Generic Event</em>'.
 	 * @generated
 	 */
-	InternalEvent createInternalEvent();
+	GenericEvent createGenericEvent();
 
 	/**
-	 * Returns a new object of class '<em>Do Io TAction</em>'.
+	 * Returns a new object of class '<em>Generic Io TAction</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Do Io TAction</em>'.
+	 * @return a new object of class '<em>Generic Io TAction</em>'.
 	 * @generated
 	 */
-	DoIoTAction createDoIoTAction();
+	GenericIoTAction createGenericIoTAction();
+
+	/**
+	 * Returns a new object of class '<em>Message Content</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Content</em>'.
+	 * @generated
+	 */
+	MessageContent createMessageContent();
 
 	/**
 	 * Returns the package supported by this factory.

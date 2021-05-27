@@ -80,8 +80,8 @@ public class CHESSIoTOperationalProfileAdapterFactory extends AdapterFactoryImpl
 				return createServerAdapter();
 			}
 			@Override
-			public Adapter caseComSystem(ComSystem object) {
-				return createComSystemAdapter();
+			public Adapter caseResources(Resources object) {
+				return createResourcesAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -146,16 +146,16 @@ public class CHESSIoTOperationalProfileAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.ComSystem <em>Com System</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources <em>Resources</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.ComSystem
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTOperationalProfile.Resources
 	 * @generated
 	 */
-	public Adapter createComSystemAdapter() {
+	public Adapter createResourcesAdapter() {
 		return null;
 	}
 

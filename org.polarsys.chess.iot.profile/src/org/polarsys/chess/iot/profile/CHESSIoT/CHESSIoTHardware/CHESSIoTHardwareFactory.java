@@ -40,15 +40,6 @@ public interface CHESSIoTHardwareFactory extends EFactory {
 	ActuatorUnit createActuatorUnit();
 
 	/**
-	 * Returns a new object of class '<em>Io TBaord</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Io TBaord</em>'.
-	 * @generated
-	 */
-	IoTBaord createIoTBaord();
-
-	/**
 	 * Returns a new object of class '<em>System HW</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +83,15 @@ public interface CHESSIoTHardwareFactory extends EFactory {
 	 * @generated
 	 */
 	TagUnit createTagUnit();
+
+	/**
+	 * Returns a new object of class '<em>Physical Baord</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Physical Baord</em>'.
+	 * @generated
+	 */
+	PhysicalBaord createPhysicalBaord();
 
 	/**
 	 * Returns the package supported by this factory.

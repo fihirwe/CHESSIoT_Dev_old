@@ -13,26 +13,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.uml2.uml.Component;
 
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage;
-import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord;
+import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord;
 
 import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.VirtualBoard;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Io TBaord</b></em>'.
+ * An implementation of the model object '<em><b>Physical Baord</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.IoTBaordImpl#getBoardName <em>Board Name</em>}</li>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.IoTBaordImpl#getVirtualBoard <em>Virtual Board</em>}</li>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.IoTBaordImpl#getBase_Component <em>Base Component</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.PhysicalBaordImpl#getBoardName <em>Board Name</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.PhysicalBaordImpl#getVirtualBoard <em>Virtual Board</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.impl.PhysicalBaordImpl#getBase_Component <em>Base Component</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBaord {
+public class PhysicalBaordImpl extends MinimalEObjectImpl.Container implements PhysicalBaord {
 	/**
 	 * The default value of the '{@link #getBoardName() <em>Board Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -78,7 +78,7 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected IoTBaordImpl() {
+	protected PhysicalBaordImpl() {
 		super();
 	}
 
@@ -89,7 +89,7 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return CHESSIoTHardwarePackage.Literals.IO_TBAORD;
+		return CHESSIoTHardwarePackage.Literals.PHYSICAL_BAORD;
 	}
 
 	/**
@@ -110,7 +110,7 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 		String oldBoardName = boardName;
 		boardName = newBoardName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTHardwarePackage.IO_TBAORD__BOARD_NAME, oldBoardName, boardName));
+			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTHardwarePackage.PHYSICAL_BAORD__BOARD_NAME, oldBoardName, boardName));
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 			virtualBoard = (VirtualBoard)eResolveProxy(oldVirtualBoard);
 			if (virtualBoard != oldVirtualBoard) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CHESSIoTHardwarePackage.IO_TBAORD__VIRTUAL_BOARD, oldVirtualBoard, virtualBoard));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CHESSIoTHardwarePackage.PHYSICAL_BAORD__VIRTUAL_BOARD, oldVirtualBoard, virtualBoard));
 			}
 		}
 		return virtualBoard;
@@ -148,7 +148,7 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 		VirtualBoard oldVirtualBoard = virtualBoard;
 		virtualBoard = newVirtualBoard;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTHardwarePackage.IO_TBAORD__VIRTUAL_BOARD, oldVirtualBoard, virtualBoard));
+			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTHardwarePackage.PHYSICAL_BAORD__VIRTUAL_BOARD, oldVirtualBoard, virtualBoard));
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 			base_Component = (Component)eResolveProxy(oldBase_Component);
 			if (base_Component != oldBase_Component) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CHESSIoTHardwarePackage.IO_TBAORD__BASE_COMPONENT, oldBase_Component, base_Component));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CHESSIoTHardwarePackage.PHYSICAL_BAORD__BASE_COMPONENT, oldBase_Component, base_Component));
 			}
 		}
 		return base_Component;
@@ -186,7 +186,7 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 		Component oldBase_Component = base_Component;
 		base_Component = newBase_Component;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTHardwarePackage.IO_TBAORD__BASE_COMPONENT, oldBase_Component, base_Component));
+			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTHardwarePackage.PHYSICAL_BAORD__BASE_COMPONENT, oldBase_Component, base_Component));
 	}
 
 	/**
@@ -197,12 +197,12 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CHESSIoTHardwarePackage.IO_TBAORD__BOARD_NAME:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__BOARD_NAME:
 				return getBoardName();
-			case CHESSIoTHardwarePackage.IO_TBAORD__VIRTUAL_BOARD:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__VIRTUAL_BOARD:
 				if (resolve) return getVirtualBoard();
 				return basicGetVirtualBoard();
-			case CHESSIoTHardwarePackage.IO_TBAORD__BASE_COMPONENT:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__BASE_COMPONENT:
 				if (resolve) return getBase_Component();
 				return basicGetBase_Component();
 		}
@@ -217,13 +217,13 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CHESSIoTHardwarePackage.IO_TBAORD__BOARD_NAME:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__BOARD_NAME:
 				setBoardName((String)newValue);
 				return;
-			case CHESSIoTHardwarePackage.IO_TBAORD__VIRTUAL_BOARD:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__VIRTUAL_BOARD:
 				setVirtualBoard((VirtualBoard)newValue);
 				return;
-			case CHESSIoTHardwarePackage.IO_TBAORD__BASE_COMPONENT:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__BASE_COMPONENT:
 				setBase_Component((Component)newValue);
 				return;
 		}
@@ -238,13 +238,13 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CHESSIoTHardwarePackage.IO_TBAORD__BOARD_NAME:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__BOARD_NAME:
 				setBoardName(BOARD_NAME_EDEFAULT);
 				return;
-			case CHESSIoTHardwarePackage.IO_TBAORD__VIRTUAL_BOARD:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__VIRTUAL_BOARD:
 				setVirtualBoard((VirtualBoard)null);
 				return;
-			case CHESSIoTHardwarePackage.IO_TBAORD__BASE_COMPONENT:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__BASE_COMPONENT:
 				setBase_Component((Component)null);
 				return;
 		}
@@ -259,11 +259,11 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CHESSIoTHardwarePackage.IO_TBAORD__BOARD_NAME:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__BOARD_NAME:
 				return BOARD_NAME_EDEFAULT == null ? boardName != null : !BOARD_NAME_EDEFAULT.equals(boardName);
-			case CHESSIoTHardwarePackage.IO_TBAORD__VIRTUAL_BOARD:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__VIRTUAL_BOARD:
 				return virtualBoard != null;
-			case CHESSIoTHardwarePackage.IO_TBAORD__BASE_COMPONENT:
+			case CHESSIoTHardwarePackage.PHYSICAL_BAORD__BASE_COMPONENT:
 				return base_Component != null;
 		}
 		return super.eIsSet(featureID);
@@ -285,4 +285,4 @@ public class IoTBaordImpl extends MinimalEObjectImpl.Container implements IoTBao
 		return result.toString();
 	}
 
-} //IoTBaordImpl
+} //PhysicalBaordImpl

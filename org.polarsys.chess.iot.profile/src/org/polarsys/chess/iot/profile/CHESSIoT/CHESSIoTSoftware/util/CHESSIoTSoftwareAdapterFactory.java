@@ -128,12 +128,16 @@ public class CHESSIoTSoftwareAdapterFactory extends AdapterFactoryImpl {
 				return createIoTElementAdapter();
 			}
 			@Override
-			public Adapter caseInternalEvent(InternalEvent object) {
-				return createInternalEventAdapter();
+			public Adapter caseGenericEvent(GenericEvent object) {
+				return createGenericEventAdapter();
 			}
 			@Override
-			public Adapter caseDoIoTAction(DoIoTAction object) {
-				return createDoIoTActionAdapter();
+			public Adapter caseGenericIoTAction(GenericIoTAction object) {
+				return createGenericIoTActionAdapter();
+			}
+			@Override
+			public Adapter caseMessageContent(MessageContent object) {
+				return createMessageContentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -366,30 +370,44 @@ public class CHESSIoTSoftwareAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent <em>Internal Event</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent <em>Generic Event</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent
 	 * @generated
 	 */
-	public Adapter createInternalEventAdapter() {
+	public Adapter createGenericEventAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.DoIoTAction <em>Do Io TAction</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericIoTAction <em>Generic Io TAction</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.DoIoTAction
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericIoTAction
 	 * @generated
 	 */
-	public Adapter createDoIoTActionAdapter() {
+	public Adapter createGenericIoTActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent <em>Message Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.MessageContent
+	 * @generated
+	 */
+	public Adapter createMessageContentAdapter() {
 		return null;
 	}
 

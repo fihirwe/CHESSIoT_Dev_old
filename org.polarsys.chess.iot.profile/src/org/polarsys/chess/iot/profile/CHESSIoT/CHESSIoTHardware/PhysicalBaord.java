@@ -10,23 +10,23 @@ import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.VirtualBoard;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Io TBaord</b></em>'.
+ * A representation of the model object '<em><b>Physical Baord</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getBoardName <em>Board Name</em>}</li>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getVirtualBoard <em>Virtual Board</em>}</li>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getBase_Component <em>Base Component</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getBoardName <em>Board Name</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getVirtualBoard <em>Virtual Board</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getBase_Component <em>Base Component</em>}</li>
  * </ul>
  *
- * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage#getIoTBaord()
+ * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage#getPhysicalBaord()
  * @model
  * @generated
  */
-public interface IoTBaord extends EObject {
+public interface PhysicalBaord extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Board Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -37,14 +37,14 @@ public interface IoTBaord extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Board Name</em>' attribute.
 	 * @see #setBoardName(String)
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage#getIoTBaord_BoardName()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage#getPhysicalBaord_BoardName()
 	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getBoardName();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getBoardName <em>Board Name</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getBoardName <em>Board Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Board Name</em>' attribute.
@@ -63,14 +63,14 @@ public interface IoTBaord extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Virtual Board</em>' reference.
 	 * @see #setVirtualBoard(VirtualBoard)
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage#getIoTBaord_VirtualBoard()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage#getPhysicalBaord_VirtualBoard()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	VirtualBoard getVirtualBoard();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getVirtualBoard <em>Virtual Board</em>}' reference.
+	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getVirtualBoard <em>Virtual Board</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Virtual Board</em>' reference.
@@ -89,14 +89,14 @@ public interface IoTBaord extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Base Component</em>' reference.
 	 * @see #setBase_Component(Component)
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage#getIoTBaord_Base_Component()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.CHESSIoTHardwarePackage#getPhysicalBaord_Base_Component()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Component getBase_Component();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord#getBase_Component <em>Base Component</em>}' reference.
+	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord#getBase_Component <em>Base Component</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Base Component</em>' reference.
@@ -105,4 +105,4 @@ public interface IoTBaord extends EObject {
 	 */
 	void setBase_Component(Component value);
 
-} // IoTBaord
+} // PhysicalBaord

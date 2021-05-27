@@ -71,8 +71,9 @@ public class CHESSIoTSoftwareFactoryImpl extends EFactoryImpl implements CHESSIo
 			case CHESSIoTSoftwarePackage.SEND_PAYLOAD: return createSendPayload();
 			case CHESSIoTSoftwarePackage.STATE_TRANSITION: return createStateTransition();
 			case CHESSIoTSoftwarePackage.IO_TELEMENT: return createIoTElement();
-			case CHESSIoTSoftwarePackage.INTERNAL_EVENT: return createInternalEvent();
-			case CHESSIoTSoftwarePackage.DO_IO_TACTION: return createDoIoTAction();
+			case CHESSIoTSoftwarePackage.GENERIC_EVENT: return createGenericEvent();
+			case CHESSIoTSoftwarePackage.GENERIC_IO_TACTION: return createGenericIoTAction();
+			case CHESSIoTSoftwarePackage.MESSAGE_CONTENT: return createMessageContent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -233,9 +234,9 @@ public class CHESSIoTSoftwareFactoryImpl extends EFactoryImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public InternalEvent createInternalEvent() {
-		InternalEventImpl internalEvent = new InternalEventImpl();
-		return internalEvent;
+	public GenericEvent createGenericEvent() {
+		GenericEventImpl genericEvent = new GenericEventImpl();
+		return genericEvent;
 	}
 
 	/**
@@ -243,9 +244,19 @@ public class CHESSIoTSoftwareFactoryImpl extends EFactoryImpl implements CHESSIo
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DoIoTAction createDoIoTAction() {
-		DoIoTActionImpl doIoTAction = new DoIoTActionImpl();
-		return doIoTAction;
+	public GenericIoTAction createGenericIoTAction() {
+		GenericIoTActionImpl genericIoTAction = new GenericIoTActionImpl();
+		return genericIoTAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public MessageContent createMessageContent() {
+		MessageContentImpl messageContent = new MessageContentImpl();
+		return messageContent;
 	}
 
 	/**

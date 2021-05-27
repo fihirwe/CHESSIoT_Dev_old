@@ -20,6 +20,8 @@
           upperBound="-1" eType="#//CHESSIoTSoftware/IoTEvent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_State" ordered="false"
           lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//State"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="internal" ordered="false"
+          lowerBound="1" eType="#//CHESSIoTSoftware/IoTEvent"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IoTEvent">
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
@@ -86,14 +88,12 @@
           lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Payload">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="Content" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Message" ordered="false"
           lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Message"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="payloadName" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Comment" ordered="false"
           lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Comment"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="OutgoingEvent" eSuperTypes="#//CHESSIoTSoftware/IoTEvent">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPeriodic" ordered="false"
@@ -133,7 +133,7 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="ioTState" ordered="false"
           lowerBound="1" eType="#//CHESSIoTSoftware/IoTState"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="InternalEvent" eSuperTypes="#//CHESSIoTSoftware/IoTEvent">
+    <eClassifiers xsi:type="ecore:EClass" name="GenericEvent" eSuperTypes="#//CHESSIoTSoftware/IoTEvent">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="isPeriodic" ordered="false"
           lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//Boolean"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeInterval" ordered="false"
@@ -141,9 +141,17 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="do" ordered="false" lowerBound="1"
           eType="#//CHESSIoTSoftware/IoTAction"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="DoIoTAction" eSuperTypes="#//CHESSIoTSoftware/IoTAction">
+    <eClassifiers xsi:type="ecore:EClass" name="GenericIoTAction" eSuperTypes="#//CHESSIoTSoftware/IoTAction">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="actionName" ordered="false"
           lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="MessageContent">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Operation" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Operation"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="_" ordered="false" lowerBound="1"
+          eType="#//CHESSIoTSoftware/Payload"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
     </eClassifiers>
   </eSubpackages>
   <eSubpackages name="CHESSIoTSystem" nsURI="http:///CHESSIoT/CHESSIoTSystem.ecore"
@@ -220,10 +228,13 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
           lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="ComSystem">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Class" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Class"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Resources">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" ordered="false"
+          lowerBound="1" eType="#//CHESSIoTHardware/PhysicalBaord"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="resouceType" ordered="false"
+          lowerBound="1" eType="#//CHESSIoTOperationalProfile/resourceType"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EEnum" name="resourceType"/>
   </eSubpackages>
   <eSubpackages name="CHESSIoTHardware" nsURI="http:///CHESSIoT/CHESSIoTHardware.ecore"
       nsPrefix="CHESSIoT.CHESSIoTHardware">
@@ -258,14 +269,6 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
           lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="IoTBaord">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="boardName" ordered="false"
-          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualBoard" ordered="false"
-          lowerBound="1" eType="#//CHESSIoTSoftware/VirtualBoard"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
-          lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
-    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="SystemHW">
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
           lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
@@ -281,6 +284,14 @@
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="portOut" eSuperTypes="#//CHESSIoTHardware/IoTPort"/>
     <eClassifiers xsi:type="ecore:EClass" name="TagUnit">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
+          lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PhysicalBaord">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="boardName" ordered="false"
+          lowerBound="1" eType="ecore:EDataType ../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="virtualBoard" ordered="false"
+          lowerBound="1" eType="#//CHESSIoTSoftware/VirtualBoard"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="base_Component" ordered="false"
           lowerBound="1" eType="ecore:EClass ../org.eclipse.uml2.uml/model/UML.ecore#//Component"/>
     </eClassifiers>

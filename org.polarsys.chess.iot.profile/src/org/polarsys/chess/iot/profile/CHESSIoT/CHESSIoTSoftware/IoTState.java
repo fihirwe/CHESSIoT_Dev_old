@@ -20,6 +20,7 @@ import org.eclipse.uml2.uml.State;
  *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState#getOnEntry <em>On Entry</em>}</li>
  *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState#getOnExit <em>On Exit</em>}</li>
  *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState#getBase_State <em>Base State</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState#getInternal <em>Internal</em>}</li>
  * </ul>
  *
  * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getIoTState()
@@ -84,5 +85,31 @@ public interface IoTState extends EObject {
 	 * @generated
 	 */
 	void setBase_State(State value);
+
+	/**
+	 * Returns the value of the '<em><b>Internal</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Internal</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Internal</em>' reference.
+	 * @see #setInternal(IoTEvent)
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getIoTState_Internal()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	IoTEvent getInternal();
+
+	/**
+	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState#getInternal <em>Internal</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Internal</em>' reference.
+	 * @see #getInternal()
+	 * @generated
+	 */
+	void setInternal(IoTEvent value);
 
 } // IoTState

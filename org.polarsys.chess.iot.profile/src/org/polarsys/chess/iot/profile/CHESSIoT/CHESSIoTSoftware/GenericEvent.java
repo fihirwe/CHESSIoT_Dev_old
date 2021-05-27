@@ -5,23 +5,23 @@ package org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Internal Event</b></em>'.
+ * A representation of the model object '<em><b>Generic Event</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#isPeriodic <em>Is Periodic</em>}</li>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#getTimeInterval <em>Time Interval</em>}</li>
- *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#getDo <em>Do</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#isPeriodic <em>Is Periodic</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#getTimeInterval <em>Time Interval</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#getDo <em>Do</em>}</li>
  * </ul>
  *
- * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getInternalEvent()
+ * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getGenericEvent()
  * @model
  * @generated
  */
-public interface InternalEvent extends IoTEvent {
+public interface GenericEvent extends IoTEvent {
 	/**
 	 * Returns the value of the '<em><b>Is Periodic</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -32,14 +32,14 @@ public interface InternalEvent extends IoTEvent {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Periodic</em>' attribute.
 	 * @see #setIsPeriodic(boolean)
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getInternalEvent_IsPeriodic()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getGenericEvent_IsPeriodic()
 	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isPeriodic();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#isPeriodic <em>Is Periodic</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#isPeriodic <em>Is Periodic</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Periodic</em>' attribute.
@@ -58,14 +58,14 @@ public interface InternalEvent extends IoTEvent {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Time Interval</em>' attribute.
 	 * @see #setTimeInterval(int)
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getInternalEvent_TimeInterval()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getGenericEvent_TimeInterval()
 	 * @model dataType="org.eclipse.uml2.types.Integer" required="true" ordered="false"
 	 * @generated
 	 */
 	int getTimeInterval();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#getTimeInterval <em>Time Interval</em>}' attribute.
+	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#getTimeInterval <em>Time Interval</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Time Interval</em>' attribute.
@@ -84,14 +84,14 @@ public interface InternalEvent extends IoTEvent {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Do</em>' reference.
 	 * @see #setDo(IoTAction)
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getInternalEvent_Do()
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.CHESSIoTSoftwarePackage#getGenericEvent_Do()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	IoTAction getDo();
 
 	/**
-	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.InternalEvent#getDo <em>Do</em>}' reference.
+	 * Sets the value of the '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.GenericEvent#getDo <em>Do</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Do</em>' reference.
@@ -100,4 +100,4 @@ public interface InternalEvent extends IoTEvent {
 	 */
 	void setDo(IoTAction value);
 
-} // InternalEvent
+} // GenericEvent

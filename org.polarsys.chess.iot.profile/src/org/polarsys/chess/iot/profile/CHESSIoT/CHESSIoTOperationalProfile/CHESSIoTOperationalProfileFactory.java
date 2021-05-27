@@ -49,13 +49,13 @@ public interface CHESSIoTOperationalProfileFactory extends EFactory {
 	Server createServer();
 
 	/**
-	 * Returns a new object of class '<em>Com System</em>'.
+	 * Returns a new object of class '<em>Resources</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Com System</em>'.
+	 * @return a new object of class '<em>Resources</em>'.
 	 * @generated
 	 */
-	ComSystem createComSystem();
+	Resources createResources();
 
 	/**
 	 * Returns the package supported by this factory.

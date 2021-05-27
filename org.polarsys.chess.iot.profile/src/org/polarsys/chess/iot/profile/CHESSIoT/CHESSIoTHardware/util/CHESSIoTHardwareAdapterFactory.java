@@ -76,10 +76,6 @@ public class CHESSIoTHardwareAdapterFactory extends AdapterFactoryImpl {
 				return createActuatorUnitAdapter();
 			}
 			@Override
-			public Adapter caseIoTBaord(IoTBaord object) {
-				return createIoTBaordAdapter();
-			}
-			@Override
 			public Adapter caseSystemHW(SystemHW object) {
 				return createSystemHWAdapter();
 			}
@@ -98,6 +94,10 @@ public class CHESSIoTHardwareAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseTagUnit(TagUnit object) {
 				return createTagUnitAdapter();
+			}
+			@Override
+			public Adapter casePhysicalBaord(PhysicalBaord object) {
+				return createPhysicalBaordAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -144,20 +144,6 @@ public class CHESSIoTHardwareAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActuatorUnitAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord <em>Io TBaord</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.IoTBaord
-	 * @generated
-	 */
-	public Adapter createIoTBaordAdapter() {
 		return null;
 	}
 
@@ -228,6 +214,20 @@ public class CHESSIoTHardwareAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createTagUnitAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord <em>Physical Baord</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTHardware.PhysicalBaord
+	 * @generated
+	 */
+	public Adapter createPhysicalBaordAdapter() {
 		return null;
 	}
 

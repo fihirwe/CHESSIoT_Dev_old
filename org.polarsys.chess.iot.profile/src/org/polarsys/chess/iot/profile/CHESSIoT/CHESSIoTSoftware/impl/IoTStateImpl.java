@@ -33,6 +33,7 @@ import org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.IoTState;
  *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.IoTStateImpl#getOnEntry <em>On Entry</em>}</li>
  *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.IoTStateImpl#getOnExit <em>On Exit</em>}</li>
  *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.IoTStateImpl#getBase_State <em>Base State</em>}</li>
+ *   <li>{@link org.polarsys.chess.iot.profile.CHESSIoT.CHESSIoTSoftware.impl.IoTStateImpl#getInternal <em>Internal</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +68,16 @@ public class IoTStateImpl extends MinimalEObjectImpl.Container implements IoTSta
 	 * @ordered
 	 */
 	protected State base_State;
+
+	/**
+	 * The cached value of the '{@link #getInternal() <em>Internal</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInternal()
+	 * @generated
+	 * @ordered
+	 */
+	protected IoTEvent internal;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,6 +165,44 @@ public class IoTStateImpl extends MinimalEObjectImpl.Container implements IoTSta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public IoTEvent getInternal() {
+		if (internal != null && internal.eIsProxy()) {
+			InternalEObject oldInternal = (InternalEObject)internal;
+			internal = (IoTEvent)eResolveProxy(oldInternal);
+			if (internal != oldInternal) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CHESSIoTSoftwarePackage.IO_TSTATE__INTERNAL, oldInternal, internal));
+			}
+		}
+		return internal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IoTEvent basicGetInternal() {
+		return internal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInternal(IoTEvent newInternal) {
+		IoTEvent oldInternal = internal;
+		internal = newInternal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CHESSIoTSoftwarePackage.IO_TSTATE__INTERNAL, oldInternal, internal));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -164,6 +213,9 @@ public class IoTStateImpl extends MinimalEObjectImpl.Container implements IoTSta
 			case CHESSIoTSoftwarePackage.IO_TSTATE__BASE_STATE:
 				if (resolve) return getBase_State();
 				return basicGetBase_State();
+			case CHESSIoTSoftwarePackage.IO_TSTATE__INTERNAL:
+				if (resolve) return getInternal();
+				return basicGetInternal();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -188,6 +240,9 @@ public class IoTStateImpl extends MinimalEObjectImpl.Container implements IoTSta
 			case CHESSIoTSoftwarePackage.IO_TSTATE__BASE_STATE:
 				setBase_State((State)newValue);
 				return;
+			case CHESSIoTSoftwarePackage.IO_TSTATE__INTERNAL:
+				setInternal((IoTEvent)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -209,6 +264,9 @@ public class IoTStateImpl extends MinimalEObjectImpl.Container implements IoTSta
 			case CHESSIoTSoftwarePackage.IO_TSTATE__BASE_STATE:
 				setBase_State((State)null);
 				return;
+			case CHESSIoTSoftwarePackage.IO_TSTATE__INTERNAL:
+				setInternal((IoTEvent)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -227,6 +285,8 @@ public class IoTStateImpl extends MinimalEObjectImpl.Container implements IoTSta
 				return onExit != null && !onExit.isEmpty();
 			case CHESSIoTSoftwarePackage.IO_TSTATE__BASE_STATE:
 				return base_State != null;
+			case CHESSIoTSoftwarePackage.IO_TSTATE__INTERNAL:
+				return internal != null;
 		}
 		return super.eIsSet(featureID);
 	}
